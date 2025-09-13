@@ -15,32 +15,18 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import net.minecraft.client.MinecraftClient;
-import net.wurstclient.altmanager.AltManager;
-import net.wurstclient.altmanager.Encryption;
 import net.wurstclient.analytics.PlausibleAnalytics;
 import net.wurstclient.clickgui.ClickGui;
-import net.wurstclient.command.CmdList;
-import net.wurstclient.command.CmdProcessor;
-import net.wurstclient.command.Command;
 import net.wurstclient.event.EventManager;
-import net.wurstclient.events.ChatOutputListener;
 import net.wurstclient.events.GUIRenderListener;
-import net.wurstclient.events.KeyPressListener;
 import net.wurstclient.events.PostMotionListener;
 import net.wurstclient.events.PreMotionListener;
-import net.wurstclient.events.UpdateListener;
-import net.wurstclient.hack.Hack;
 import net.wurstclient.hack.HackList;
 import net.wurstclient.hud.IngameHUD;
 import net.wurstclient.keybinds.KeybindList;
-import net.wurstclient.keybinds.KeybindProcessor;
 import net.wurstclient.mixinterface.IMinecraftClient;
-import net.wurstclient.navigator.Navigator;
 import net.wurstclient.other_feature.OtfList;
-import net.wurstclient.other_feature.OtherFeature;
 import net.wurstclient.settings.SettingsFile;
-import net.wurstclient.update.ProblematicResourcePackDetector;
-import net.wurstclient.update.WurstUpdater;
 import net.wurstclient.util.json.JsonException;
 
 public enum WurstClient
@@ -55,16 +41,12 @@ public enum WurstClient
 	
 	private PlausibleAnalytics plausible;
 	private EventManager eventManager;
-	private AltManager altManager;
 	private HackList hax;
-	private CmdList cmds;
 	private OtfList otfs;
 	private SettingsFile settingsFile;
 	private Path settingsProfileFolder;
 	private KeybindList keybinds;
 	private ClickGui gui;
-	private Navigator navigator;
-	private CmdProcessor cmdProcessor;
 	private IngameHUD hud;
 	private RotationFaker rotationFaker;
 	private FriendsList friends;
@@ -72,13 +54,11 @@ public enum WurstClient
 	
 	private boolean enabled = true;
 	private static boolean guiInitialized;
-	private WurstUpdater updater;
-	private ProblematicResourcePackDetector problematicPackDetector;
 	private Path wurstFolder;
 	
 	public void initialize()
 	{
-		System.out.println("Starting Wurst Client...");
+		System.out.println("Starting Wurst UI...");
 		
 		MC = MinecraftClient.getInstance();
 		IMC = (IMinecraftClient)MC;
@@ -92,16 +72,14 @@ public enum WurstClient
 		
 		Path enabledHacksFile = wurstFolder.resolve("enabled-hacks.json");
 		hax = new HackList(enabledHacksFile);
-		
-		cmds = new CmdList();
+
 		
 		otfs = new OtfList();
 		
 		Path settingsFile = wurstFolder.resolve("settings.json");
 		settingsProfileFolder = wurstFolder.resolve("settings");
-		this.settingsFile = new SettingsFile(settingsFile, hax, cmds, otfs);
+		this.settingsFile = new SettingsFile(settingsFile, hax,otfs);
 		this.settingsFile.load();
-		hax.tooManyHaxHack.loadBlockedHacksFile();
 		
 		Path keybindsFile = wurstFolder.resolve("keybinds.json");
 		keybinds = new KeybindList(keybindsFile);
@@ -110,7 +88,6 @@ public enum WurstClient
 		gui = new ClickGui(guiFile);
 		
 		Path preferencesFile = wurstFolder.resolve("preferences.json");
-		navigator = new Navigator(preferencesFile, hax, cmds, otfs);
 		
 		Path friendsFile = wurstFolder.resolve("friends.json");
 		friends = new FriendsList(friendsFile);
@@ -118,12 +95,9 @@ public enum WurstClient
 		
 		translator = new WurstTranslator();
 		
-		cmdProcessor = new CmdProcessor(cmds);
-		eventManager.add(ChatOutputListener.class, cmdProcessor);
-		
-		KeybindProcessor keybindProcessor =
-			new KeybindProcessor(hax, keybinds, cmdProcessor);
-		eventManager.add(KeyPressListener.class, keybindProcessor);
+		/*KeybindProcessor keybindProcessor =
+			new KeybindProcessor(hax, keybinds);
+		eventManager.add(KeyPressListener.class, keybindProcessor);*/
 		
 		hud = new IngameHUD();
 		eventManager.add(GUIRenderListener.class, hud);
@@ -132,21 +106,21 @@ public enum WurstClient
 		eventManager.add(PreMotionListener.class, rotationFaker);
 		eventManager.add(PostMotionListener.class, rotationFaker);
 		
-		updater = new WurstUpdater();
+		/*updater = new WurstUpdater();
 		eventManager.add(UpdateListener.class, updater);
 		
 		problematicPackDetector = new ProblematicResourcePackDetector();
-		problematicPackDetector.start();
+		problematicPackDetector.start();*/
 		
-		Path altsFile = wurstFolder.resolve("alts.encrypted_json");
+		/*Path altsFile = wurstFolder.resolve("alts.encrypted_json");
 		Path encFolder = Encryption.chooseEncryptionFolder();
-		altManager = new AltManager(altsFile, encFolder);
+		altManager = new AltManager(altsFile, encFolder);*/
 	}
 	
 	private Path createWurstFolder()
 	{
 		Path dotMinecraftFolder = MC.runDirectory.toPath().normalize();
-		Path wurstFolder = dotMinecraftFolder.resolve("wurst");
+		Path wurstFolder = dotMinecraftFolder.resolve("wurstui");
 		
 		try
 		{
@@ -155,7 +129,7 @@ public enum WurstClient
 		}catch(IOException e)
 		{
 			throw new RuntimeException(
-				"Couldn't create .minecraft/wurst folder.", e);
+				"Couldn't create .minecraft/wurstui folder.", e);
 		}
 		
 		return wurstFolder;
@@ -214,10 +188,10 @@ public enum WurstClient
 		return hax;
 	}
 	
-	public CmdList getCmds()
+/*	public CmdList getCmds()
 	{
 		return cmds;
-	}
+	}*/
 	
 	public OtfList getOtfs()
 	{
@@ -226,7 +200,7 @@ public enum WurstClient
 	
 	public Feature getFeatureByName(String name)
 	{
-		Hack hack = getHax().getHackByName(name);
+		/*Hack hack = getHax().getHackByName(name);
 		if(hack != null)
 			return hack;
 		
@@ -235,7 +209,8 @@ public enum WurstClient
 			return cmd;
 		
 		OtherFeature otf = getOtfs().getOtfByName(name);
-		return otf;
+		return otf;*/
+		return null;
 	}
 	
 	public KeybindList getKeybinds()
@@ -254,15 +229,15 @@ public enum WurstClient
 		return gui;
 	}
 	
-	public Navigator getNavigator()
+	/*public Navigator getNavigator()
 	{
 		return navigator;
-	}
+	}*/
 	
-	public CmdProcessor getCmdProcessor()
+/*	public CmdProcessor getCmdProcessor()
 	{
 		return cmdProcessor;
-	}
+	}*/
 	
 	public IngameHUD getHud()
 	{
@@ -289,7 +264,7 @@ public enum WurstClient
 		return enabled;
 	}
 	
-	public void setEnabled(boolean enabled)
+	/*public void setEnabled(boolean enabled)
 	{
 		this.enabled = enabled;
 		
@@ -304,19 +279,19 @@ public enum WurstClient
 	{
 		return updater;
 	}
-	
-	public ProblematicResourcePackDetector getProblematicPackDetector()
+	*/
+	/*public ProblematicResourcePackDetector getProblematicPackDetector()
 	{
 		return problematicPackDetector;
-	}
+	}*/
 	
 	public Path getWurstFolder()
 	{
 		return wurstFolder;
 	}
 	
-	public AltManager getAltManager()
+	/*public AltManager getAltManager()
 	{
 		return altManager;
-	}
+	}*/
 }

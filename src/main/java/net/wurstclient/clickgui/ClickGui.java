@@ -33,7 +33,6 @@ import net.wurstclient.Category;
 import net.wurstclient.Feature;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.components.FeatureButton;
-import net.wurstclient.hacks.ClickGuiHack;
 import net.wurstclient.settings.Setting;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.json.JsonUtils;
@@ -74,7 +73,7 @@ public final class ClickGui
 		
 		ArrayList<Feature> features = new ArrayList<>();
 		features.addAll(WURST.getHax().getAllHax());
-		features.addAll(WURST.getCmds().getAllCmds());
+/*		features.addAll(WURST.getCmds().getAllCmds());*/
 		features.addAll(WURST.getOtfs().getAllOtfs());
 		
 		for(Feature f : features)
@@ -84,18 +83,18 @@ public final class ClickGui
 		windows.addAll(windowMap.values());
 		
 		Window uiSettings = new Window("UI Settings");
-		uiSettings.add(new FeatureButton(WURST.getOtfs().wurstLogoOtf));
+		/*uiSettings.add(new FeatureButton(WURST.getOtfs().wurstLogoOtf));
 		uiSettings.add(new FeatureButton(WURST.getOtfs().hackListOtf));
-		uiSettings.add(new FeatureButton(WURST.getOtfs().keybindManagerOtf));
-		ClickGuiHack clickGuiHack = WURST.getHax().clickGuiHack;
-		Stream<Setting> settings = clickGuiHack.getSettings().values().stream();
-		settings.map(Setting::getComponent).forEach(c -> uiSettings.add(c));
+		uiSettings.add(new FeatureButton(WURST.getOtfs().keybindManagerOtf));*/
+		/*ClickGuiHack clickGuiHack = WURST.getHax().clickGuiHack;
+		Stream<Setting> settings = clickGuiHack.getSettings().values().stream();*/
+		/*settings.map(Setting::getComponent).forEach(c -> uiSettings.add(c));*/
 		windows.add(uiSettings);
 		
 		for(Window window : windows)
 			window.setMinimized(true);
 		
-		windows.add(WurstClient.INSTANCE.getHax().radarHack.getWindow());
+		/*windows.add(WurstClient.INSTANCE.getHax().radarHack.getWindow());*/
 		
 		int x = 5;
 		int y = 5;
@@ -587,7 +586,7 @@ public final class ClickGui
 	
 	public void updateColors()
 	{
-		ClickGuiHack clickGui = WURST.getHax().clickGuiHack;
+		/*ClickGuiHack clickGui = WURST.getHax().clickGuiHack;
 		
 		opacity = clickGui.getOpacity();
 		ttOpacity = clickGui.getTooltipOpacity();
@@ -599,7 +598,7 @@ public final class ClickGui
 		if(WurstClient.INSTANCE.getHax().rainbowUiHack.isEnabled())
 			acColor = RenderUtils.getRainbowColor();
 		else
-			acColor = clickGui.getAccentColor();
+			acColor = clickGui.getAccentColor();*/
 	}
 	
 	private void renderWindow(DrawContext context, Window window, int mouseX,

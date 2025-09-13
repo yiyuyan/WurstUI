@@ -13,7 +13,6 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.InputUtil;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.screens.ClickGuiScreen;
-import net.wurstclient.command.CmdProcessor;
 import net.wurstclient.events.KeyPressListener;
 import net.wurstclient.hack.Hack;
 import net.wurstclient.hack.HackList;
@@ -23,14 +22,11 @@ public final class KeybindProcessor implements KeyPressListener
 {
 	private final HackList hax;
 	private final KeybindList keybinds;
-	private final CmdProcessor cmdProcessor;
 	
-	public KeybindProcessor(HackList hax, KeybindList keybinds,
-		CmdProcessor cmdProcessor)
+	public KeybindProcessor(HackList hax, KeybindList keybinds)
 	{
 		this.hax = hax;
 		this.keybinds = keybinds;
-		this.cmdProcessor = cmdProcessor;
 	}
 	
 	@Override
@@ -73,7 +69,7 @@ public final class KeybindProcessor implements KeyPressListener
 	
 	private void processCmd(String cmd)
 	{
-		if(cmd.startsWith("."))
+		/*if(cmd.startsWith("."))
 			cmdProcessor.process(cmd.substring(1));
 		else if(cmd.contains(" "))
 			cmdProcessor.process(cmd);
@@ -95,6 +91,6 @@ public final class KeybindProcessor implements KeyPressListener
 			}
 			
 			hack.setEnabled(!hack.isEnabled());
-		}
+		}*/
 	}
 }

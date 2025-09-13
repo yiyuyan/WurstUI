@@ -1,11 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "wurst",
+  "id": "wurstui",
   "version": "${version}",
-  "name": "Wurst Client",
+  "name": "Wurst UI",
   "description": "Wurst Wurst Wurst!",
   "authors": [
-    "Alexander01998"
+    "Alexander01998",
+    "KSmc_brigade"
   ],
   "contact": {
     "homepage": "https://www.wurstclient.net/modmenu-homepage/",
@@ -13,7 +14,7 @@
     "issues": "https://www.wurstclient.net/modmenu-issues/"
   },
   "license": "GPL-3.0-or-later",
-  "icon": "assets/wurst/icon.png",
+  "icon": "assets/wurstui/icon.png",
   "environment": "client",
   "entrypoints": {
     "main": [

@@ -13,22 +13,12 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-
-import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
 import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.hit.HitResult;
-import net.wurstclient.WurstClient;
 import net.wurstclient.event.EventManager;
 import net.wurstclient.events.CameraTransformViewBobbingListener.CameraTransformViewBobbingEvent;
-import net.wurstclient.hacks.FullbrightHack;
 
 @Mixin(GameRenderer.class)
 public abstract class GameRendererMixin implements AutoCloseable
@@ -84,7 +74,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 		cancelNextBobView = false;
 	}
 	
-	@Inject(at = @At(value = "RETURN", ordinal = 1),
+	/*@Inject(at = @At(value = "RETURN", ordinal = 1),
 		method = "getFov(Lnet/minecraft/client/render/Camera;FZ)F",
 		cancellable = true)
 	private void onGetFov(Camera camera, float tickDelta, boolean changingFov,
@@ -94,9 +84,9 @@ public abstract class GameRendererMixin implements AutoCloseable
 			.changeFovBasedOnZoom(cir.getReturnValueF()));
 	}
 	
-	/**
+	*//**
 	 * This is the part that makes Liquids work.
-	 */
+	 *//*
 	@WrapOperation(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/entity/Entity;raycast(DFZ)Lnet/minecraft/util/hit/HitResult;",
 		ordinal = 0),
@@ -146,5 +136,5 @@ public abstract class GameRendererMixin implements AutoCloseable
 	{
 		if(WurstClient.INSTANCE.getHax().noHurtcamHack.isEnabled())
 			ci.cancel();
-	}
+	}*/
 }

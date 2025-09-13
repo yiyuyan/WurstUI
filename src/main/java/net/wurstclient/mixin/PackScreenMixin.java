@@ -8,9 +8,6 @@
 package net.wurstclient.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.pack.PackScreen;
@@ -29,9 +26,9 @@ public class PackScreenMixin extends Screen
 	 * Scans for problematic resource packs (currently just VanillaTweaks
 	 * Twinkling Stars) whenever the resource pack screen is closed.
 	 */
-	@Inject(at = @At("HEAD"), method = "close()V")
+	/*@Inject(at = @At("HEAD"), method = "close()V")
 	public void onClose(CallbackInfo ci)
 	{
 		WurstClient.INSTANCE.getProblematicPackDetector().start();
-	}
+	}*/
 }

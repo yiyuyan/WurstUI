@@ -13,11 +13,10 @@ import java.util.TreeMap;
 
 import net.minecraft.util.crash.CrashException;
 import net.minecraft.util.crash.CrashReport;
-import net.wurstclient.other_features.*;
 
 public final class OtfList
 {
-	public final ChangelogOtf changelogOtf = new ChangelogOtf();
+	/*public final ChangelogOtf changelogOtf = new ChangelogOtf();
 	public final CleanUpOtf cleanUpOtf = new CleanUpOtf();
 	public final DisableOtf disableOtf = new DisableOtf();
 	public final HackListOtf hackListOtf = new HackListOtf();
@@ -33,7 +32,7 @@ public final class OtfList
 	public final WikiDataExportOtf wikiDataExportOtf = new WikiDataExportOtf();
 	public final WurstCapesOtf wurstCapesOtf = new WurstCapesOtf();
 	public final WurstLogoOtf wurstLogoOtf = new WurstLogoOtf();
-	public final ZoomOtf zoomOtf = new ZoomOtf();
+	public final ZoomOtf zoomOtf = new ZoomOtf();*/
 	
 	private final TreeMap<String, OtherFeature> otfs =
 		new TreeMap<>(String::compareToIgnoreCase);

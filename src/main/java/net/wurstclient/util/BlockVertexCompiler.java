@@ -14,7 +14,6 @@ import java.util.stream.Stream;
 import java.util.stream.Stream.Builder;
 
 import net.minecraft.util.math.BlockPos;
-import net.wurstclient.hacks.SearchHack;
 
 /**
  * Converts a {@link HashSet} of block positions into an {@link ArrayList} of

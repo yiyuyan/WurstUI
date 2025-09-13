@@ -17,7 +17,6 @@ import com.google.gson.JsonArray;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.wurstclient.commands.FriendsCmd;
 import net.wurstclient.settings.CheckboxSetting;
 import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
@@ -55,10 +54,10 @@ public class FriendsList
 		if(entity == null || !(entity instanceof PlayerEntity))
 			return;
 		
-		FriendsCmd friendsCmd = WurstClient.INSTANCE.getCmds().friendsCmd;
+		/*FriendsCmd friendsCmd = WurstClient.INSTANCE.getCmds().friendsCmd;
 		CheckboxSetting middleClickFriends = friendsCmd.getMiddleClickFriends();
 		if(!middleClickFriends.isChecked())
-			return;
+			return;*/
 		
 		String name = entity.getName().getString();
 		

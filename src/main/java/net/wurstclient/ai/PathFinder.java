@@ -622,9 +622,9 @@ public class PathFinder
 	
 	public PathProcessor getProcessor()
 	{
-		if(abilities.flying())
+		/*if(abilities.flying())
 			return new FlyPathProcessor(path, abilities.creativeFlying());
-		
+		*/
 		return new WalkPathProcessor(path);
 	}
 	

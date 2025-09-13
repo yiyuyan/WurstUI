@@ -140,7 +140,7 @@ public class WurstTranslator implements SynchronousResourceReloader
 	
 	public boolean isForcedEnglish()
 	{
-		return wurst.getOtfs().translationsOtf.getForceEnglish().isChecked();
+		return false;
 	}
 	
 	/**
@@ -184,7 +184,7 @@ public class WurstTranslator implements SynchronousResourceReloader
 		for(String langCode : langCodes)
 		{
 			String langFilePath = "translations/" + langCode + ".json";
-			Identifier langId = Identifier.of("wurst", langFilePath);
+			Identifier langId = Identifier.of("wurstui", langFilePath);
 			
 			for(Resource resource : manager.getAllResources(langId))
 				try(InputStream stream = resource.getInputStream())

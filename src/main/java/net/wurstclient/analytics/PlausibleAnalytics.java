@@ -47,7 +47,7 @@ public final class PlausibleAnalytics
 	private static final Gson GSON = new Gson();
 	private static final Logger LOGGER = LoggerFactory.getLogger("Plausible");
 	
-	private static final String MOD_ID = "wurst";
+	private static final String MOD_ID = "wurstui";
 	private static final URI API_ENDPOINT =
 		URI.create("https://plausible.wurstclient.net/api/event");
 	
@@ -68,8 +68,8 @@ public final class PlausibleAnalytics
 		this.configFile = new AnalyticsConfigFile(configFile);
 		this.configFile.load(this);
 		
-		sessionProp("version", getVersion("wurst"));
-		sessionProp("short_version", getShortVersion("wurst"));
+		sessionProp("version", getVersion("wurstui"));
+		sessionProp("short_version", getShortVersion("wurstui"));
 		sessionProp("mc_version", getVersion("minecraft"));
 		sessionProp("fabric_api_version", getVersion("fabric-api"));
 		sessionProp("fabric_loader_version", getVersion("fabricloader"));
@@ -140,7 +140,7 @@ public final class PlausibleAnalytics
 	private boolean isDebugMode()
 	{
 		return FabricLoader.getInstance().isDevelopmentEnvironment()
-			|| System.getProperty("wurst.e2eTest") != null;
+			|| System.getProperty("wurstui.e2eTest") != null;
 	}
 	
 	private void runBackgroundLoop()

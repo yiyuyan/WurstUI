@@ -74,8 +74,8 @@ public abstract class EntityMixin implements Nameable, EntityLike, CommandOutput
 		if(!cir.getReturnValueZ())
 			return;
 		
-		if(WurstClient.INSTANCE.getHax().trueSightHack
+		/*if(WurstClient.INSTANCE.getHax().trueSightHack
 			.shouldBeVisible((Entity)(Object)this))
-			cir.setReturnValue(false);
+			cir.setReturnValue(false);*/
 	}
 }

@@ -7,7 +7,6 @@
  */
 package net.wurstclient.mixin;
 
-import org.joml.Matrix4f;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -15,23 +14,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Share;
 import com.llamalad7.mixinextras.sugar.ref.LocalDoubleRef;
 
 import net.minecraft.client.font.TextRenderer;
-import net.minecraft.client.font.TextRenderer.TextLayerType;
-import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderDispatcher;
 import net.minecraft.client.render.entity.EntityRenderer;
 import net.minecraft.client.render.entity.state.EntityRenderState;
-import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
-import net.minecraft.text.Text;
-import net.minecraft.util.math.Vec3d;
-import net.wurstclient.WurstClient;
-import net.wurstclient.hacks.NameTagsHack;
 
 @Mixin(EntityRenderer.class)
 public abstract class EntityRendererMixin<T extends Entity, S extends EntityRenderState>
@@ -40,7 +30,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 	@Final
 	protected EntityRenderDispatcher dispatcher;
 	
-	@Inject(at = @At("HEAD"),
+	/*@Inject(at = @At("HEAD"),
 		method = "renderLabelIfPresent(Lnet/minecraft/client/render/entity/state/EntityRenderState;Lnet/minecraft/text/Text;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V",
 		cancellable = true)
 	private void onRenderLabelIfPresent(S state, Text text,
@@ -51,12 +41,12 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 		wurstRenderLabelIfPresent(state, text, matrices, vertexConsumers,
 			light);
 		ci.cancel();
-	}
+	}*/
 	
 	/**
 	 * Copy of renderLabelIfPresent() since calling the original would result in
 	 * an infinite loop. Also makes it easier to modify.
-	 */
+	 *//*
 	protected void wurstRenderLabelIfPresent(S state, Text text,
 		MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light)
 	{
@@ -113,9 +103,9 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 		matrices.pop();
 	}
 	
-	/**
+	*//**
 	 * Disables the nametag distance limit if configured in NameTags.
-	 */
+	 *//*
 	@WrapOperation(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/client/render/entity/EntityRenderDispatcher;getSquaredDistanceToCamera(Lnet/minecraft/entity/Entity;)D"),
 		method = "updateRenderState(Lnet/minecraft/entity/Entity;Lnet/minecraft/client/render/entity/state/EntityRenderState;F)V")
@@ -130,7 +120,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 			return 0;
 		
 		return actualDistanceSq.get();
-	}
+	}*/
 	
 	/**
 	 * Restores the true squared distance so we don't break other code that

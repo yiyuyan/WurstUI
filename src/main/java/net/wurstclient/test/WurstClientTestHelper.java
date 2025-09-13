@@ -397,7 +397,6 @@ public enum WurstClientTestHelper
 	{
 		System.out.println("Running command: ." + command);
 		submitAndWait(mc -> {
-			WurstClient.INSTANCE.getCmdProcessor().process(command);
 		});
 	}
 	

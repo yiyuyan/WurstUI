@@ -28,11 +28,11 @@ public record PlayerAbilities(boolean invulnerable, boolean creativeFlying,
 		boolean invulnerable =
 			mcAbilities.invulnerable || mcAbilities.creativeMode;
 		boolean creativeFlying = mcAbilities.flying;
-		boolean flying = creativeFlying || hax.flightHack.isEnabled();
-		boolean immuneToFallDamage = invulnerable || hax.noFallHack.isEnabled();
-		boolean noWaterSlowdown = hax.antiWaterPushHack.isPreventingSlowdown();
-		boolean jesus = hax.jesusHack.isEnabled();
-		boolean spider = hax.spiderHack.isEnabled();
+		boolean flying = mcAbilities.flying;
+		boolean immuneToFallDamage = invulnerable;
+		boolean noWaterSlowdown = false;
+		boolean jesus = false;
+		boolean spider = false;
 		
 		return new PlayerAbilities(invulnerable, creativeFlying, flying,
 			immuneToFallDamage, noWaterSlowdown, jesus, spider);

@@ -9,7 +9,6 @@ package net.wurstclient.nochatreports;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Supplier;
 
 import net.minecraft.client.font.MultilineText;
 import net.minecraft.client.gui.DrawContext;
@@ -21,7 +20,6 @@ import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableTextContent;
 import net.minecraft.util.Colors;
 import net.wurstclient.WurstClient;
-import net.wurstclient.other_features.NoChatReportsOtf;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.LastServerRememberer;
 
@@ -44,7 +42,7 @@ public final class ForcedChatReportsScreen extends Screen
 	private int reasonHeight;
 	
 	private ButtonWidget signatureButton;
-	private final Supplier<String> sigButtonMsg;
+/*	private final Supplier<String> sigButtonMsg;*/
 	
 	public ForcedChatReportsScreen(Screen prevScreen)
 	{
@@ -56,10 +54,10 @@ public final class ForcedChatReportsScreen extends Screen
 		reason = Text.literal(WurstClient.INSTANCE
 			.translate("gui.wurst.nochatreports.unsafe_server.message"));
 		
-		NoChatReportsOtf ncr = WurstClient.INSTANCE.getOtfs().noChatReportsOtf;
+		/*NoChatReportsOtf ncr = WurstClient.INSTANCE.getOtfs().noChatReportsOtf;
 		sigButtonMsg = () -> WurstClient.INSTANCE
 			.translate("button.wurst.nochatreports.signatures_status")
-			+ blockedOrAllowed(ncr.isEnabled());
+			+ blockedOrAllowed(ncr.isEnabled());*/
 	}
 	
 	private String blockedOrAllowed(boolean blocked)
@@ -82,9 +80,9 @@ public final class ForcedChatReportsScreen extends Screen
 		int reconnectY = signaturesY + 24;
 		int backButtonY = reconnectY + 24;
 		
-		addDrawableChild(signatureButton = ButtonWidget
+		/*addDrawableChild(signatureButton = ButtonWidget
 			.builder(Text.literal(sigButtonMsg.get()), b -> toggleSignatures())
-			.dimensions(buttonX, signaturesY, 200, 20).build());
+			.dimensions(buttonX, signaturesY, 200, 20).build());*/
 		
 		addDrawableChild(ButtonWidget
 			.builder(Text.literal("Reconnect"),
@@ -99,8 +97,8 @@ public final class ForcedChatReportsScreen extends Screen
 	
 	private void toggleSignatures()
 	{
-		WurstClient.INSTANCE.getOtfs().noChatReportsOtf.doPrimaryAction();
-		signatureButton.setMessage(Text.literal(sigButtonMsg.get()));
+		/*WurstClient.INSTANCE.getOtfs().noChatReportsOtf.doPrimaryAction();
+		signatureButton.setMessage(Text.literal(sigButtonMsg.get()));*/
 	}
 	
 	@Override
@@ -127,8 +125,8 @@ public final class ForcedChatReportsScreen extends Screen
 	
 	public static boolean isCausedByNoChatReports(Text disconnectReason)
 	{
-		if(!WurstClient.INSTANCE.getOtfs().noChatReportsOtf.isActive())
-			return false;
+		/*if(!WurstClient.INSTANCE.getOtfs().noChatReportsOtf.isActive())
+			return false;*/
 		
 		if(disconnectReason.getContent() instanceof TranslatableTextContent tr
 			&& TRANSLATABLE_DISCONNECT_REASONS.contains(tr.getKey()))

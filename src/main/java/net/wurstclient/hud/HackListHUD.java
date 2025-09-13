@@ -18,14 +18,11 @@ import net.minecraft.util.Colors;
 import net.wurstclient.WurstClient;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.hack.Hack;
-import net.wurstclient.other_features.HackListOtf;
-import net.wurstclient.other_features.HackListOtf.Mode;
-import net.wurstclient.other_features.HackListOtf.Position;
 
 public final class HackListHUD implements UpdateListener
 {
 	private final ArrayList<HackListEntry> activeHax = new ArrayList<>();
-	private final HackListOtf otf = WurstClient.INSTANCE.getOtfs().hackListOtf;
+	//private final HackListOtf otf = WurstClient.INSTANCE.getOtfs().hackListOtf;
 	private int posY;
 	private int textColor;
 	
@@ -36,7 +33,7 @@ public final class HackListHUD implements UpdateListener
 	
 	public void render(DrawContext context, float partialTicks)
 	{
-		if(otf.getMode() == Mode.HIDDEN)
+		/*if(otf.getMode() == Mode.HIDDEN)
 			return;
 		
 		if(otf.getPosition() == Position.LEFT
@@ -61,7 +58,7 @@ public final class HackListHUD implements UpdateListener
 			|| height > context.getScaledWindowHeight())
 			drawCounter(context);
 		else
-			drawHackList(context, partialTicks);
+			drawHackList(context, partialTicks);*/
 	}
 	
 	private void drawCounter(DrawContext context)
@@ -73,17 +70,13 @@ public final class HackListHUD implements UpdateListener
 	
 	private void drawHackList(DrawContext context, float partialTicks)
 	{
-		if(otf.isAnimations())
-			for(HackListEntry e : activeHax)
-				drawWithOffset(context, e, partialTicks);
-		else
-			for(HackListEntry e : activeHax)
-				drawString(context, e.hack.getRenderName());
+        for(HackListEntry e : activeHax)
+            drawString(context, e.hack.getRenderName());
 	}
 	
 	public void updateState(Hack hack)
 	{
-		int offset = otf.isAnimations() ? 4 : 0;
+		int offset = 0;
 		HackListEntry entry = new HackListEntry(hack, offset);
 		
 		if(hack.isEnabled())
@@ -94,27 +87,21 @@ public final class HackListHUD implements UpdateListener
 			activeHax.add(entry);
 			sort();
 			
-		}else if(!otf.isAnimations())
-			activeHax.remove(entry);
+		}else activeHax.remove(entry);
 	}
 	
 	private void sort()
 	{
-		Comparator<HackListEntry> comparator =
+		/*Comparator<HackListEntry> comparator =
 			Comparator.comparing(hle -> hle.hack, otf.getComparator());
-		Collections.sort(activeHax, comparator);
+		Collections.sort(activeHax, comparator);*/
 	}
 	
 	@Override
 	public void onUpdate()
 	{
-		if(otf.shouldSort())
-			sort();
-		
-		if(!otf.isAnimations())
-			return;
-		
-		for(Iterator<HackListEntry> itr = activeHax.iterator(); itr.hasNext();)
+
+        for(Iterator<HackListEntry> itr = activeHax.iterator(); itr.hasNext();)
 		{
 			HackListEntry e = itr.next();
 			boolean enabled = e.hack.isEnabled();
@@ -133,18 +120,13 @@ public final class HackListHUD implements UpdateListener
 	{
 		TextRenderer tr = WurstClient.MC.textRenderer;
 		int posX;
-		
-		if(otf.getPosition() == Position.LEFT)
-			posX = 2;
-		else
-		{
-			int screenWidth = context.getScaledWindowWidth();
-			int stringWidth = tr.getWidth(s);
-			
-			posX = screenWidth - stringWidth - 2;
-		}
-		
-		context.drawText(tr, s, posX + 1, posY + 1, Colors.BLACK, false);
+
+        int screenWidth = context.getScaledWindowWidth();
+        int stringWidth = tr.getWidth(s);
+
+        posX = screenWidth - stringWidth - 2;
+
+        context.drawText(tr, s, posX + 1, posY + 1, Colors.BLACK, false);
 		context.state.goUpLayer();
 		context.drawText(tr, s, posX, posY, textColor | Colors.BLACK, false);
 		context.state.goDownLayer();
@@ -162,17 +144,12 @@ public final class HackListHUD implements UpdateListener
 			e.offset * partialTicks + e.prevOffset * (1 - partialTicks);
 		
 		float posX;
-		if(otf.getPosition() == Position.LEFT)
-			posX = 2 - 5 * offset;
-		else
-		{
-			int screenWidth = context.getScaledWindowWidth();
-			int stringWidth = tr.getWidth(s);
-			
-			posX = screenWidth - stringWidth - 2 + 5 * offset;
-		}
-		
-		int alpha = (int)(255 * (1 - offset / 4)) << 24;
+        int screenWidth = context.getScaledWindowWidth();
+        int stringWidth = tr.getWidth(s);
+
+        posX = screenWidth - stringWidth - 2 + 5 * offset;
+
+        int alpha = (int)(255 * (1 - offset / 4)) << 24;
 		context.drawText(tr, s, (int)posX + 1, posY + 1, 0x04000000 | alpha,
 			false);
 		context.state.goUpLayer();

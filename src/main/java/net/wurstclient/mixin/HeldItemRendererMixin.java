@@ -38,9 +38,9 @@ public abstract class HeldItemRendererMixin
 		VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci)
 	{
 		// lower shield when blocking
-		if(item.getItem() == Items.SHIELD)
+		/*if(item.getItem() == Items.SHIELD)
 			WurstClient.INSTANCE.getHax().noShieldOverlayHack
-				.adjustShieldPosition(matrices, true);
+				.adjustShieldPosition(matrices, true);*/
 	}
 	
 	/**
@@ -58,8 +58,8 @@ public abstract class HeldItemRendererMixin
 		CallbackInfo ci)
 	{
 		// lower shield when not blocking
-		if(item.getItem() == Items.SHIELD)
+		/*if(item.getItem() == Items.SHIELD)
 			WurstClient.INSTANCE.getHax().noShieldOverlayHack
-				.adjustShieldPosition(matrices, false);
+				.adjustShieldPosition(matrices, false);*/
 	}
 }

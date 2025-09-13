@@ -21,8 +21,6 @@ import net.wurstclient.Feature;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.ClickGui;
 import net.wurstclient.events.KeyPressListener;
-import net.wurstclient.hacks.TooManyHaxHack;
-import net.wurstclient.other_features.TabGuiOtf;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.RenderUtils;
 
@@ -32,8 +30,8 @@ public final class TabGui implements KeyPressListener
 	private static final MinecraftClient MC = WurstClient.MC;
 	
 	private final ArrayList<Tab> tabs = new ArrayList<>();
-	private final TabGuiOtf tabGuiOtf =
-		WurstClient.INSTANCE.getOtfs().tabGuiOtf;
+	/*private final TabGuiOtf tabGuiOtf =
+		WurstClient.INSTANCE.getOtfs().tabGuiOtf;*/
 	
 	private int width;
 	private int height;
@@ -50,7 +48,7 @@ public final class TabGui implements KeyPressListener
 		
 		ArrayList<Feature> features = new ArrayList<>();
 		features.addAll(WURST.getHax().getAllHax());
-		features.addAll(WURST.getCmds().getAllCmds());
+		/*features.addAll(WURST.getCmds().getAllCmds());*/
 		features.addAll(WURST.getOtfs().getAllOtfs());
 		
 		for(Feature feature : features)
@@ -80,8 +78,8 @@ public final class TabGui implements KeyPressListener
 		if(event.getAction() != GLFW.GLFW_PRESS)
 			return;
 		
-		if(tabGuiOtf.isHidden())
-			return;
+		/*if(tabGuiOtf.isHidden())
+			return;*/
 		
 		if(tabOpened)
 			switch(event.getKeyCode())
@@ -119,8 +117,8 @@ public final class TabGui implements KeyPressListener
 	
 	public void render(DrawContext context, float partialTicks)
 	{
-		if(tabGuiOtf.isHidden())
-			return;
+		/*if(tabGuiOtf.isHidden())
+			return;*/
 		
 		Matrix3x2fStack matrixStack = context.getMatrices();
 		matrixStack.pushMatrix();
@@ -247,14 +245,14 @@ public final class TabGui implements KeyPressListener
 		{
 			Feature feature = features.get(selected);
 			
-			TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
+			/*TooManyHaxHack tooManyHax = WURST.getHax().tooManyHaxHack;
 			if(tooManyHax.isEnabled() && tooManyHax.isBlocked(feature))
 			{
 				ChatUtils
 					.error(feature.getName() + " is blocked by TooManyHax.");
 				return;
 			}
-			
+			*/
 			feature.doPrimaryAction();
 		}
 		

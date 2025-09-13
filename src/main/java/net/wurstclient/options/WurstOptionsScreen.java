@@ -24,10 +24,6 @@ import net.minecraft.util.Util;
 import net.minecraft.util.Util.OperatingSystem;
 import net.wurstclient.WurstClient;
 import net.wurstclient.analytics.PlausibleAnalytics;
-import net.wurstclient.commands.FriendsCmd;
-import net.wurstclient.hacks.XRayHack;
-import net.wurstclient.other_features.VanillaSpoofOtf;
-import net.wurstclient.settings.CheckboxSetting;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.WurstColors;
 
@@ -57,19 +53,19 @@ public class WurstOptionsScreen extends Screen
 	private void addSettingButtons()
 	{
 		WurstClient wurst = WurstClient.INSTANCE;
-		FriendsCmd friendsCmd = wurst.getCmds().friendsCmd;
-		CheckboxSetting middleClickFriends = friendsCmd.getMiddleClickFriends();
+		//FriendsCmd friendsCmd = wurst.getCmds().friendsCmd;
+		//CheckboxSetting middleClickFriends = friendsCmd.getMiddleClickFriends();
 		PlausibleAnalytics plausible = wurst.getPlausible();
-		VanillaSpoofOtf vanillaSpoofOtf = wurst.getOtfs().vanillaSpoofOtf;
-		CheckboxSetting forceEnglish =
-			wurst.getOtfs().translationsOtf.getForceEnglish();
+		//VanillaSpoofOtf vanillaSpoofOtf = wurst.getOtfs().vanillaSpoofOtf;
+		//CheckboxSetting forceEnglish =
+		//	wurst.getOtfs().translationsOtf.getForceEnglish();
 		
-		new WurstOptionsButton(-154, 24,
+		/*new WurstOptionsButton(-154, 24,
 			() -> "Click Friends: "
 				+ (middleClickFriends.isChecked() ? "ON" : "OFF"),
 			middleClickFriends.getWrappedDescription(200),
 			b -> middleClickFriends
-				.setChecked(!middleClickFriends.isChecked()));
+				.setChecked(!middleClickFriends.isChecked()));*/
 		
 		new WurstOptionsButton(-154, 48,
 			() -> "Count Users: " + (plausible.isEnabled() ? "ON" : "OFF"),
@@ -82,7 +78,7 @@ public class WurstOptionsScreen extends Screen
 				+ " (see plausible.io).",
 			b -> plausible.setEnabled(!plausible.isEnabled()));
 		
-		new WurstOptionsButton(-154, 72,
+		/*new WurstOptionsButton(-154, 72,
 			() -> "Spoof Vanilla: "
 				+ (vanillaSpoofOtf.isEnabled() ? "ON" : "OFF"),
 			vanillaSpoofOtf.getDescription(),
@@ -93,21 +89,21 @@ public class WurstOptionsScreen extends Screen
 			"Allows text in Wurst to be displayed in other languages than"
 				+ " English. It will use the same language that Minecraft is"
 				+ " set to.\n\n" + "This is an experimental feature!",
-			b -> forceEnglish.setChecked(!forceEnglish.isChecked()));
+			b -> forceEnglish.setChecked(!forceEnglish.isChecked()));*/
 	}
 	
 	private void addManagerButtons()
 	{
-		XRayHack xRayHack = WurstClient.INSTANCE.getHax().xRayHack;
+		/*XRayHack xRayHack = WurstClient.INSTANCE.getHax().xRayHack;*/
 		
 		new WurstOptionsButton(-50, 24, () -> "Keybinds",
 			"Keybinds allow you to toggle any hack or command by simply"
 				+ " pressing a button.",
 			b -> client.setScreen(new KeybindManagerScreen(this)));
 		
-		new WurstOptionsButton(-50, 48, () -> "X-Ray Blocks",
+		/*new WurstOptionsButton(-50, 48, () -> "X-Ray Blocks",
 			"Manager for the blocks that X-Ray will show.",
-			b -> xRayHack.openBlockListEditor(this));
+			b -> xRayHack.openBlockListEditor(this));*/
 		
 		new WurstOptionsButton(-50, 72, () -> "Zoom",
 			"The Zoom Manager allows you to change the zoom key and how far it"

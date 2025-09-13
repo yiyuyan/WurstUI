@@ -7,45 +7,33 @@
  */
 package net.wurstclient.settings;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonPrimitive;
 
-import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.Component;
-import net.wurstclient.clickgui.components.BookOffersEditButton;
-import net.wurstclient.hacks.autolibrarian.BookOffer;
 import net.wurstclient.keybinds.PossibleKeybind;
-import net.wurstclient.util.json.JsonException;
-import net.wurstclient.util.json.JsonUtils;
-import net.wurstclient.util.json.WsonObject;
 import net.wurstclient.util.text.WText;
 
 public final class BookOffersSetting extends Setting
 {
-	private final ArrayList<BookOffer> offers = new ArrayList<>();
-	private final BookOffer[] defaultOffers;
+	/*private final ArrayList<BookOffer> offers = new ArrayList<>();
+	private final BookOffer[] defaultOffers;*/
 	
 	public BookOffersSetting(String name, WText description,
 		String... enchantments)
 	{
 		super(name, description);
 		
-		Arrays.stream(enchantments).filter(Objects::nonNull).map(s -> {
+		/*Arrays.stream(enchantments).filter(Objects::nonNull).map(s -> {
 			String[] parts = s.split(";");
 			return new BookOffer(parts[0], Integer.parseInt(parts[1]), 64);
 		}).filter(BookOffer::isMostlyValid).distinct().sorted()
 			.forEach(offers::add);
-		defaultOffers = offers.toArray(new BookOffer[0]);
+		defaultOffers = offers.toArray(new BookOffer[0]);*/
 	}
 	
 	public BookOffersSetting(String name, String descriptionKey,
@@ -54,7 +42,7 @@ public final class BookOffersSetting extends Setting
 		this(name, WText.translated(descriptionKey), enchantments);
 	}
 	
-	public List<BookOffer> getOffers()
+	/*public List<BookOffer> getOffers()
 	{
 		return Collections.unmodifiableList(offers);
 	}
@@ -94,22 +82,22 @@ public final class BookOffersSetting extends Setting
 		offers.add(offer);
 		Collections.sort(offers);
 		WurstClient.INSTANCE.saveSettings();
-	}
+	}*/
 	
-	public void remove(int index)
+	/*public void remove(int index)
 	{
 		if(index < 0 || index >= offers.size())
 			return;
 		
 		offers.remove(index);
 		WurstClient.INSTANCE.saveSettings();
-	}
+	}*/
 	
 	/**
 	 * Replaces the offer at the given index with a new one. If the index is
 	 * invalid, the new offer is invalid, or the new offer already exists
 	 * elsewhere in the list, nothing will happen.
-	 */
+	 *//*
 	public void replace(int index, BookOffer offer)
 	{
 		// check if index is valid
@@ -140,18 +128,18 @@ public final class BookOffersSetting extends Setting
 		offers.clear();
 		offers.addAll(Arrays.asList(defaultOffers));
 		WurstClient.INSTANCE.saveSettings();
-	}
+	}*/
 	
 	@Override
 	public Component getComponent()
 	{
-		return new BookOffersEditButton(this);
+		return null;
 	}
 	
 	@Override
 	public void fromJson(JsonElement json)
 	{
-		try
+		/*try
 		{
 			offers.clear();
 			
@@ -173,12 +161,12 @@ public final class BookOffersSetting extends Setting
 			System.out.println("Invalid book offer list: " + json);
 			e.printStackTrace();
 			resetToDefaults();
-		}
+		}*/
 	}
 	
-	private BookOffer loadOffer(WsonObject wson)
+	/*private BookOffer loadOffer(WsonObject wson)
 	{
-		try
+		*//*try
 		{
 			String id = wson.getString("id");
 			int level = wson.getInt("level");
@@ -190,19 +178,19 @@ public final class BookOffersSetting extends Setting
 			System.out.println("Invalid book offer: " + wson);
 			e.printStackTrace();
 			return null;
-		}
-	}
+		}*//*
+	}*/
 	
 	@Override
 	public JsonElement toJson()
 	{
 		// if offers is the same as defaultOffers, save string "default"
-		if(offers.equals(Arrays.asList(defaultOffers)))
-			return new JsonPrimitive("default");
+		/*if(offers.equals(Arrays.asList(defaultOffers)))
+			return new JsonPrimitive("default");*/
 		
 		JsonArray json = new JsonArray();
 		
-		offers.forEach(offer -> {
+		/*offers.forEach(offer -> {
 			JsonObject jsonOffer = new JsonObject();
 			
 			jsonOffer.addProperty("id", offer.id());
@@ -211,7 +199,7 @@ public final class BookOffersSetting extends Setting
 				jsonOffer.addProperty("max_price", offer.price());
 			
 			json.add(jsonOffer);
-		});
+		});*/
 		
 		return json;
 	}
@@ -225,7 +213,7 @@ public final class BookOffersSetting extends Setting
 		json.addProperty("type", "BookOffers");
 		
 		JsonArray jsonDefaultOffers = new JsonArray();
-		for(BookOffer offer : defaultOffers)
+		/*for(BookOffer offer : defaultOffers)
 		{
 			JsonObject jsonOffer = new JsonObject();
 			jsonOffer.addProperty("id", offer.id());
@@ -234,7 +222,7 @@ public final class BookOffersSetting extends Setting
 				jsonOffer.addProperty("max_price", offer.price());
 			
 			jsonDefaultOffers.add(jsonOffer);
-		}
+		}*/
 		json.add("defaultOffers", jsonDefaultOffers);
 		
 		return json;

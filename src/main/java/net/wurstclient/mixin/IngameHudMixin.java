@@ -58,13 +58,13 @@ public class IngameHudMixin
 		String path = texture.getPath();
 		HackList hax = WurstClient.INSTANCE.getHax();
 		
-		if("textures/misc/pumpkinblur.png".equals(path)
+		/*if("textures/misc/pumpkinblur.png".equals(path)
 			&& hax.noPumpkinHack.isEnabled())
 			ci.cancel();
 		
 		if("textures/misc/powder_snow_outline.png".equals(path)
 			&& hax.noOverlayHack.isEnabled())
-			ci.cancel();
+			ci.cancel();*/
 	}
 	
 	@Inject(at = @At("HEAD"),
@@ -74,8 +74,8 @@ public class IngameHudMixin
 		CallbackInfo ci)
 	{
 		HackList hax = WurstClient.INSTANCE.getHax();
-		if(hax == null || !hax.noVignetteHack.isEnabled())
-			return;
+		/*if(hax == null || !hax.noVignetteHack.isEnabled())
+			return;*/
 		
 		ci.cancel();
 	}

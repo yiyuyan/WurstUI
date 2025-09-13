@@ -14,7 +14,6 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.wurstclient.WurstClient;
-import net.wurstclient.other_features.ZoomOtf;
 import net.wurstclient.settings.CheckboxSetting;
 import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.util.WurstColors;
@@ -33,7 +32,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 	@Override
 	public void init()
 	{
-		WurstClient wurst = WurstClient.INSTANCE;
+		/*WurstClient wurst = WurstClient.INSTANCE;
 		ZoomOtf zoom = wurst.getOtfs().zoomOtf;
 		SliderSetting level = zoom.getLevelSetting();
 		CheckboxSetting scroll = zoom.getScrollSetting();
@@ -70,17 +69,17 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 						"Use Mouse Wheel: " + onOrOff(scroll.isChecked())),
 					b -> toggleScroll())
 				.dimensions(width / 2 - 79, height / 4 + 96 - 16, 158, 20)
-				.build());
+				.build());*/
 	}
 	
 	private void toggleScroll()
 	{
-		ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
+		/*ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
 		CheckboxSetting scroll = zoom.getScrollSetting();
 		
 		scroll.setChecked(!scroll.isChecked());
 		scrollButton.setMessage(
-			Text.literal("Use Mouse Wheel: " + onOrOff(scroll.isChecked())));
+			Text.literal("Use Mouse Wheel: " + onOrOff(scroll.isChecked())));*/
 	}
 	
 	private String onOrOff(boolean on)
@@ -98,13 +97,13 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 	public void render(DrawContext context, int mouseX, int mouseY,
 		float partialTicks)
 	{
-		ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
-		SliderSetting level = zoom.getLevelSetting();
+		/*ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
+		SliderSetting level = zoom.getLevelSetting();*/
 		
 		context.drawCenteredTextWithShadow(textRenderer, "Zoom Manager",
 			width / 2, 40, Colors.WHITE);
 		context.drawTextWithShadow(textRenderer,
-			"Zoom Level: " + level.getValueString(), width / 2 - 75,
+			"Zoom Level: " + 1, width / 2 - 75,
 			height / 4 + 44, WurstColors.VERY_LIGHT_GRAY);
 		
 		for(Drawable drawable : drawables)
@@ -114,7 +113,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 	@Override
 	public void setKey(String key)
 	{
-		WurstClient.INSTANCE.getOtfs().zoomOtf.setBoundKey(key);
+		/*WurstClient.INSTANCE.getOtfs().zoomOtf.setBoundKey(key);*/
 		// Button text updates automatically because going back to this screen
 		// calls init(). Might be different in older MC versions.
 	}

@@ -113,43 +113,16 @@ public class FlyPathProcessor extends PathProcessor
 		// horizontal movement
 		if(horizontal)
 		{
-			if(!creativeFlying && MC.player.getPos().distanceTo(
-				vecInPos) <= WURST.getHax().flightHack.horizontalSpeed
-					.getValue())
-			{
 				MC.player.setPosition(vecInPos.x, vecInPos.y, vecInPos.z);
 				return;
-			}
-			
-			MC.options.forwardKey.setPressed(true);
-			
-			if(MC.player.horizontalCollision)
-				if(posVec.y > nextBox.maxY)
-					MC.options.sneakKey.setPressed(true);
-				else if(posVec.y < nextBox.minY)
-					MC.options.jumpKey.setPressed(true);
-				
-			// vertical movement
+
+            // vertical movement
 		}else if(y)
 		{
-			if(!creativeFlying && MC.player.getPos().distanceTo(
-				vecInPos) <= WURST.getHax().flightHack.verticalSpeed.getValue())
-			{
-				MC.player.setPosition(vecInPos.x, vecInPos.y, vecInPos.z);
-				return;
-			}
-			
-			if(posVec.y < nextBox.minY)
-				MC.options.jumpKey.setPressed(true);
-			else
-				MC.options.sneakKey.setPressed(true);
-			
-			if(MC.player.verticalCollision)
-			{
-				MC.options.sneakKey.setPressed(false);
-				MC.options.forwardKey.setPressed(true);
-			}
-		}
+            MC.player.setPosition(vecInPos.x, vecInPos.y, vecInPos.z);
+            return;
+
+        }
 	}
 	
 	@Override

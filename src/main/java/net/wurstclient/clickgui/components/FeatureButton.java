@@ -17,8 +17,6 @@ import net.wurstclient.clickgui.ClickGuiIcons;
 import net.wurstclient.clickgui.Component;
 import net.wurstclient.clickgui.SettingsWindow;
 import net.wurstclient.clickgui.Window;
-import net.wurstclient.hacks.TooManyHaxHack;
-import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.RenderUtils;
 
 public final class FeatureButton extends Component
@@ -42,7 +40,7 @@ public final class FeatureButton extends Component
 	@Override
 	public void handleMouseClick(double mouseX, double mouseY, int mouseButton)
 	{
-		if(mouseButton != 0)
+		/*if(mouseButton != 0)
 			return;
 		
 		if(hasSettings && (mouseX > getX() + getWidth() - 12
@@ -59,7 +57,7 @@ public final class FeatureButton extends Component
 			return;
 		}
 		
-		feature.doPrimaryAction();
+		feature.doPrimaryAction();*/
 	}
 	
 	private boolean isSettingsWindowOpen()

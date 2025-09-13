@@ -56,7 +56,7 @@ public class ChatHudMixin
 		}
 		
 		message.set(event.getComponent());
-		indicator.set(WurstClient.INSTANCE.getOtfs().noChatReportsOtf
-			.modifyIndicator(message.get(), signature, indicator.get()));
+/*		indicator.set(WurstClient.INSTANCE.getOtfs().noChatReportsOtf
+			.modifyIndicator(message.get(), signature, indicator.get()));*/
 	}
 }
