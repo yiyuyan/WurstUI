@@ -7,6 +7,7 @@ buildscript {
 plugins {
 	id "fabric-loom" version "${loom_version}"
 	id "com.diffplug.spotless" version "7.2.1"
+	id "maven-publish"
 }
 
 def ENV = System.getenv()
@@ -285,3 +286,15 @@ task uploadBackups {
 		}
 	}
 }
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+		}
+	}
+	repositories {
+		mavenLocal()
+	}
+}
+
