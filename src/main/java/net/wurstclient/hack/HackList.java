@@ -189,7 +189,7 @@ public final class HackList implements UpdateListener
 	public final VeinMinerHack veinMinerHack = new VeinMinerHack();
 	public final XRayHack xRayHack = new XRayHack();*/
 	
-	private final TreeMap<String, Hack> hax =
+	public final TreeMap<String, Hack> hax =
 		new TreeMap<>(String::compareToIgnoreCase);
 	
 	private final EnabledHacksFile enabledHacksFile;
