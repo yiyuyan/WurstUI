@@ -7,7 +7,7 @@
  */
 package net.wurstclient.settings;
 
-public final class EspBoxSizeSetting
+public class EspBoxSizeSetting
 	extends EnumSetting<EspBoxSizeSetting.BoxSize>
 {
 	public EspBoxSizeSetting(String description)

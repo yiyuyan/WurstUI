@@ -21,7 +21,7 @@ import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.settings.SliderSetting.ValueDisplay;
 import net.wurstclient.util.MathUtils;
 
-public final class EditSliderScreen extends Screen
+public class EditSliderScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final SliderSetting slider;

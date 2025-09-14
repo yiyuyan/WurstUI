@@ -13,7 +13,7 @@ import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PiglinEntity;
 import net.minecraft.entity.passive.PufferfishEntity;
 
-public final class FilterNeutralSetting extends AttackDetectingEntityFilter
+public class FilterNeutralSetting extends AttackDetectingEntityFilter
 {
 	private FilterNeutralSetting(String description, Mode selected,
 		boolean checked)

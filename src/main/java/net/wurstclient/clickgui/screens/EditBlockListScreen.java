@@ -31,7 +31,7 @@ import net.wurstclient.util.BlockUtils;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.WurstColors;
 
-public final class EditBlockListScreen extends Screen
+public class EditBlockListScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final BlockListSetting blockList;
@@ -195,7 +195,7 @@ public final class EditBlockListScreen extends Screen
 		return false;
 	}
 	
-	private final class Entry
+	private class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<EditBlockListScreen.Entry>
 	{
 		private final String blockName;
@@ -246,7 +246,7 @@ public final class EditBlockListScreen extends Screen
 		}
 	}
 	
-	private final class ListGui
+	private class ListGui
 		extends AlwaysSelectedEntryListWidget<EditBlockListScreen.Entry>
 	{
 		public ListGui(MinecraftClient minecraft, EditBlockListScreen screen,

@@ -28,7 +28,7 @@ import net.minecraft.util.Util;
 import net.wurstclient.settings.FileSetting;
 import net.wurstclient.util.WurstColors;
 
-public final class SelectFileScreen extends Screen
+public class SelectFileScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final FileSetting setting;
@@ -156,7 +156,7 @@ public final class SelectFileScreen extends Screen
 		return false;
 	}
 	
-	private final class Entry
+	private class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<SelectFileScreen.Entry>
 	{
 		private final Path path;
@@ -190,7 +190,7 @@ public final class SelectFileScreen extends Screen
 		}
 	}
 	
-	private final class ListGui
+	private class ListGui
 		extends AlwaysSelectedEntryListWidget<SelectFileScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, SelectFileScreen screen,

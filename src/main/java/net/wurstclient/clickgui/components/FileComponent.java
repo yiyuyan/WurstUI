@@ -17,7 +17,7 @@ import net.wurstclient.clickgui.screens.SelectFileScreen;
 import net.wurstclient.settings.FileSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class FileComponent extends Component
+public class FileComponent extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

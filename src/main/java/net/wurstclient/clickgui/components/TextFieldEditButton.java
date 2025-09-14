@@ -21,7 +21,7 @@ import net.wurstclient.settings.TextFieldSetting;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.RenderUtils;
 
-public final class TextFieldEditButton extends Component
+public class TextFieldEditButton extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

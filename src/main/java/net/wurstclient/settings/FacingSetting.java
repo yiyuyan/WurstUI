@@ -13,7 +13,7 @@ import net.minecraft.util.math.Vec3d;
 import net.wurstclient.WurstClient;
 import net.wurstclient.util.RotationUtils;
 
-public final class FacingSetting extends EnumSetting<FacingSetting.Facing>
+public class FacingSetting extends EnumSetting<FacingSetting.Facing>
 {
 	private static final WurstClient WURST = WurstClient.INSTANCE;
 	

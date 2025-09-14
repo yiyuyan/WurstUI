@@ -16,7 +16,7 @@ import java.util.stream.Stream;
 
 import net.minecraft.util.math.BlockPos;
 
-public final class BlockBreakingCache
+public class BlockBreakingCache
 {
 	private final ArrayDeque<Set<BlockPos>> prevBlocks = new ArrayDeque<>();
 	

@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.EndermanEntity;
 
-public final class FilterEndermenSetting extends AttackDetectingEntityFilter
+public class FilterEndermenSetting extends AttackDetectingEntityFilter
 {
 	private FilterEndermenSetting(String description, Mode selected,
 		boolean checked)

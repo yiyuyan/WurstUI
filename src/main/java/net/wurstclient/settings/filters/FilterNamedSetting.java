@@ -9,7 +9,7 @@ package net.wurstclient.settings.filters;
 
 import net.minecraft.entity.Entity;
 
-public final class FilterNamedSetting extends EntityFilterCheckbox
+public class FilterNamedSetting extends EntityFilterCheckbox
 {
 	public FilterNamedSetting(String description, boolean checked)
 	{

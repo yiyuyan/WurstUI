@@ -30,7 +30,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.text.WText;
 
-public final class FileSetting extends Setting
+public class FileSetting extends Setting
 {
 	private final Path folder;
 	private String selectedFile = "";

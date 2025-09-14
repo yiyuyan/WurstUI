@@ -15,7 +15,7 @@ import net.wurstclient.settings.Setting;
 import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.settings.filterlists.EntityFilterList.EntityFilter;
 
-public final class FilterFlyingSetting extends SliderSetting
+public class FilterFlyingSetting extends SliderSetting
 	implements EntityFilter
 {
 	public FilterFlyingSetting(String description, double value)

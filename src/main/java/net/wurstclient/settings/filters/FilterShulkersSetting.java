@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.ShulkerEntity;
 
-public final class FilterShulkersSetting extends EntityFilterCheckbox
+public class FilterShulkersSetting extends EntityFilterCheckbox
 {
 	public FilterShulkersSetting(String description, boolean checked)
 	{

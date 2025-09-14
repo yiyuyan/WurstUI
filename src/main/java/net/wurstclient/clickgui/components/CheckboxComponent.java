@@ -17,7 +17,7 @@ import net.wurstclient.clickgui.Component;
 import net.wurstclient.settings.CheckboxSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class CheckboxComponent extends Component
+public class CheckboxComponent extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

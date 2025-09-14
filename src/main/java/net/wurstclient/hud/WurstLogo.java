@@ -15,7 +15,7 @@ import net.wurstclient.WurstClient;
 
 import java.awt.*;
 
-public final class WurstLogo
+public class WurstLogo
 {
 	private static final WurstClient WURST = WurstClient.INSTANCE;
 	private static final Identifier LOGO_TEXTURE =

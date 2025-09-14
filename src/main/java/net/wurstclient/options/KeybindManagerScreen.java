@@ -26,7 +26,7 @@ import net.wurstclient.keybinds.Keybind;
 import net.wurstclient.keybinds.KeybindList;
 import net.wurstclient.util.WurstColors;
 
-public final class KeybindManagerScreen extends Screen
+public class KeybindManagerScreen extends Screen
 {
 	private final Screen prevScreen;
 	
@@ -159,7 +159,7 @@ public final class KeybindManagerScreen extends Screen
 		return false;
 	}
 	
-	private final class Entry
+	private class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<KeybindManagerScreen.Entry>
 	{
 		private final Keybind keybind;
@@ -193,7 +193,7 @@ public final class KeybindManagerScreen extends Screen
 		}
 	}
 	
-	private final class ListGui
+	private class ListGui
 		extends AlwaysSelectedEntryListWidget<KeybindManagerScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, KeybindManagerScreen screen)

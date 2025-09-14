@@ -15,7 +15,7 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.settings.EnumSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class ComboBoxPopup<T extends Enum<T>> extends Popup
+public class ComboBoxPopup<T extends Enum<T>> extends Popup
 {
 	private static final ClickGui GUI = WurstClient.INSTANCE.getGui();
 	private static final TextRenderer TR = WurstClient.MC.textRenderer;

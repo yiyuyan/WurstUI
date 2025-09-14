@@ -31,7 +31,7 @@ import net.wurstclient.settings.ColorSetting;
 import net.wurstclient.util.ColorUtils;
 import net.wurstclient.util.WurstColors;
 
-public final class EditColorScreen extends Screen
+public class EditColorScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final ColorSetting colorSetting;

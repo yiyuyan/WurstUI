@@ -29,7 +29,7 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.util.WurstColors;
 import net.wurstclient.util.json.JsonException;
 
-public final class KeybindProfilesScreen extends Screen
+public class KeybindProfilesScreen extends Screen
 {
 	private final Screen prevScreen;
 	
@@ -152,7 +152,7 @@ public final class KeybindProfilesScreen extends Screen
 		return false;
 	}
 	
-	private final class Entry
+	private class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<KeybindProfilesScreen.Entry>
 	{
 		private final Path path;
@@ -186,7 +186,7 @@ public final class KeybindProfilesScreen extends Screen
 		}
 	}
 	
-	private final class ListGui
+	private class ListGui
 		extends AlwaysSelectedEntryListWidget<KeybindProfilesScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, KeybindProfilesScreen screen,

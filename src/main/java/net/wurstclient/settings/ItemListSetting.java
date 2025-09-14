@@ -31,7 +31,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.text.WText;
 
-public final class ItemListSetting extends Setting
+public class ItemListSetting extends Setting
 {
 	private final ArrayList<String> itemNames = new ArrayList<>();
 	private final String[] defaultNames;

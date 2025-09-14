@@ -10,7 +10,7 @@ package net.wurstclient.settings;
 import net.minecraft.util.math.random.Random;
 import net.wurstclient.WurstClient;
 
-public final class AttackSpeedSliderSetting extends SliderSetting
+public class AttackSpeedSliderSetting extends SliderSetting
 {
 	private final Random random = Random.createLocal();
 	private int tickTimer;

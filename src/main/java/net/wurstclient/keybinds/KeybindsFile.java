@@ -22,7 +22,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonObject;
 
-public final class KeybindsFile
+public class KeybindsFile
 {
 	private final Path path;
 	

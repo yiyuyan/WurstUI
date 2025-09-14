@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.MagmaCubeEntity;
 import net.minecraft.entity.mob.SlimeEntity;
 
-public final class FilterSlimesSetting extends EntityFilterCheckbox
+public class FilterSlimesSetting extends EntityFilterCheckbox
 {
 	private static final String EXCEPTIONS_TEXT =
 		"\n\nThis filter does not affect magma cubes.";

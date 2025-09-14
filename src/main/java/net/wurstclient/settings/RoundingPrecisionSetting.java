@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 
-public final class RoundingPrecisionSetting extends SliderSetting
+public class RoundingPrecisionSetting extends SliderSetting
 {
 	private static final DecimalFormatSymbols SYMBOLS =
 		new DecimalFormatSymbols(Locale.ENGLISH);

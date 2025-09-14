@@ -25,7 +25,7 @@ import net.wurstclient.util.MinPriorityThreadFactory;
 /**
  * Searches the given {@link Chunk} for blocks matching the given query.
  */
-public final class ChunkSearcher
+public class ChunkSearcher
 {
 	private static final ExecutorService BACKGROUND_THREAD_POOL =
 		MinPriorityThreadFactory.newFixedThreadPool();

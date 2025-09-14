@@ -16,7 +16,7 @@ import net.minecraft.util.math.ChunkPos;
 import net.wurstclient.settings.ChunkAreaSetting;
 import net.wurstclient.util.chunk.ChunkSearcher.Result;
 
-public final class ChunkSearcherCoordinator extends AbstractChunkCoordinator
+public class ChunkSearcherCoordinator extends AbstractChunkCoordinator
 {
 	public ChunkSearcherCoordinator(ChunkAreaSetting area)
 	{

@@ -17,7 +17,7 @@ import net.minecraft.util.crash.CrashReport;
 import net.minecraft.util.crash.CrashReportSection;
 import net.wurstclient.WurstClient;
 
-public final class EventManager
+public class EventManager
 {
 	private final WurstClient wurst;
 	private final HashMap<Class<? extends Listener>, ArrayList<? extends Listener>> listenerMap =

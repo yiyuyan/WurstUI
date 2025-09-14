@@ -13,7 +13,7 @@ import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.wurstclient.WurstClient;
 
-public final class PauseAttackOnContainersSetting extends CheckboxSetting
+public class PauseAttackOnContainersSetting extends CheckboxSetting
 {
 	public PauseAttackOnContainersSetting(boolean checked)
 	{

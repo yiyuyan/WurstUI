@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 
-public final class FilterArmorStandsSetting extends EntityFilterCheckbox
+public class FilterArmorStandsSetting extends EntityFilterCheckbox
 {
 	public FilterArmorStandsSetting(String description, boolean checked)
 	{

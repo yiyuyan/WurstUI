@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 
-public final class FilterCrystalsSetting extends EntityFilterCheckbox
+public class FilterCrystalsSetting extends EntityFilterCheckbox
 {
 	public FilterCrystalsSetting(String description, boolean checked)
 	{

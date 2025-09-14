@@ -17,7 +17,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonObject;
 
-public final class AnalyticsConfigFile
+public class AnalyticsConfigFile
 {
 	private final Path path;
 	private boolean disableSaving;

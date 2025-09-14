@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.AbstractHorseEntity;
 import net.minecraft.entity.passive.TameableEntity;
 
-public final class FilterPetsSetting extends EntityFilterCheckbox
+public class FilterPetsSetting extends EntityFilterCheckbox
 {
 	public FilterPetsSetting(String description, boolean checked)
 	{

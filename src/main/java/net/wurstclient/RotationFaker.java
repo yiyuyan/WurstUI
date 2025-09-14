@@ -14,7 +14,7 @@ import net.wurstclient.events.PreMotionListener;
 import net.wurstclient.util.Rotation;
 import net.wurstclient.util.RotationUtils;
 
-public final class RotationFaker
+public class RotationFaker
 	implements PreMotionListener, PostMotionListener
 {
 	private boolean fakeRotation;

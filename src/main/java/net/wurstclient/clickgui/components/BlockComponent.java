@@ -21,7 +21,7 @@ import net.wurstclient.clickgui.screens.EditBlockScreen;
 import net.wurstclient.settings.BlockSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class BlockComponent extends Component
+public class BlockComponent extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

@@ -15,7 +15,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.wurstclient.util.RotationUtils;
 
-public final class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
+public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 {
 	private static final String FULL_DESCRIPTION_SUFFIX =
 		buildDescriptionSuffix();

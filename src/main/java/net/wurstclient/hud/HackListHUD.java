@@ -19,7 +19,7 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.hack.Hack;
 
-public final class HackListHUD implements UpdateListener
+public class HackListHUD implements UpdateListener
 {
 	private final ArrayList<HackListEntry> activeHax = new ArrayList<>();
 	//private final HackListOtf otf = WurstClient.INSTANCE.getOtfs().hackListOtf;
@@ -159,7 +159,7 @@ public final class HackListHUD implements UpdateListener
 		posY += 9;
 	}
 	
-	private static final class HackListEntry
+	private static class HackListEntry
 	{
 		private final Hack hack;
 		private int offset;

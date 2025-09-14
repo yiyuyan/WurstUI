@@ -16,7 +16,7 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.hack.Hack;
 import net.wurstclient.util.text.WText;
 
-public final class SwingHandSetting
+public class SwingHandSetting
 	extends EnumSetting<SwingHandSetting.SwingHand>
 {
 	private static final MinecraftClient MC = WurstClient.MC;

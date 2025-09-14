@@ -42,7 +42,7 @@ import net.minecraft.client.world.ClientWorld;
  * {@link https://plausible.io/privacy-focused-web-analytics} for a
  * non-technical overview of how Plausible works.
  */
-public final class PlausibleAnalytics
+public class PlausibleAnalytics
 {
 	private static final Gson GSON = new Gson();
 	private static final Logger LOGGER = LoggerFactory.getLogger("Plausible");

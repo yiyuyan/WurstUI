@@ -7,7 +7,7 @@
  */
 package net.wurstclient.settings;
 
-public final class EspStyleSetting extends EnumSetting<EspStyleSetting.EspStyle>
+public class EspStyleSetting extends EnumSetting<EspStyleSetting.EspStyle>
 {
 	public EspStyleSetting()
 	{

@@ -26,7 +26,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.text.WText;
 
-public final class ColorSetting extends Setting
+public class ColorSetting extends Setting
 {
 	private Color color;
 	private final Color defaultColor;

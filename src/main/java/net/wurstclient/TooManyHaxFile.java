@@ -20,7 +20,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonArray;
 
-public final class TooManyHaxFile
+public class TooManyHaxFile
 {
 	private final Path path;
 	private final ArrayList<Feature> blockedFeatures;

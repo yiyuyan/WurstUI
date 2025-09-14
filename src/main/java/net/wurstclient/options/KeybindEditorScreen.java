@@ -17,7 +17,7 @@ import net.minecraft.util.Colors;
 import net.wurstclient.WurstClient;
 import net.wurstclient.util.WurstColors;
 
-public final class KeybindEditorScreen extends Screen
+public class KeybindEditorScreen extends Screen
 	implements PressAKeyCallback
 {
 	private final Screen prevScreen;

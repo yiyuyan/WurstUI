@@ -18,7 +18,7 @@ import net.wurstclient.settings.ColorSetting;
 import net.wurstclient.util.ColorUtils;
 import net.wurstclient.util.RenderUtils;
 
-public final class ColorComponent extends Component
+public class ColorComponent extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

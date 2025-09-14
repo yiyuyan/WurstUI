@@ -20,7 +20,7 @@ import com.google.gson.JsonElement;
  * generally makes it easier to process untrusted JSON data without accidentally
  * crashing something.
  */
-public final class WsonArray
+public class WsonArray
 {
 	private final JsonArray json;
 	

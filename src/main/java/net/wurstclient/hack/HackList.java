@@ -25,7 +25,7 @@ import net.wurstclient.event.EventManager;
 import net.wurstclient.events.UpdateListener;
 import net.wurstclient.util.json.JsonException;
 
-public final class HackList implements UpdateListener
+public class HackList implements UpdateListener
 {
 	/*public final AimAssistHack aimAssistHack = new AimAssistHack();
 	public final AirPlaceHack airPlaceHack = new AirPlaceHack();

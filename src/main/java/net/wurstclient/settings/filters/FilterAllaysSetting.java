@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.AllayEntity;
 
-public final class FilterAllaysSetting extends EntityFilterCheckbox
+public class FilterAllaysSetting extends EntityFilterCheckbox
 {
 	public FilterAllaysSetting(String description, boolean checked)
 	{

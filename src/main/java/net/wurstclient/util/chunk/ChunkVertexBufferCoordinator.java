@@ -26,7 +26,7 @@ import net.wurstclient.settings.ChunkAreaSetting;
 import net.wurstclient.util.EasyVertexBuffer;
 import net.wurstclient.util.chunk.ChunkSearcher.Result;
 
-public final class ChunkVertexBufferCoordinator extends AbstractChunkCoordinator
+public class ChunkVertexBufferCoordinator extends AbstractChunkCoordinator
 {
 	private final HashMap<ChunkPos, EasyVertexBuffer> buffers = new HashMap<>();
 	private final Renderer renderer;

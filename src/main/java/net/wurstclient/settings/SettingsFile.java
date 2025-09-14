@@ -29,7 +29,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonObject;
 
-public final class SettingsFile
+public class SettingsFile
 {
 	private final Path path;
 	private final Map<String, Feature> featuresWithSettings;

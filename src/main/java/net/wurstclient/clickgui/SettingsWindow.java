@@ -14,7 +14,7 @@ import net.wurstclient.Feature;
 import net.wurstclient.WurstClient;
 import net.wurstclient.settings.Setting;
 
-public final class SettingsWindow extends Window
+public class SettingsWindow extends Window
 {
 	public SettingsWindow(Feature feature, Window parent, int buttonY)
 	{

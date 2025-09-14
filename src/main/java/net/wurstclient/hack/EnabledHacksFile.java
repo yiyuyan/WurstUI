@@ -19,7 +19,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonArray;
 
-public final class EnabledHacksFile
+public class EnabledHacksFile
 {
 	private final Path path;
 	private boolean disableSaving;

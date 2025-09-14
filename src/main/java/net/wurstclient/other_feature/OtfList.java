@@ -14,7 +14,7 @@ import java.util.TreeMap;
 import net.minecraft.util.crash.CrashException;
 import net.minecraft.util.crash.CrashReport;
 
-public final class OtfList
+public class OtfList
 {
 	/*public final ChangelogOtf changelogOtf = new ChangelogOtf();
 	public final CleanUpOtf cleanUpOtf = new CleanUpOtf();

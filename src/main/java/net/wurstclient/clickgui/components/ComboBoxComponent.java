@@ -20,7 +20,7 @@ import net.wurstclient.clickgui.Component;
 import net.wurstclient.settings.EnumSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class ComboBoxComponent<T extends Enum<T>> extends Component
+public class ComboBoxComponent<T extends Enum<T>> extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

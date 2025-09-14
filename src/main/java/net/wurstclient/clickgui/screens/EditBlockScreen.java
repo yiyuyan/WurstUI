@@ -26,7 +26,7 @@ import net.wurstclient.util.BlockUtils;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.WurstColors;
 
-public final class EditBlockScreen extends Screen
+public class EditBlockScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final BlockSetting setting;

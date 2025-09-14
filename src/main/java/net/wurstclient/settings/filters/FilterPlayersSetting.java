@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 
-public final class FilterPlayersSetting extends EntityFilterCheckbox
+public class FilterPlayersSetting extends EntityFilterCheckbox
 {
 	public FilterPlayersSetting(String description, boolean checked)
 	{

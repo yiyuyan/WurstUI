@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.AmbientEntity;
 
-public final class FilterBatsSetting extends EntityFilterCheckbox
+public class FilterBatsSetting extends EntityFilterCheckbox
 {
 	public FilterBatsSetting(String description, boolean checked)
 	{

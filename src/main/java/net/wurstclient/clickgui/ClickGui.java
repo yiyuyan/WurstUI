@@ -37,7 +37,7 @@ import net.wurstclient.settings.Setting;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.json.JsonUtils;
 
-public final class ClickGui
+public class ClickGui
 {
 	private static final WurstClient WURST = WurstClient.INSTANCE;
 	private static final MinecraftClient MC = WurstClient.MC;

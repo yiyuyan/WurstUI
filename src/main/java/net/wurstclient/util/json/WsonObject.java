@@ -19,7 +19,7 @@ import com.google.gson.JsonObject;
  * generally makes it easier to process untrusted JSON data without accidentally
  * crashing something.
  */
-public final class WsonObject
+public class WsonObject
 {
 	private final JsonObject json;
 	

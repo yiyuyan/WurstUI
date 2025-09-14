@@ -24,7 +24,7 @@ import net.wurstclient.events.KeyPressListener;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.RenderUtils;
 
-public final class TabGui implements KeyPressListener
+public class TabGui implements KeyPressListener
 {
 	private static final WurstClient WURST = WurstClient.INSTANCE;
 	private static final MinecraftClient MC = WurstClient.MC;
@@ -191,7 +191,7 @@ public final class TabGui implements KeyPressListener
 		RenderUtils.drawBoxShadow2D(context, x1, y1, x2, y2);
 	}
 	
-	private static final class Tab
+	private static class Tab
 	{
 		private final String name;
 		private final ArrayList<Feature> features = new ArrayList<>();

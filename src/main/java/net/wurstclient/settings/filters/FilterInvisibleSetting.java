@@ -9,7 +9,7 @@ package net.wurstclient.settings.filters;
 
 import net.minecraft.entity.Entity;
 
-public final class FilterInvisibleSetting extends EntityFilterCheckbox
+public class FilterInvisibleSetting extends EntityFilterCheckbox
 {
 	public FilterInvisibleSetting(String description, boolean checked)
 	{

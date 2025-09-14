@@ -9,7 +9,7 @@ package net.wurstclient.util.text;
 
 import java.util.Objects;
 
-public final class WLiteralTextContent implements WTextContent
+public class WLiteralTextContent implements WTextContent
 {
 	public static final WLiteralTextContent EMPTY = new WLiteralTextContent("");
 	

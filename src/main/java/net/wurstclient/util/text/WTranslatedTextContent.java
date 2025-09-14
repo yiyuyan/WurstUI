@@ -13,7 +13,7 @@ import java.util.Objects;
 import net.wurstclient.WurstClient;
 import net.wurstclient.WurstTranslator;
 
-public final class WTranslatedTextContent implements WTextContent
+public class WTranslatedTextContent implements WTextContent
 {
 	private final String key;
 	private final Object[] args;

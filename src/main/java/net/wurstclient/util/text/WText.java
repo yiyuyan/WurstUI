@@ -21,7 +21,7 @@ import net.minecraft.text.Text;
  * This is necessary because Minecraft's {@link Text} does not have access to
  * Wurst's translations for security reasons.
  */
-public final class WText
+public class WText
 {
 	private final ArrayList<WTextContent> contents;
 	

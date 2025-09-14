@@ -21,7 +21,7 @@ import java.util.stream.Stream;
 import net.wurstclient.WurstClient;
 import net.wurstclient.util.json.JsonException;
 
-public final class KeybindList
+public class KeybindList
 {
 	public static final Set<Keybind> DEFAULT_KEYBINDS = createDefaultKeybinds();
 	private final ArrayList<Keybind> keybinds = new ArrayList<>();

@@ -18,7 +18,7 @@ import net.wurstclient.clickgui.Component;
 import net.wurstclient.keybinds.PossibleKeybind;
 import net.wurstclient.util.text.WText;
 
-public final class BookOffersSetting extends Setting
+public class BookOffersSetting extends Setting
 {
 	/*private final ArrayList<BookOffer> offers = new ArrayList<>();
 	private final BookOffer[] defaultOffers;*/

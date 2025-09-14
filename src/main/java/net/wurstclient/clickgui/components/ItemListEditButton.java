@@ -13,7 +13,7 @@ import net.wurstclient.clickgui.screens.EditItemListScreen;
 import net.wurstclient.settings.ItemListSetting;
 import net.wurstclient.settings.Setting;
 
-public final class ItemListEditButton extends AbstractListEditButton
+public class ItemListEditButton extends AbstractListEditButton
 {
 	private final ItemListSetting setting;
 	

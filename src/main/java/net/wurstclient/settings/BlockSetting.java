@@ -27,7 +27,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.text.WText;
 
-public final class BlockSetting extends Setting
+public class BlockSetting extends Setting
 {
 	private String blockName = "";
 	private final String defaultName;

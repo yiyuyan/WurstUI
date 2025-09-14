@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.vehicle.AbstractMinecartEntity;
 
-public final class FilterMinecartsSetting extends EntityFilterCheckbox
+public class FilterMinecartsSetting extends EntityFilterCheckbox
 {
 	public FilterMinecartsSetting(String description, boolean checked)
 	{

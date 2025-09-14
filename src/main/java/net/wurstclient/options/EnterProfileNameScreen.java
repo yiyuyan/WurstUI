@@ -20,7 +20,7 @@ import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 
-public final class EnterProfileNameScreen extends Screen
+public class EnterProfileNameScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final Consumer<String> callback;

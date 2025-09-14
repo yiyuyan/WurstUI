@@ -12,7 +12,7 @@ import net.minecraft.entity.mob.Monster;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.TadpoleEntity;
 
-public final class FilterBabiesSetting extends EntityFilterCheckbox
+public class FilterBabiesSetting extends EntityFilterCheckbox
 {
 	private static final String EXCEPTIONS_TEXT = "\n\nThis filter does not"
 		+ " affect baby zombies and other hostile baby mobs.";

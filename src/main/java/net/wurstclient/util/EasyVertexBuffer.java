@@ -35,7 +35,7 @@ import net.minecraft.client.util.math.MatrixStack;
  * An abstraction of Minecraft 1.21.5's new {@code GpuBuffer} system that makes
  * working with it as easy as {@code VertexBuffer} was.
  */
-public final class EasyVertexBuffer implements AutoCloseable
+public class EasyVertexBuffer implements AutoCloseable
 {
 	private final RenderSystem.ShapeIndexBuffer shapeIndexBuffer;
 	private final GpuBuffer vertexBuffer;

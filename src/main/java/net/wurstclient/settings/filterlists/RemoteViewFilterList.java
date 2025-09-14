@@ -12,7 +12,7 @@ import java.util.List;
 
 import net.wurstclient.settings.filters.*;
 
-public final class RemoteViewFilterList extends EntityFilterList
+public class RemoteViewFilterList extends EntityFilterList
 {
 	private RemoteViewFilterList(List<EntityFilter> filters)
 	{

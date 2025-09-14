@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 
-public final class FilterZombieVillagersSetting extends EntityFilterCheckbox
+public class FilterZombieVillagersSetting extends EntityFilterCheckbox
 {
 	public FilterZombieVillagersSetting(String description, boolean checked)
 	{

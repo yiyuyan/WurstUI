@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.MerchantEntity;
 
-public final class FilterVillagersSetting extends EntityFilterCheckbox
+public class FilterVillagersSetting extends EntityFilterCheckbox
 {
 	public FilterVillagersSetting(String description, boolean checked)
 	{

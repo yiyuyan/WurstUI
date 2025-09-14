@@ -18,7 +18,7 @@ import net.wurstclient.clickgui.screens.EditSliderScreen;
 import net.wurstclient.settings.SliderSetting;
 import net.wurstclient.util.RenderUtils;
 
-public final class SliderComponent extends Component
+public class SliderComponent extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

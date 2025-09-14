@@ -20,7 +20,7 @@ import net.minecraft.client.gui.screen.TitleScreen;
 import net.minecraft.client.gui.screen.world.CreateWorldScreen;
 import net.minecraft.client.gui.screen.world.SelectWorldScreen;
 
-public final class WurstE2ETestClient implements ModInitializer
+public class WurstE2ETestClient implements ModInitializer
 {
 	@Override
 	public void onInitialize()

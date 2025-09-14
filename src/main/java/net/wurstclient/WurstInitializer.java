@@ -9,7 +9,7 @@ package net.wurstclient;
 
 import net.fabricmc.api.ModInitializer;
 
-public final class WurstInitializer implements ModInitializer
+public class WurstInitializer implements ModInitializer
 {
 	private static boolean initialized;
 	

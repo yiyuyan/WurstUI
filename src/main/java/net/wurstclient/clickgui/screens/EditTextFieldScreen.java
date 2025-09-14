@@ -19,7 +19,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Colors;
 import net.wurstclient.settings.TextFieldSetting;
 
-public final class EditTextFieldScreen extends Screen
+public class EditTextFieldScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final TextFieldSetting setting;

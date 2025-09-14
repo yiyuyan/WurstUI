@@ -13,7 +13,7 @@ import net.wurstclient.clickgui.screens.EditBlockListScreen;
 import net.wurstclient.settings.BlockListSetting;
 import net.wurstclient.settings.Setting;
 
-public final class BlockListEditButton extends AbstractListEditButton
+public class BlockListEditButton extends AbstractListEditButton
 {
 	private final BlockListSetting setting;
 	

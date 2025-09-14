@@ -18,7 +18,7 @@ import net.wurstclient.hack.Hack;
 import net.wurstclient.hack.HackList;
 import net.wurstclient.util.ChatUtils;
 
-public final class KeybindProcessor implements KeyPressListener
+public class KeybindProcessor implements KeyPressListener
 {
 	private final HackList hax;
 	private final KeybindList keybinds;

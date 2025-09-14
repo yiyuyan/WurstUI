@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 
-public final class FilterZombiePiglinsSetting
+public class FilterZombiePiglinsSetting
 	extends AttackDetectingEntityFilter
 {
 	private FilterZombiePiglinsSetting(String description, Mode selected,

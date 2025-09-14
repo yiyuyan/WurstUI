@@ -24,7 +24,7 @@ import net.wurstclient.util.json.JsonException;
 import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.text.WText;
 
-public final class TextFieldSetting extends Setting
+public class TextFieldSetting extends Setting
 {
 	private String value = "";
 	private final String defaultValue;

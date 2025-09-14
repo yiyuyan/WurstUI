@@ -19,7 +19,7 @@ import net.wurstclient.clickgui.SettingsWindow;
 import net.wurstclient.clickgui.Window;
 import net.wurstclient.util.RenderUtils;
 
-public final class FeatureButton extends Component
+public class FeatureButton extends Component
 {
 	private static final ClickGui GUI = WURST.getGui();
 	private static final TextRenderer TR = MC.textRenderer;

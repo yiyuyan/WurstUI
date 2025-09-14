@@ -12,7 +12,7 @@ import java.util.List;
 
 import net.wurstclient.settings.filters.*;
 
-public final class FollowFilterList extends EntityFilterList
+public class FollowFilterList extends EntityFilterList
 {
 	private FollowFilterList(List<EntityFilter> filters)
 	{

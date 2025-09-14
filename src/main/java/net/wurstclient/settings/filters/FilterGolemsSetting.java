@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.ShulkerEntity;
 import net.minecraft.entity.passive.GolemEntity;
 
-public final class FilterGolemsSetting extends EntityFilterCheckbox
+public class FilterGolemsSetting extends EntityFilterCheckbox
 {
 	public FilterGolemsSetting(String description, boolean checked)
 	{

@@ -12,7 +12,7 @@ import java.util.List;
 
 import net.wurstclient.settings.filters.*;
 
-public final class AnchorAuraFilterList extends EntityFilterList
+public class AnchorAuraFilterList extends EntityFilterList
 {
 	private AnchorAuraFilterList(List<EntityFilter> filters)
 	{

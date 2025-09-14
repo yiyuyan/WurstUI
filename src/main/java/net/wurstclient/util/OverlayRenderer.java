@@ -15,7 +15,7 @@ import net.minecraft.util.math.MathHelper;
 import net.wurstclient.WurstClient;
 import net.wurstclient.mixinterface.IMinecraftClient;
 
-public final class OverlayRenderer
+public class OverlayRenderer
 {
 	protected static final MinecraftClient MC = WurstClient.MC;
 	protected static final IMinecraftClient IMC = WurstClient.IMC;

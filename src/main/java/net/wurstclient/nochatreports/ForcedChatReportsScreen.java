@@ -23,7 +23,7 @@ import net.wurstclient.WurstClient;
 import net.wurstclient.util.ChatUtils;
 import net.wurstclient.util.LastServerRememberer;
 
-public final class ForcedChatReportsScreen extends Screen
+public class ForcedChatReportsScreen extends Screen
 {
 	private static final List<String> TRANSLATABLE_DISCONNECT_REASONS =
 		Arrays.asList("multiplayer.disconnect.missing_public_key",

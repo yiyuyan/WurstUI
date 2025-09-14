@@ -11,7 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.player.PlayerEntity;
 
-public final class FilterSleepingSetting extends EntityFilterCheckbox
+public class FilterSleepingSetting extends EntityFilterCheckbox
 {
 	public FilterSleepingSetting(String description, boolean checked)
 	{

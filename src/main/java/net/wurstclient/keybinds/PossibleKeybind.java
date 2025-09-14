@@ -7,7 +7,7 @@
  */
 package net.wurstclient.keybinds;
 
-public final class PossibleKeybind
+public class PossibleKeybind
 {
 	private final String command;
 	private final String description;

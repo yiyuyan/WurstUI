@@ -10,7 +10,7 @@ package net.wurstclient.settings.filters;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.mob.PiglinEntity;
 
-public final class FilterPiglinsSetting extends AttackDetectingEntityFilter
+public class FilterPiglinsSetting extends AttackDetectingEntityFilter
 {
 	private static final String EXCEPTIONS_TEXT =
 		"\n\nThis filter does not affect piglin brutes.";

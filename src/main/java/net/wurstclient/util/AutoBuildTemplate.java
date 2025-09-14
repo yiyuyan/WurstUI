@@ -21,7 +21,7 @@ import net.wurstclient.util.json.JsonUtils;
 import net.wurstclient.util.json.WsonArray;
 import net.wurstclient.util.json.WsonObject;
 
-public final class AutoBuildTemplate
+public class AutoBuildTemplate
 {
 	private final Path path;
 	private final String name;

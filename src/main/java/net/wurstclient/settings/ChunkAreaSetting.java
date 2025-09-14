@@ -15,7 +15,7 @@ import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.EmptyChunk;
 import net.wurstclient.WurstClient;
 
-public final class ChunkAreaSetting
+public class ChunkAreaSetting
 	extends EnumSetting<ChunkAreaSetting.ChunkArea>
 {
 	private static final MinecraftClient MC = WurstClient.MC;

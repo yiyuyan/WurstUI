@@ -13,7 +13,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 import net.wurstclient.clickgui.ClickGui;
 
-public final class ClickGuiScreen extends Screen
+public class ClickGuiScreen extends Screen
 {
 	private final ClickGui gui;
 	

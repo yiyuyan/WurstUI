@@ -191,7 +191,7 @@ public class WurstOptionsScreen extends Screen
 		}
 	}
 	
-	private final class WurstOptionsButton extends ButtonWidget
+	private class WurstOptionsButton extends ButtonWidget
 	{
 		private final Supplier<String> messageSupplier;
 		private final List<Text> tooltip;

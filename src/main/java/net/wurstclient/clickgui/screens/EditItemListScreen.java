@@ -33,7 +33,7 @@ import net.wurstclient.util.ItemUtils;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.WurstColors;
 
-public final class EditItemListScreen extends Screen
+public class EditItemListScreen extends Screen
 {
 	private final Screen prevScreen;
 	private final ItemListSetting itemList;
@@ -197,7 +197,7 @@ public final class EditItemListScreen extends Screen
 		return false;
 	}
 	
-	private final class Entry
+	private class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<EditItemListScreen.Entry>
 	{
 		private final String itemName;
@@ -248,7 +248,7 @@ public final class EditItemListScreen extends Screen
 		}
 	}
 	
-	private final class ListGui
+	private class ListGui
 		extends AlwaysSelectedEntryListWidget<EditItemListScreen.Entry>
 	{
 		public ListGui(MinecraftClient minecraft, EditItemListScreen screen,

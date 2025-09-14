@@ -7,7 +7,7 @@
  */
 package net.wurstclient.util.json;
 
-public final class JsonException extends Exception
+public class JsonException extends Exception
 {
 	public JsonException()
 	{}

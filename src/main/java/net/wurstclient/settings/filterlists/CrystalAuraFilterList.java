@@ -12,7 +12,7 @@ import java.util.List;
 
 import net.wurstclient.settings.filters.*;
 
-public final class CrystalAuraFilterList extends EntityFilterList
+public class CrystalAuraFilterList extends EntityFilterList
 {
 	private CrystalAuraFilterList(List<EntityFilter> filters)
 	{
