@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "example",
+  "version": "${version}",
+  "name": "exampleMod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "cn.ksmcbrigade.example.ExampleMod"
+    ],
+    "modmenu": [
+      "cn.ksmcbrigade.example.MenuCompat"
+    ]
+  },
+  "mixins": [
+    "example.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}",
+    "wurstui": "*"
+  }
+}
