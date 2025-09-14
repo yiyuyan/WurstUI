@@ -22,14 +22,14 @@ import net.wurstclient.util.RenderUtils;
 
 public class ComboBoxComponent<T extends Enum<T>> extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int ARROW_SIZE = 11;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int ARROW_SIZE = 11;
 	
-	private final EnumSetting<T> setting;
-	private final int popupWidth;
+	public final EnumSetting<T> setting;
+	public final int popupWidth;
 	
-	private ComboBoxPopup<T> popup;
+	public ComboBoxPopup<T> popup;
 	
 	public ComboBoxComponent(EnumSetting<T> setting)
 	{
@@ -59,7 +59,7 @@ public class ComboBoxComponent<T extends Enum<T>> extends Component
 		}
 	}
 	
-	private void handleLeftClick()
+	public void handleLeftClick()
 	{
 		if(isPopupOpen())
 		{
@@ -72,7 +72,7 @@ public class ComboBoxComponent<T extends Enum<T>> extends Component
 		GUI.addPopup(popup);
 	}
 	
-	private void handleRightClick()
+	public void handleRightClick()
 	{
 		if(isPopupOpen())
 			return;
@@ -80,7 +80,7 @@ public class ComboBoxComponent<T extends Enum<T>> extends Component
 		setting.setSelected(setting.getDefaultSelected());
 	}
 	
-	private boolean isPopupOpen()
+	public boolean isPopupOpen()
 	{
 		return popup != null && !popup.isClosing();
 	}
@@ -131,7 +131,7 @@ public class ComboBoxComponent<T extends Enum<T>> extends Component
 		context.state.goDownLayer();
 	}
 	
-	private int getFillColor(boolean hovering)
+	public int getFillColor(boolean hovering)
 	{
 		float opacity = GUI.getOpacity() * (hovering ? 1.5F : 1);
 		return RenderUtils.toIntColor(GUI.getBgColor(), opacity);

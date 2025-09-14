@@ -19,8 +19,8 @@ import net.wurstclient.util.json.WsonObject;
 
 public class AnalyticsConfigFile
 {
-	private final Path path;
-	private boolean disableSaving;
+	public final Path path;
+	public boolean disableSaving;
 	
 	public AnalyticsConfigFile(Path path)
 	{
@@ -47,7 +47,7 @@ public class AnalyticsConfigFile
 		save(plausible);
 	}
 	
-	private void loadJson(WsonObject wson, PlausibleAnalytics plausible)
+	public void loadJson(WsonObject wson, PlausibleAnalytics plausible)
 		throws JsonException
 	{
 		try
@@ -84,7 +84,7 @@ public class AnalyticsConfigFile
 		}
 	}
 	
-	private JsonObject createJson(PlausibleAnalytics plausible)
+	public JsonObject createJson(PlausibleAnalytics plausible)
 	{
 		JsonObject json = new JsonObject();
 		json.addProperty("version", 2);

@@ -17,11 +17,11 @@ import net.wurstclient.util.RotationUtils;
 public class RotationFaker
 	implements PreMotionListener, PostMotionListener
 {
-	private boolean fakeRotation;
-	private float serverYaw;
-	private float serverPitch;
-	private float realYaw;
-	private float realPitch;
+	public boolean fakeRotation;
+	public float serverYaw;
+	public float serverPitch;
+	public float realYaw;
+	public float realPitch;
 	
 	@Override
 	public void onPreMotion()

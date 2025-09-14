@@ -26,7 +26,7 @@ public enum ChunkUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public static Stream<BlockEntity> getLoadedBlockEntities()
 	{

@@ -18,11 +18,11 @@ import net.wurstclient.util.RenderUtils;
 
 public abstract class AbstractListEditButton extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
 	
-	private final String buttonText = "Edit...";
-	private final int buttonWidth = TR.getWidth(buttonText);
+	public final String buttonText = "Edit...";
+	public final int buttonWidth = TR.getWidth(buttonText);
 	
 	protected abstract void openScreen();
 	
@@ -75,7 +75,7 @@ public abstract class AbstractListEditButton extends Component
 		context.state.goDownLayer();
 	}
 	
-	private int getFillColor(boolean hovering)
+	public int getFillColor(boolean hovering)
 	{
 		float opacity = GUI.getOpacity() * (hovering ? 1.5F : 1);
 		return RenderUtils.toIntColor(GUI.getBgColor(), opacity);

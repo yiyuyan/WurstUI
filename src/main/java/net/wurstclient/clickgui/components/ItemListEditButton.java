@@ -15,7 +15,7 @@ import net.wurstclient.settings.Setting;
 
 public class ItemListEditButton extends AbstractListEditButton
 {
-	private final ItemListSetting setting;
+	public final ItemListSetting setting;
 	
 	public ItemListEditButton(ItemListSetting setting)
 	{

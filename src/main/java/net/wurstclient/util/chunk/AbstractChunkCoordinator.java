@@ -30,7 +30,7 @@ public abstract class AbstractChunkCoordinator implements PacketInputListener
 	protected final HashMap<ChunkPos, ChunkSearcher> searchers =
 		new HashMap<>();
 	protected final ChunkAreaSetting area;
-	private BiPredicate<BlockPos, BlockState> query;
+	public BiPredicate<BlockPos, BlockState> query;
 	
 	protected final Set<ChunkPos> chunksToUpdate =
 		Collections.synchronizedSet(new HashSet<>());

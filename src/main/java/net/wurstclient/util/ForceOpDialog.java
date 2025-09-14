@@ -29,17 +29,17 @@ public class ForceOpDialog extends JDialog
 		new ForceOpDialog(args[0]);
 	}
 	
-	private final ArrayList<Component> components = new ArrayList<>();
+	public final ArrayList<Component> components = new ArrayList<>();
 	
-	private JSpinner spDelay;
-	private JCheckBox cbDontWait;
+	public JSpinner spDelay;
+	public JCheckBox cbDontWait;
 	
-	private JLabel lPasswords;
-	private JLabel lTime;
-	private JLabel lAttempts;
+	public JLabel lPasswords;
+	public JLabel lTime;
+	public JLabel lAttempts;
 	
-	private int numPW = 50;
-	private int lastPW = -1;
+	public int numPW = 50;
+	public int lastPW = -1;
 	
 	public ForceOpDialog(String username)
 	{
@@ -76,7 +76,7 @@ public class ForceOpDialog extends JDialog
 		new Thread(this::handleDialogInput, "ForceOP dialog input").start();
 	}
 	
-	private void handleDialogInput()
+	public void handleDialogInput()
 	{
 		try(BufferedReader bf = new BufferedReader(
 			new InputStreamReader(System.in, StandardCharsets.UTF_8)))
@@ -90,7 +90,7 @@ public class ForceOpDialog extends JDialog
 		}
 	}
 	
-	private void messageFromWurst(String line)
+	public void messageFromWurst(String line)
 	{
 		if(line.startsWith("numPW "))
 		{
@@ -107,7 +107,7 @@ public class ForceOpDialog extends JDialog
 		}
 	}
 	
-	private void addPwListSelector()
+	public void addPwListSelector()
 	{
 		JRadioButton rbDefaultList = new JRadioButton("default", true);
 		rbDefaultList.setLocation(4, 24);
@@ -141,7 +141,7 @@ public class ForceOpDialog extends JDialog
 		});
 	}
 	
-	private void browsePwList()
+	public void browsePwList()
 	{
 		JFileChooser fsTXTList = new JFileChooser();
 		fsTXTList.setAcceptAllFileFilterUsed(false);
@@ -164,7 +164,7 @@ public class ForceOpDialog extends JDialog
 		System.out.println("list " + pwList);
 	}
 	
-	private void addHowToUseButton()
+	public void addHowToUseButton()
 	{
 		JButton bHowTo = new JButton("How to use");
 		bHowTo.setFont(new Font(bHowTo.getFont().getName(), Font.BOLD, 16));
@@ -174,7 +174,7 @@ public class ForceOpDialog extends JDialog
 		add(bHowTo);
 	}
 	
-	private void openHowToUseLink()
+	public void openHowToUseLink()
 	{
 		try
 		{
@@ -188,7 +188,7 @@ public class ForceOpDialog extends JDialog
 		}
 	}
 	
-	private void addDelaySelector()
+	public void addDelaySelector()
 	{
 		JLabel lDelay1 = addLabel("Delay between attempts:", 4, 84);
 		
@@ -206,7 +206,7 @@ public class ForceOpDialog extends JDialog
 		addLabel("ms", spDelay.getX() + spDelay.getWidth() + 4, 84);
 	}
 	
-	private void addDontWaitCheckbox()
+	public void addDontWaitCheckbox()
 	{
 		cbDontWait = new JCheckBox("<html>Don't wait for "
 			+ "\"<span style=\"color: red;\"><b>Wrong password!</b></span>\" "
@@ -219,7 +219,7 @@ public class ForceOpDialog extends JDialog
 		add(cbDontWait);
 	}
 	
-	private void addStartButton()
+	public void addStartButton()
 	{
 		JButton bStart = new JButton("Start");
 		bStart.setFont(new Font(bStart.getFont().getName(), Font.BOLD, 18));
@@ -229,7 +229,7 @@ public class ForceOpDialog extends JDialog
 		add(bStart);
 	}
 	
-	private JLabel addLabel(String text, int x, int y)
+	public JLabel addLabel(String text, int x, int y)
 	{
 		JLabel label = makeLabel(text, x, y);
 		add(label);
@@ -239,14 +239,14 @@ public class ForceOpDialog extends JDialog
 	/**
 	 * Adds a label that won't be disabled when the Start button is pressed.
 	 */
-	private JLabel addPersistentLabel(String text, int x, int y)
+	public JLabel addPersistentLabel(String text, int x, int y)
 	{
 		JLabel label = makeLabel(text, x, y);
 		super.add(label);
 		return label;
 	}
 	
-	private JLabel makeLabel(String text, int x, int y)
+	public JLabel makeLabel(String text, int x, int y)
 	{
 		JLabel label = new JLabel(text);
 		label.setLocation(x, y);
@@ -254,7 +254,7 @@ public class ForceOpDialog extends JDialog
 		return label;
 	}
 	
-	private void addSeparator(int x, int y, int width, int height)
+	public void addSeparator(int x, int y, int width, int height)
 	{
 		JSeparator sepSpeedStart = new JSeparator();
 		sepSpeedStart.setLocation(x, y);
@@ -269,20 +269,20 @@ public class ForceOpDialog extends JDialog
 		return super.add(comp);
 	}
 	
-	private void updateNumPasswords()
+	public void updateNumPasswords()
 	{
 		updatePasswordsLabel();
 		updateTimeLabel();
 		updateAttemptsLabel();
 	}
 	
-	private void updatePasswordsLabel()
+	public void updatePasswordsLabel()
 	{
 		lPasswords.setText("Passwords: " + numPW);
 		lPasswords.setSize(lPasswords.getPreferredSize());
 	}
 	
-	private void updateTimeLabel()
+	public void updateTimeLabel()
 	{
 		int remainingPW = numPW - (lastPW + 1);
 		long timeMS = remainingPW * (int)spDelay.getValue();
@@ -301,7 +301,7 @@ public class ForceOpDialog extends JDialog
 		lTime.setSize(lTime.getPreferredSize());
 	}
 	
-	private String getTimeString(long ms)
+	public String getTimeString(long ms)
 	{
 		TimeUnit uDays = TimeUnit.DAYS;
 		TimeUnit uHours = TimeUnit.HOURS;
@@ -316,13 +316,13 @@ public class ForceOpDialog extends JDialog
 		return days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 	}
 	
-	private void updateAttemptsLabel()
+	public void updateAttemptsLabel()
 	{
 		lAttempts.setText("Attempts: " + (lastPW + 1) + "/" + numPW);
 		lAttempts.setSize(lAttempts.getPreferredSize());
 	}
 	
-	private void startForceOP()
+	public void startForceOP()
 	{
 		components.forEach(c -> c.setEnabled(false));
 		

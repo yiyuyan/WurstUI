@@ -29,7 +29,7 @@ import net.wurstclient.events.PacketInputListener.PacketInputEvent;
 public abstract class ClientConnectionMixin
 	extends SimpleChannelInboundHandler<Packet<?>>
 {
-	private ConcurrentLinkedQueue<ConnectionPacketOutputEvent> events =
+	public ConcurrentLinkedQueue<ConnectionPacketOutputEvent> events =
 		new ConcurrentLinkedQueue<>();
 	
 	@Inject(at = @At(value = "INVOKE",
@@ -37,7 +37,7 @@ public abstract class ClientConnectionMixin
 		ordinal = 0),
 		method = "channelRead0(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet;)V",
 		cancellable = true)
-	private void onChannelRead0(ChannelHandlerContext context, Packet<?> packet,
+	public void onChannelRead0(ChannelHandlerContext context, Packet<?> packet,
 		CallbackInfo ci)
 	{
 		PacketInputEvent event = new PacketInputEvent(packet);
@@ -63,7 +63,7 @@ public abstract class ClientConnectionMixin
 	@Inject(at = @At("HEAD"),
 		method = "send(Lnet/minecraft/network/packet/Packet;Lio/netty/channel/ChannelFutureListener;)V",
 		cancellable = true)
-	private void onSend(Packet<?> packet,
+	public void onSend(Packet<?> packet,
 		@Nullable ChannelFutureListener callback, CallbackInfo ci)
 	{
 		ConnectionPacketOutputEvent event = getEvent(packet);
@@ -76,7 +76,7 @@ public abstract class ClientConnectionMixin
 		events.remove(event);
 	}
 	
-	private ConnectionPacketOutputEvent getEvent(Packet<?> packet)
+	public ConnectionPacketOutputEvent getEvent(Packet<?> packet)
 	{
 		for(ConnectionPacketOutputEvent event : events)
 			if(event.getPacket() == packet)

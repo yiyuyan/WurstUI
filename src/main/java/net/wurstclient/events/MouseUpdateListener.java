@@ -31,10 +31,10 @@ public interface MouseUpdateListener extends Listener
 	 */
 	public static class MouseUpdateEvent extends Event<MouseUpdateListener>
 	{
-		private double deltaX;
-		private double deltaY;
-		private final double defaultDeltaX;
-		private final double defaultDeltaY;
+		public double deltaX;
+		public double deltaY;
+		public final double defaultDeltaX;
+		public final double defaultDeltaY;
 		
 		public MouseUpdateEvent(double deltaX, double deltaY)
 		{

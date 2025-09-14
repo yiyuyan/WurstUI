@@ -41,7 +41,7 @@ public abstract class EntityMixin implements Nameable, EntityLike, CommandOutput
 		ordinal = 0),
 		method = "updateMovementInFluid(Lnet/minecraft/registry/tag/TagKey;D)Z",
 		require = 0)
-	private boolean shouldSetVelocity(Entity instance, Vec3d velocity)
+	public boolean shouldSetVelocity(Entity instance, Vec3d velocity)
 	{
 		VelocityFromFluidEvent event = new VelocityFromFluidEvent(instance);
 		EventManager.fire(event);
@@ -51,7 +51,7 @@ public abstract class EntityMixin implements Nameable, EntityLike, CommandOutput
 	@Inject(at = @At("HEAD"),
 		method = "Lnet/minecraft/entity/Entity;pushAwayFrom(Lnet/minecraft/entity/Entity;)V",
 		cancellable = true)
-	private void onPushAwayFrom(Entity entity, CallbackInfo ci)
+	public void onPushAwayFrom(Entity entity, CallbackInfo ci)
 	{
 		VelocityFromEntityCollisionEvent event =
 			new VelocityFromEntityCollisionEvent((Entity)(Object)this);
@@ -67,7 +67,7 @@ public abstract class EntityMixin implements Nameable, EntityLike, CommandOutput
 	@Inject(at = @At("RETURN"),
 		method = "Lnet/minecraft/entity/Entity;isInvisibleTo(Lnet/minecraft/entity/player/PlayerEntity;)Z",
 		cancellable = true)
-	private void onIsInvisibleTo(PlayerEntity player,
+	public void onIsInvisibleTo(PlayerEntity player,
 		CallbackInfoReturnable<Boolean> cir)
 	{
 		// Return early if the entity is not invisible

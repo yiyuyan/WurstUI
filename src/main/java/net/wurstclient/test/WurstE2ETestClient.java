@@ -35,7 +35,7 @@ public class WurstE2ETestClient implements ModInitializer
 			}).start(this::runTests);
 	}
 	
-	private void runTests()
+	public void runTests()
 	{
 		System.out.println("Starting Wurst End-to-End Tests");
 		waitForResourceLoading();

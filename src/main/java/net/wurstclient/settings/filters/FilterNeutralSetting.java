@@ -15,7 +15,7 @@ import net.minecraft.entity.passive.PufferfishEntity;
 
 public class FilterNeutralSetting extends AttackDetectingEntityFilter
 {
-	private FilterNeutralSetting(String description, Mode selected,
+	public FilterNeutralSetting(String description, Mode selected,
 		boolean checked)
 	{
 		super("Filter neutral mobs", description, selected, checked);

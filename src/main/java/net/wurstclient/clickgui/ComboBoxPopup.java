@@ -17,11 +17,11 @@ import net.wurstclient.util.RenderUtils;
 
 public class ComboBoxPopup<T extends Enum<T>> extends Popup
 {
-	private static final ClickGui GUI = WurstClient.INSTANCE.getGui();
-	private static final TextRenderer TR = WurstClient.MC.textRenderer;
+	public static final ClickGui GUI = WurstClient.INSTANCE.getGui();
+	public static final TextRenderer TR = WurstClient.MC.textRenderer;
 	
-	private final EnumSetting<T> setting;
-	private final int popupWidth;
+	public final EnumSetting<T> setting;
+	public final int popupWidth;
 	
 	public ComboBoxPopup(Component owner, EnumSetting<T> setting,
 		int popupWidth)
@@ -97,7 +97,7 @@ public class ComboBoxPopup<T extends Enum<T>> extends Popup
 		}
 	}
 	
-	private boolean isHovering(int mouseX, int mouseY, int x1, int x2, int y1,
+	public boolean isHovering(int mouseX, int mouseY, int x1, int x2, int y1,
 		int y2)
 	{
 		return mouseX >= x1 && mouseY >= y1 && mouseX < x2 && mouseY < y2;

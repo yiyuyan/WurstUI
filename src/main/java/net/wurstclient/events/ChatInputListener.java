@@ -22,8 +22,8 @@ public interface ChatInputListener extends Listener
 	public static class ChatInputEvent
 		extends CancellableEvent<ChatInputListener>
 	{
-		private Text component;
-		private List<ChatHudLine.Visible> chatLines;
+		public Text component;
+		public List<ChatHudLine.Visible> chatLines;
 		
 		public ChatInputEvent(Text component,
 			List<ChatHudLine.Visible> visibleMessages)

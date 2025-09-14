@@ -20,8 +20,8 @@ public interface ChatOutputListener extends Listener
 	public static class ChatOutputEvent
 		extends CancellableEvent<ChatOutputListener>
 	{
-		private final String originalMessage;
-		private String message;
+		public final String originalMessage;
+		public String message;
 		
 		public ChatOutputEvent(String message)
 		{

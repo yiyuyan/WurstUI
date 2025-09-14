@@ -13,7 +13,7 @@ import net.minecraft.entity.mob.SlimeEntity;
 
 public class FilterSlimesSetting extends EntityFilterCheckbox
 {
-	private static final String EXCEPTIONS_TEXT =
+	public static final String EXCEPTIONS_TEXT =
 		"\n\nThis filter does not affect magma cubes.";
 	
 	public FilterSlimesSetting(String description, boolean checked)

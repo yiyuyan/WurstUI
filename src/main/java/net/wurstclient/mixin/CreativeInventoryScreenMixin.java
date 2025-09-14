@@ -24,7 +24,7 @@ import net.wurstclient.WurstClient;
 public abstract class CreativeInventoryScreenMixin
 	extends HandledScreen<CreativeInventoryScreen.CreativeScreenHandler>
 {
-	private CreativeInventoryScreenMixin(WurstClient wurst,
+	public CreativeInventoryScreenMixin(WurstClient wurst,
 		CreativeScreenHandler screenHandler, PlayerInventory inventory,
 		Text title)
 	{
@@ -34,7 +34,7 @@ public abstract class CreativeInventoryScreenMixin
 	@Inject(at = @At("HEAD"),
 		method = "shouldShowOperatorTab(Lnet/minecraft/entity/player/PlayerEntity;)Z",
 		cancellable = true)
-	private void onShouldShowOperatorTab(PlayerEntity player,
+	public void onShouldShowOperatorTab(PlayerEntity player,
 		CallbackInfoReturnable<Boolean> cir)
 	{
 		if(WurstClient.INSTANCE.isEnabled())

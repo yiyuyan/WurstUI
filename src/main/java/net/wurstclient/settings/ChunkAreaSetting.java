@@ -18,7 +18,7 @@ import net.wurstclient.WurstClient;
 public class ChunkAreaSetting
 	extends EnumSetting<ChunkAreaSetting.ChunkArea>
 {
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public ChunkAreaSetting(String name, String description)
 	{
@@ -59,10 +59,10 @@ public class ChunkAreaSetting
 		A31("31x31 chunks", 15),
 		A33("33x33 chunks", 16);
 		
-		private final String name;
-		private final int chunkRange;
+		public final String name;
+		public final int chunkRange;
 		
-		private ChunkArea(String name, int chunkRange)
+		ChunkArea(String name, int chunkRange)
 		{
 			this.name = name;
 			this.chunkRange = chunkRange;

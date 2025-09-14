@@ -22,7 +22,7 @@ import net.wurstclient.mixinterface.IKeyBinding;
 public abstract class KeyBindingMixin implements IKeyBinding
 {
 	@Shadow
-	private InputUtil.Key boundKey;
+    private InputUtil.Key boundKey;
 	
 	@Override
 	@Unique

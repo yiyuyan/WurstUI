@@ -17,8 +17,8 @@ import net.wurstclient.settings.filterlists.EntityFilterList.EntityFilter;
 
 public abstract class AttackDetectingEntityFilter implements EntityFilter
 {
-	private final Setting setting;
-	private final Supplier<Mode> mode;
+	public final Setting setting;
+	public final Supplier<Mode> mode;
 	
 	protected AttackDetectingEntityFilter(String name, String description,
 		Mode selected, boolean checked)
@@ -67,9 +67,9 @@ public abstract class AttackDetectingEntityFilter implements EntityFilter
 		IF_CALM("If calm"),
 		OFF("Off");
 		
-		private final String name;
+		public final String name;
 		
-		private Mode(String name)
+		Mode(String name)
 		{
 			this.name = name;
 		}

@@ -21,7 +21,7 @@ public interface VelocityFromEntityCollisionListener extends Listener
 	public static class VelocityFromEntityCollisionEvent
 		extends CancellableEvent<VelocityFromEntityCollisionListener>
 	{
-		private final Entity entity;
+		public final Entity entity;
 		
 		public VelocityFromEntityCollisionEvent(Entity entity)
 		{

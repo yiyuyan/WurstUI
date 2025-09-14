@@ -28,8 +28,8 @@ import net.wurstclient.util.text.WText;
 
 public class ColorSetting extends Setting
 {
-	private Color color;
-	private final Color defaultColor;
+	public Color color;
+	public final Color defaultColor;
 	
 	public ColorSetting(String name, WText description, Color color)
 	{
@@ -161,7 +161,7 @@ public class ColorSetting extends Setting
 		return pkb;
 	}
 	
-	private void addPKB(LinkedHashSet<PossibleKeybind> pkb, String command,
+	public void addPKB(LinkedHashSet<PossibleKeybind> pkb, String command,
 		String description)
 	{
 		pkb.add(new PossibleKeybind(command, description));

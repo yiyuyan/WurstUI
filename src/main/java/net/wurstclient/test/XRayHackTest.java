@@ -61,7 +61,7 @@ public enum XRayHackTest
 		clearChat();
 	}
 	
-	private static void buildTestRig()
+	public static void buildTestRig()
 	{
 		// Stone wall (9 wide, 5 high, 3 deep)
 		runChatCommand("fill ~-5 ~ ~5 ~5 ~5 ~7 stone");

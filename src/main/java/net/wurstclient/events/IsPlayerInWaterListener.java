@@ -19,8 +19,8 @@ public interface IsPlayerInWaterListener extends Listener
 	public static class IsPlayerInWaterEvent
 		extends Event<IsPlayerInWaterListener>
 	{
-		private boolean inWater;
-		private final boolean normallyInWater;
+		public boolean inWater;
+		public final boolean normallyInWater;
 		
 		public IsPlayerInWaterEvent(boolean inWater)
 		{

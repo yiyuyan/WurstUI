@@ -25,17 +25,17 @@ import net.wurstclient.util.text.WText;
 
 public class SliderSetting extends Setting implements SliderLock
 {
-	private double value;
-	private final double defaultValue;
-	private final double minimum;
-	private final double maximum;
-	private final double increment;
-	private final ValueDisplay display;
+	public double value;
+	public final double defaultValue;
+	public final double minimum;
+	public final double maximum;
+	public final double increment;
+	public final ValueDisplay display;
 	
-	private SliderLock lock;
-	private boolean disabled;
-	private double usableMin;
-	private double usableMax;
+	public SliderLock lock;
+	public boolean disabled;
+	public double usableMin;
+	public double usableMax;
 	
 	public SliderSetting(String name, WText description, double value,
 		double minimum, double maximum, double increment, ValueDisplay display)
@@ -121,7 +121,7 @@ public class SliderSetting extends Setting implements SliderLock
 		setValueIgnoreLock(value);
 	}
 	
-	private void setValueIgnoreLock(double value)
+	public void setValueIgnoreLock(double value)
 	{
 		value = (int)Math.round(value / increment) * increment;
 		value = MathUtils.clamp(value, usableMin, usableMax);
@@ -321,7 +321,7 @@ public class SliderSetting extends Setting implements SliderLock
 		
 		public static final ValueDisplay LOGARITHMIC = new ValueDisplay()
 		{
-			private static final DecimalFormat FORMAT =
+			public static final DecimalFormat FORMAT =
 				new DecimalFormat("#,###");
 			
 			@Override

@@ -17,7 +17,7 @@ import net.wurstclient.WurstClient;
 
 public record Rotation(float yaw, float pitch)
 {
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public void applyToClientPlayer()
 	{

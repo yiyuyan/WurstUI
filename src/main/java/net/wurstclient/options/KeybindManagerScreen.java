@@ -28,13 +28,13 @@ import net.wurstclient.util.WurstColors;
 
 public class KeybindManagerScreen extends Screen
 {
-	private final Screen prevScreen;
+	public final Screen prevScreen;
 	
-	private ListGui listGui;
-	private ButtonWidget addButton;
-	private ButtonWidget editButton;
-	private ButtonWidget removeButton;
-	private ButtonWidget backButton;
+	public ListGui listGui;
+	public ButtonWidget addButton;
+	public ButtonWidget editButton;
+	public ButtonWidget removeButton;
+	public ButtonWidget backButton;
 	
 	public KeybindManagerScreen(Screen prevScreen)
 	{
@@ -81,7 +81,7 @@ public class KeybindManagerScreen extends Screen
 			.dimensions(width - 108, 8, 100, 20).build());
 	}
 	
-	private void edit()
+	public void edit()
 	{
 		Keybind keybind = listGui.getSelectedKeybind();
 		if(keybind == null)
@@ -91,7 +91,7 @@ public class KeybindManagerScreen extends Screen
 			keybind.getCommands()));
 	}
 	
-	private void remove()
+	public void remove()
 	{
 		Keybind keybind = listGui.getSelectedKeybind();
 		if(keybind == null)
@@ -159,10 +159,10 @@ public class KeybindManagerScreen extends Screen
 		return false;
 	}
 	
-	private class Entry
+	public class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<KeybindManagerScreen.Entry>
 	{
-		private final Keybind keybind;
+		public final Keybind keybind;
 		
 		public Entry(Keybind keybind)
 		{
@@ -193,7 +193,7 @@ public class KeybindManagerScreen extends Screen
 		}
 	}
 	
-	private class ListGui
+	public class ListGui
 		extends AlwaysSelectedEntryListWidget<KeybindManagerScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, KeybindManagerScreen screen)

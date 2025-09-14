@@ -23,7 +23,7 @@ public class ChunkOcclusionGraphBuilderMixin
 	@Inject(at = @At("HEAD"),
 		method = "markClosed(Lnet/minecraft/util/math/BlockPos;)V",
 		cancellable = true)
-	private void onMarkClosed(BlockPos pos, CallbackInfo ci)
+	public void onMarkClosed(BlockPos pos, CallbackInfo ci)
 	{
 		SetOpaqueCubeEvent event = new SetOpaqueCubeEvent();
 		EventManager.fire(event);

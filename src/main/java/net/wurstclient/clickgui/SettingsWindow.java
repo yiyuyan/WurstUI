@@ -31,7 +31,7 @@ public class SettingsWindow extends Window
 		setInitialPosition(parent, buttonY);
 	}
 	
-	private void setInitialPosition(Window parent, int buttonY)
+	public void setInitialPosition(Window parent, int buttonY)
 	{
 		int scroll = parent.isScrollingEnabled() ? parent.getScrollOffset() : 0;
 		int x = parent.getX() + parent.getWidth() + 5;

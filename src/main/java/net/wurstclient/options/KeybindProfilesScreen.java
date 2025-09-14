@@ -31,10 +31,10 @@ import net.wurstclient.util.json.JsonException;
 
 public class KeybindProfilesScreen extends Screen
 {
-	private final Screen prevScreen;
+	public final Screen prevScreen;
 	
-	private ListGui listGui;
-	private ButtonWidget loadButton;
+	public ListGui listGui;
+	public ButtonWidget loadButton;
 	
 	public KeybindProfilesScreen(Screen prevScreen)
 	{
@@ -68,13 +68,13 @@ public class KeybindProfilesScreen extends Screen
 			.dimensions(width / 2 + 54, height - 48, 100, 20).build());
 	}
 	
-	private void openFolder()
+	public void openFolder()
 	{
 		Util.getOperatingSystem().open(
 			WurstClient.INSTANCE.getKeybinds().getProfilesFolder().toFile());
 	}
 	
-	private void newProfile(String name)
+	public void newProfile(String name)
 	{
 		if(!name.endsWith(".json"))
 			name += ".json";
@@ -89,7 +89,7 @@ public class KeybindProfilesScreen extends Screen
 		}
 	}
 	
-	private void loadSelected()
+	public void loadSelected()
 	{
 		Path path = listGui.getSelectedPath();
 		if(path == null)
@@ -152,10 +152,10 @@ public class KeybindProfilesScreen extends Screen
 		return false;
 	}
 	
-	private class Entry
+	public class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<KeybindProfilesScreen.Entry>
 	{
-		private final Path path;
+		public final Path path;
 		
 		public Entry(Path path)
 		{
@@ -186,7 +186,7 @@ public class KeybindProfilesScreen extends Screen
 		}
 	}
 	
-	private class ListGui
+	public class ListGui
 		extends AlwaysSelectedEntryListWidget<KeybindProfilesScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, KeybindProfilesScreen screen,

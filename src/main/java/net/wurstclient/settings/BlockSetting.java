@@ -29,9 +29,9 @@ import net.wurstclient.util.text.WText;
 
 public class BlockSetting extends Setting
 {
-	private String blockName = "";
-	private final String defaultName;
-	private final boolean allowAir;
+	public String blockName = "";
+	public final String defaultName;
+	public final boolean allowAir;
 	
 	public BlockSetting(String name, WText description, String blockName,
 		boolean allowAir)

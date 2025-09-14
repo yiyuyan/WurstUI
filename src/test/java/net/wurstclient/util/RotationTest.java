@@ -199,7 +199,7 @@ class RotationTest
 		assertEquals(90, r.pitch());
 	}
 	
-	private void assertAlmostEquals(double expected, double actual)
+	public void assertAlmostEquals(double expected, double actual)
 	{
 		if(Math.abs(expected - actual) > 1e-6)
 			fail("expected: <" + expected + "> but was: <" + actual + ">");

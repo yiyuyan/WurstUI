@@ -13,7 +13,7 @@ import net.minecraft.entity.mob.ZombifiedPiglinEntity;
 public class FilterZombiePiglinsSetting
 	extends AttackDetectingEntityFilter
 {
-	private FilterZombiePiglinsSetting(String description, Mode selected,
+	public FilterZombiePiglinsSetting(String description, Mode selected,
 		boolean checked)
 	{
 		super("Filter zombie piglins", description, selected, checked);

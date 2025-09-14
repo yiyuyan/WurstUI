@@ -30,11 +30,11 @@ import net.wurstclient.util.WurstColors;
 
 public class SelectFileScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final FileSetting setting;
+	public final Screen prevScreen;
+	public final FileSetting setting;
 	
-	private ListGui listGui;
-	private ButtonWidget doneButton;
+	public ListGui listGui;
+	public ButtonWidget doneButton;
 	
 	public SelectFileScreen(Screen prevScreen, FileSetting blockList)
 	{
@@ -67,17 +67,17 @@ public class SelectFileScreen extends Screen
 				.dimensions(width / 2 + 2, height - 48, 100, 20).build());
 	}
 	
-	private void openFolder()
+	public void openFolder()
 	{
 		Util.getOperatingSystem().open(setting.getFolder().toFile());
 	}
 	
-	private void openPrevScreen()
+	public void openPrevScreen()
 	{
 		client.setScreen(prevScreen);
 	}
 	
-	private void done()
+	public void done()
 	{
 		Path path = listGui.getSelectedPath();
 		if(path != null)
@@ -89,7 +89,7 @@ public class SelectFileScreen extends Screen
 		openPrevScreen();
 	}
 	
-	private void askToConfirmReset()
+	public void askToConfirmReset()
 	{
 		Text title = Text.literal("Reset Folder");
 		
@@ -101,7 +101,7 @@ public class SelectFileScreen extends Screen
 		client.setScreen(new ConfirmScreen(this::confirmReset, title, message));
 	}
 	
-	private void confirmReset(boolean confirmed)
+	public void confirmReset(boolean confirmed)
 	{
 		if(confirmed)
 			setting.resetFolder();
@@ -156,10 +156,10 @@ public class SelectFileScreen extends Screen
 		return false;
 	}
 	
-	private class Entry
+	public class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<SelectFileScreen.Entry>
 	{
-		private final Path path;
+		public final Path path;
 		
 		public Entry(Path path)
 		{
@@ -190,7 +190,7 @@ public class SelectFileScreen extends Screen
 		}
 	}
 	
-	private class ListGui
+	public class ListGui
 		extends AlwaysSelectedEntryListWidget<SelectFileScreen.Entry>
 	{
 		public ListGui(MinecraftClient mc, SelectFileScreen screen,

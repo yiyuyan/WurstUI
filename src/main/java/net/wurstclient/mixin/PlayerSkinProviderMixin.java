@@ -33,14 +33,14 @@ import net.wurstclient.util.json.WsonObject;
 public abstract class PlayerSkinProviderMixin
 {
 	@Unique
-	private static HashMap<String, String> capes;
+    private static HashMap<String, String> capes;
 	
 	@Unique
-	private MinecraftProfileTexture currentCape;
+	public MinecraftProfileTexture currentCape;
 	
 	@Inject(at = @At("HEAD"),
 		method = "fetchSkinTextures(Ljava/util/UUID;Lcom/mojang/authlib/minecraft/MinecraftProfileTextures;)Ljava/util/concurrent/CompletableFuture;")
-	private void onFetchSkinTextures(UUID uuid,
+	public void onFetchSkinTextures(UUID uuid,
 		MinecraftProfileTextures textures,
 		CallbackInfoReturnable<CompletableFuture<SkinTextures>> cir)
 	{
@@ -72,7 +72,7 @@ public abstract class PlayerSkinProviderMixin
 		method = "fetchSkinTextures(Ljava/util/UUID;Lcom/mojang/authlib/minecraft/MinecraftProfileTextures;)Ljava/util/concurrent/CompletableFuture;",
 		ordinal = 1,
 		name = "minecraftProfileTexture2")
-	private MinecraftProfileTexture modifyCapeTexture(
+	public MinecraftProfileTexture modifyCapeTexture(
 		MinecraftProfileTexture old)
 	{
 		if(currentCape == null)
@@ -84,7 +84,7 @@ public abstract class PlayerSkinProviderMixin
 	}
 	
 	@Unique
-	private void setupWurstCapes()
+	public void setupWurstCapes()
 	{
 		try
 		{

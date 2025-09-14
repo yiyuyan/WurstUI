@@ -15,9 +15,9 @@ import net.wurstclient.events.GUIRenderListener;
 
 public class IngameHUD implements GUIRenderListener
 {
-	//private final WurstLogo wurstLogo = new WurstLogo();
-	private final HackListHUD hackList = new HackListHUD();
-	private TabGui tabGui;
+	//public final WurstLogo wurstLogo = new WurstLogo();
+	public final HackListHUD hackList = new HackListHUD();
+	public TabGui tabGui;
 	
 	@Override
 	public void onRenderGUI(DrawContext context, float partialTicks)

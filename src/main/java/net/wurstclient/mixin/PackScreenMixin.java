@@ -17,7 +17,7 @@ import net.wurstclient.WurstClient;
 @Mixin(PackScreen.class)
 public class PackScreenMixin extends Screen
 {
-	private PackScreenMixin(WurstClient wurst, Text title)
+	public PackScreenMixin(WurstClient wurst, Text title)
 	{
 		super(title);
 	}

@@ -24,10 +24,10 @@ import net.wurstclient.util.json.JsonException;
 public class KeybindList
 {
 	public static final Set<Keybind> DEFAULT_KEYBINDS = createDefaultKeybinds();
-	private final ArrayList<Keybind> keybinds = new ArrayList<>();
+	public final ArrayList<Keybind> keybinds = new ArrayList<>();
 	
-	private final KeybindsFile keybindsFile;
-	private final Path profilesFolder =
+	public final KeybindsFile keybindsFile;
+	public final Path profilesFolder =
 		WurstClient.INSTANCE.getWurstFolder().resolve("keybinds");
 	
 	public KeybindList(Path keybindsFile)
@@ -114,7 +114,7 @@ public class KeybindList
 		keybindsFile.saveProfile(this, profilesFolder.resolve(fileName));
 	}
 	
-	private static Set<Keybind> createDefaultKeybinds()
+	public static Set<Keybind> createDefaultKeybinds()
 	{
 		Set<Keybind> set = new LinkedHashSet<>();
 		addKB(set, "b", "fastplace;fastbreak");
@@ -134,7 +134,7 @@ public class KeybindList
 		return Collections.unmodifiableSet(set);
 	}
 	
-	private static void addKB(Set<Keybind> set, String key, String cmds)
+	public static void addKB(Set<Keybind> set, String key, String cmds)
 	{
 		set.add(new Keybind("key.keyboard." + key, cmds));
 	}

@@ -39,14 +39,14 @@ public enum BlockVertexCompiler
 			.collect(Collectors.toCollection(ArrayList::new));
 	}
 	
-	private static int[] applyRegionOffset(int[] vertex, RegionPos region)
+	public static int[] applyRegionOffset(int[] vertex, RegionPos region)
 	{
 		vertex[0] -= region.x();
 		vertex[2] -= region.z();
 		return vertex;
 	}
 	
-	private static Stream<int[]> getVertices(BlockPos pos,
+	public static Stream<int[]> getVertices(BlockPos pos,
 		HashSet<BlockPos> matchingBlocks)
 	{
 		Builder<int[]> builder = Stream.<int[]> builder();
@@ -102,7 +102,7 @@ public enum BlockVertexCompiler
 		return builder.build();
 	}
 	
-	private static int[] getVertex(BlockPos pos, int x, int y, int z)
+	public static int[] getVertex(BlockPos pos, int x, int y, int z)
 	{
 		return new int[]{pos.getX() + x, pos.getY() + y, pos.getZ() + z};
 	}

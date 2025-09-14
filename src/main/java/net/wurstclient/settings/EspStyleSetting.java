@@ -40,11 +40,11 @@ public class EspStyleSetting extends EnumSetting<EspStyleSetting.EspStyle>
 		LINES("Lines only", false, true),
 		LINES_AND_BOXES("Lines and boxes", true, true);
 		
-		private final String name;
-		private final boolean boxes;
-		private final boolean lines;
+		public final String name;
+		public final boolean boxes;
+		public final boolean lines;
 		
-		private EspStyle(String name, boolean boxes, boolean lines)
+		EspStyle(String name, boolean boxes, boolean lines)
 		{
 			this.name = name;
 			this.boxes = boxes;

@@ -26,17 +26,17 @@ import net.wurstclient.util.RenderUtils;
 
 public class TabGui implements KeyPressListener
 {
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
-	private final ArrayList<Tab> tabs = new ArrayList<>();
-	/*private final TabGuiOtf tabGuiOtf =
+	public final ArrayList<Tab> tabs = new ArrayList<>();
+	/*public final TabGuiOtf tabGuiOtf =
 		WurstClient.INSTANCE.getOtfs().tabGuiOtf;*/
 	
-	private int width;
-	private int height;
-	private int selected;
-	private boolean tabOpened;
+	public int width;
+	public int height;
+	public int selected;
+	public boolean tabOpened;
 	
 	public TabGui()
 	{
@@ -60,7 +60,7 @@ public class TabGui implements KeyPressListener
 		updateSize();
 	}
 	
-	private void updateSize()
+	public void updateSize()
 	{
 		width = 64;
 		for(Tab tab : tabs)
@@ -181,7 +181,7 @@ public class TabGui implements KeyPressListener
 		matrixStack.popMatrix();
 	}
 	
-	private void drawBox(DrawContext context, int x1, int y1, int x2, int y2)
+	public void drawBox(DrawContext context, int x1, int y1, int x2, int y2)
 	{
 		ClickGui gui = WURST.getGui();
 		int bgColor =
@@ -191,14 +191,14 @@ public class TabGui implements KeyPressListener
 		RenderUtils.drawBoxShadow2D(context, x1, y1, x2, y2);
 	}
 	
-	private static class Tab
+	public static class Tab
 	{
-		private final String name;
-		private final ArrayList<Feature> features = new ArrayList<>();
+		public final String name;
+		public final ArrayList<Feature> features = new ArrayList<>();
 		
-		private int width;
-		private int height;
-		private int selected;
+		public int width;
+		public int height;
+		public int selected;
 		
 		public Tab(String name)
 		{
@@ -241,7 +241,7 @@ public class TabGui implements KeyPressListener
 			}
 		}
 		
-		private void onEnter()
+		public void onEnter()
 		{
 			Feature feature = features.get(selected);
 			

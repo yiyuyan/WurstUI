@@ -14,12 +14,12 @@ import net.wurstclient.Feature;
 
 public abstract class Hack extends Feature
 {
-	private final String name;
-	private final String description;
-	private Category category;
+	public final String name;
+	public final String description;
+	public Category category;
 	
-	private boolean enabled;
-	private final boolean stateSaved =
+	public boolean enabled;
+	public final boolean stateSaved =
 		!getClass().isAnnotationPresent(DontSaveState.class);
 	
 	public Hack(String name)

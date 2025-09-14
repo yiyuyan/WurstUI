@@ -18,7 +18,7 @@ import net.minecraft.util.Colors;
 
 public class PressAKeyScreen extends Screen
 {
-	private PressAKeyCallback prevScreen;
+	public PressAKeyCallback prevScreen;
 	
 	public PressAKeyScreen(PressAKeyCallback prevScreen)
 	{
@@ -40,7 +40,7 @@ public class PressAKeyScreen extends Screen
 		return super.keyPressed(keyCode, scanCode, int_3);
 	}
 	
-	private String getKeyName(int keyCode, int scanCode)
+	public String getKeyName(int keyCode, int scanCode)
 	{
 		return InputUtil.fromKeyCode(keyCode, scanCode).getTranslationKey();
 	}

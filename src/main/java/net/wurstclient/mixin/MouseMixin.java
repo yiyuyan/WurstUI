@@ -22,19 +22,19 @@ import net.wurstclient.events.MouseUpdateListener.MouseUpdateEvent;
 public class MouseMixin
 {
 	@Shadow
-	private double cursorDeltaX;
+    private double cursorDeltaX;
 	@Shadow
-	private double cursorDeltaY;
+    private double cursorDeltaY;
 	
 	@Inject(at = @At("RETURN"), method = "onMouseScroll(JDD)V")
-	private void onOnMouseScroll(long window, double horizontal,
+	public void onOnMouseScroll(long window, double horizontal,
 		double vertical, CallbackInfo ci)
 	{
 		EventManager.fire(new MouseScrollEvent(vertical));
 	}
 	
 	@Inject(at = @At("HEAD"), method = "tick()V")
-	private void onTick(CallbackInfo ci)
+	public void onTick(CallbackInfo ci)
 	{
 		MouseUpdateEvent event =
 			new MouseUpdateEvent(cursorDeltaX, cursorDeltaY);
@@ -46,7 +46,7 @@ public class MouseMixin
 	/*@WrapWithCondition(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/entity/player/PlayerInventory;setSelectedSlot(I)V"),
 		method = "onMouseScroll(JDD)V")
-	private boolean wrapOnMouseScroll(PlayerInventory inventory, int slot)
+	public boolean wrapOnMouseScroll(PlayerInventory inventory, int slot)
 	{
 		return !WurstClient.INSTANCE.getOtfs().zoomOtf
 			.shouldPreventHotbarScrolling();

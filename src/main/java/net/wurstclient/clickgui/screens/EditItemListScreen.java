@@ -35,16 +35,16 @@ import net.wurstclient.util.WurstColors;
 
 public class EditItemListScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final ItemListSetting itemList;
+	public final Screen prevScreen;
+	public final ItemListSetting itemList;
 	
-	private ListGui listGui;
-	private TextFieldWidget itemNameField;
-	private ButtonWidget addButton;
-	private ButtonWidget removeButton;
-	private ButtonWidget doneButton;
+	public ListGui listGui;
+	public TextFieldWidget itemNameField;
+	public ButtonWidget addButton;
+	public ButtonWidget removeButton;
+	public ButtonWidget doneButton;
 	
-	private Item itemToAdd;
+	public Item itemToAdd;
 	
 	public EditItemListScreen(Screen prevScreen, ItemListSetting itemList)
 	{
@@ -197,10 +197,10 @@ public class EditItemListScreen extends Screen
 		return false;
 	}
 	
-	private class Entry
+	public class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<EditItemListScreen.Entry>
 	{
-		private final String itemName;
+		public final String itemName;
 		
 		public Entry(String itemName)
 		{
@@ -236,19 +236,19 @@ public class EditItemListScreen extends Screen
 				Colors.LIGHT_GRAY, false);
 		}
 		
-		private String getDisplayName(ItemStack stack)
+		public String getDisplayName(ItemStack stack)
 		{
 			return stack.isEmpty() ? "\u00a7ounknown item\u00a7r"
 				: stack.getName().getString();
 		}
 		
-		private String getIdText(Item item)
+		public String getIdText(Item item)
 		{
 			return "ID: " + Registries.ITEM.getRawId(item);
 		}
 	}
 	
-	private class ListGui
+	public class ListGui
 		extends AlwaysSelectedEntryListWidget<EditItemListScreen.Entry>
 	{
 		public ListGui(MinecraftClient minecraft, EditItemListScreen screen,

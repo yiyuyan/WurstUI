@@ -20,7 +20,7 @@ public interface RenderBlockEntityListener extends Listener
 	public static class RenderBlockEntityEvent
 		extends CancellableEvent<RenderBlockEntityListener>
 	{
-		private final BlockEntity blockEntity;
+		public final BlockEntity blockEntity;
 		
 		public RenderBlockEntityEvent(BlockEntity blockEntity)
 		{

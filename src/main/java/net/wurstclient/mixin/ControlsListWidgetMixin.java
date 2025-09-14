@@ -38,7 +38,7 @@ public abstract class ControlsListWidgetMixin
 		target = "Lnet/minecraft/client/gui/screen/option/ControlsListWidget;addEntry(Lnet/minecraft/client/gui/widget/EntryListWidget$Entry;)I",
 		ordinal = 1),
 		method = "<init>(Lnet/minecraft/client/gui/screen/option/KeybindsScreen;Lnet/minecraft/client/MinecraftClient;)V")
-	private int dontAddZoomEntry(ControlsListWidget instance,
+	public int dontAddZoomEntry(ControlsListWidget instance,
 		EntryListWidget.Entry<?> entry, Operation<Integer> original)
 	{
 		if(!(entry instanceof ControlsListWidget.KeyBindingEntry kbEntry))

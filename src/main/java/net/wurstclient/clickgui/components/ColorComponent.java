@@ -20,11 +20,11 @@ import net.wurstclient.util.RenderUtils;
 
 public class ColorComponent extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int TEXT_HEIGHT = 11;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int TEXT_HEIGHT = 11;
 	
-	private final ColorSetting setting;
+	public final ColorSetting setting;
 	
 	public ColorComponent(ColorSetting setting)
 	{
@@ -92,7 +92,7 @@ public class ColorComponent extends Component
 		context.state.goDownLayer();
 	}
 	
-	private String getColorTooltip()
+	public String getColorTooltip()
 	{
 		String tooltip = "\u00a7cR:\u00a7r" + setting.getRed();
 		tooltip += " \u00a7aG:\u00a7r" + setting.getGreen();

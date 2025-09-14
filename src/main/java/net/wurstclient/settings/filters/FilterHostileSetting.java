@@ -14,7 +14,7 @@ import net.minecraft.entity.mob.PiglinEntity;
 
 public class FilterHostileSetting extends EntityFilterCheckbox
 {
-	private static final String EXCEPTIONS_TEXT = "\n\nThis filter does not"
+	public static final String EXCEPTIONS_TEXT = "\n\nThis filter does not"
 		+ " affect endermen, non-brute piglins, and zombified piglins.";
 	
 	public FilterHostileSetting(String description, boolean checked)

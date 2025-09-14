@@ -44,20 +44,20 @@ import net.minecraft.client.world.ClientWorld;
  */
 public class PlausibleAnalytics
 {
-	private static final Gson GSON = new Gson();
-	private static final Logger LOGGER = LoggerFactory.getLogger("Plausible");
+	public static final Gson GSON = new Gson();
+	public static final Logger LOGGER = LoggerFactory.getLogger("Plausible");
 	
-	private static final String MOD_ID = "wurstui";
-	private static final URI API_ENDPOINT =
+	public static final String MOD_ID = "wurstui";
+	public static final URI API_ENDPOINT =
 		URI.create("https://plausible.wurstclient.net/api/event");
 	
-	private final HttpClient httpClient =
+	public final HttpClient httpClient =
 		HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(5)).build();
-	private final LinkedBlockingQueue<PlausibleEvent> eventQueue =
+	public final LinkedBlockingQueue<PlausibleEvent> eventQueue =
 		new LinkedBlockingQueue<>();
-	private final JsonObject sessionProps = new JsonObject();
-	private final AnalyticsConfigFile configFile;
-	private boolean enabled = true;
+	public final JsonObject sessionProps = new JsonObject();
+	public final AnalyticsConfigFile configFile;
+	public boolean enabled = true;
 	
 	/**
 	 * Creates a new PlausibleAnalytics instance and starts a background thread
@@ -84,14 +84,14 @@ public class PlausibleAnalytics
 			.register(this::onWorldChange);
 	}
 	
-	private String getVersion(String modId)
+	public String getVersion(String modId)
 	{
 		return FabricLoader.getInstance().getModContainer(modId)
 			.map(ModContainer::getMetadata).map(ModMetadata::getVersion)
 			.map(Version::toString).orElse(null);
 	}
 	
-	private String getShortVersion(String modId)
+	public String getShortVersion(String modId)
 	{
 		String version = getVersion(modId);
 		if(version != null && version.contains("-MC"))
@@ -100,21 +100,21 @@ public class PlausibleAnalytics
 		return version;
 	}
 	
-	private void onWorldChange(MinecraftClient client, ClientWorld world)
+	public void onWorldChange(MinecraftClient client, ClientWorld world)
 	{
 		sessionProp("language", getLanguage(client));
 		sessionProp("game_type", getGameType(client));
 		pageview("/in-game");
 	}
 	
-	private String getLanguage(MinecraftClient client)
+	public String getLanguage(MinecraftClient client)
 	{
 		return Optional.ofNullable(client.getLanguageManager())
 			.map(LanguageManager::getLanguage).map(String::toLowerCase)
 			.orElse(null);
 	}
 	
-	private String getGameType(MinecraftClient client)
+	public String getGameType(MinecraftClient client)
 	{
 		ServerInfo server = client.getCurrentServerEntry();
 		if(server == null)
@@ -137,13 +137,13 @@ public class PlausibleAnalytics
 		configFile.save(this);
 	}
 	
-	private boolean isDebugMode()
+	public boolean isDebugMode()
 	{
 		return FabricLoader.getInstance().isDevelopmentEnvironment()
 			|| System.getProperty("wurstui.e2eTest") != null;
 	}
 	
-	private void runBackgroundLoop()
+	public void runBackgroundLoop()
 	{
 		while(!Thread.currentThread().isInterrupted())
 			try
@@ -162,7 +162,7 @@ public class PlausibleAnalytics
 			}
 	}
 	
-	private void sendEvent(PlausibleEvent event)
+	public void sendEvent(PlausibleEvent event)
 	{
 		String body = createRequestBody(event);
 		if(isDebugMode())
@@ -181,7 +181,7 @@ public class PlausibleAnalytics
 			.exceptionally(ex -> null);
 	}
 	
-	private String getUserAgent()
+	public String getUserAgent()
 	{
 		// Same as the "Operating System" entry in Minecraft crash reports.
 		return System.getProperty("os.name") + " ("
@@ -189,7 +189,7 @@ public class PlausibleAnalytics
 			+ System.getProperty("os.version");
 	}
 	
-	private String createRequestBody(PlausibleEvent event)
+	public String createRequestBody(PlausibleEvent event)
 	{
 		JsonObject body = new JsonObject();
 		body.addProperty("name", event.name());
@@ -292,13 +292,13 @@ public class PlausibleAnalytics
 		eventQueue.offer(new PlausibleEvent(name, url, jsonProps));
 	}
 	
-	private String buildURL(String path)
+	public String buildURL(String path)
 	{
 		String adjustedPath = path.startsWith("/") ? path : "/" + path;
 		return "mod://" + MOD_ID + adjustedPath;
 	}
 	
-	private JsonObject buildJsonProps(Map<String, String> props)
+	public JsonObject buildJsonProps(Map<String, String> props)
 	{
 		JsonObject jsonProps = sessionProps.deepCopy();
 		if(props == null || props.isEmpty())
@@ -355,6 +355,6 @@ public class PlausibleAnalytics
 			sessionProps.remove(name);
 	}
 	
-	private record PlausibleEvent(String name, String url, JsonObject props)
+	public record PlausibleEvent(String name, String url, JsonObject props)
 	{}
 }

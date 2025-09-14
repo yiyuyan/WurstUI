@@ -39,22 +39,22 @@ public enum WurstClient
 	public static final String VERSION = "7.50.1";
 	public static final String MC_VERSION = "1.21.8";
 	
-	private PlausibleAnalytics plausible;
-	private EventManager eventManager;
-	private HackList hax;
-	private OtfList otfs;
-	private SettingsFile settingsFile;
-	private Path settingsProfileFolder;
-	private KeybindList keybinds;
-	private ClickGui gui;
-	private IngameHUD hud;
-	private RotationFaker rotationFaker;
-	private FriendsList friends;
-	private WurstTranslator translator;
+	public PlausibleAnalytics plausible;
+	public EventManager eventManager;
+	public HackList hax;
+	public OtfList otfs;
+	public SettingsFile settingsFile;
+	public Path settingsProfileFolder;
+	public KeybindList keybinds;
+	public ClickGui gui;
+	public IngameHUD hud;
+	public RotationFaker rotationFaker;
+	public FriendsList friends;
+	public WurstTranslator translator;
 	
-	private boolean enabled = true;
-	private static boolean guiInitialized;
-	private Path wurstFolder;
+	public boolean enabled = true;
+	public static boolean guiInitialized;
+	public Path wurstFolder;
 	
 	public void initialize()
 	{
@@ -117,7 +117,7 @@ public enum WurstClient
 		altManager = new AltManager(altsFile, encFolder);*/
 	}
 	
-	private Path createWurstFolder()
+	public Path createWurstFolder()
 	{
 		Path dotMinecraftFolder = MC.runDirectory.toPath().normalize();
 		Path wurstFolder = dotMinecraftFolder.resolve("wurstui");

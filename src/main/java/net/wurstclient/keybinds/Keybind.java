@@ -11,8 +11,8 @@ import java.util.Objects;
 
 public class Keybind implements Comparable<Keybind>
 {
-	private final String key;
-	private final String commands;
+	public final String key;
+	public final String commands;
 	
 	public Keybind(String key, String commands)
 	{

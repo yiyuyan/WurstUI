@@ -20,7 +20,7 @@ public interface PacketOutputListener extends Listener
 	public static class PacketOutputEvent
 		extends CancellableEvent<PacketOutputListener>
 	{
-		private Packet<?> packet;
+		public Packet<?> packet;
 		
 		public PacketOutputEvent(Packet<?> packet)
 		{

@@ -31,7 +31,7 @@ public abstract class ClientPlayNetworkHandlerMixin
 	extends ClientCommonNetworkHandler
 	implements TickablePacketListener, ClientPlayPacketListener
 {
-	private ClientPlayNetworkHandlerMixin(WurstClient wurst,
+	public ClientPlayNetworkHandlerMixin(WurstClient wurst,
 		MinecraftClient client, ClientConnection connection,
 		ClientConnectionState connectionState)
 	{
@@ -67,14 +67,14 @@ public abstract class ClientPlayNetworkHandlerMixin
 	
 	/*@Inject(at = @At("TAIL"),
 		method = "loadChunk(IILnet/minecraft/network/packet/s2c/play/ChunkData;)V")
-	private void onLoadChunk(int x, int z, ChunkData chunkData, CallbackInfo ci)
+	public void onLoadChunk(int x, int z, ChunkData chunkData, CallbackInfo ci)
 	{
 		WurstClient.INSTANCE.getHax().newChunksHack.afterLoadChunk(x, z);
 	}*/
 	
 	/*@Inject(at = @At("TAIL"),
 		method = "onBlockUpdate(Lnet/minecraft/network/packet/s2c/play/BlockUpdateS2CPacket;)V")
-	private void onOnBlockUpdate(BlockUpdateS2CPacket packet, CallbackInfo ci)
+	public void onOnBlockUpdate(BlockUpdateS2CPacket packet, CallbackInfo ci)
 	{
 		WurstClient.INSTANCE.getHax().newChunksHack
 			.afterUpdateBlock(packet.getPos());
@@ -82,7 +82,7 @@ public abstract class ClientPlayNetworkHandlerMixin
 	
 	@Inject(at = @At("TAIL"),
 		method = "onChunkDeltaUpdate(Lnet/minecraft/network/packet/s2c/play/ChunkDeltaUpdateS2CPacket;)V")
-	private void onOnChunkDeltaUpdate(ChunkDeltaUpdateS2CPacket packet,
+	public void onOnChunkDeltaUpdate(ChunkDeltaUpdateS2CPacket packet,
 		CallbackInfo ci)
 	{
 		packet.visitUpdates(

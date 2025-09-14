@@ -18,7 +18,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class BlockBreakingCache
 {
-	private final ArrayDeque<Set<BlockPos>> prevBlocks = new ArrayDeque<>();
+	public final ArrayDeque<Set<BlockPos>> prevBlocks = new ArrayDeque<>();
 	
 	/**
 	 * Waits 5 ticks before trying to break the same block again, which

@@ -11,8 +11,8 @@ import net.wurstclient.Feature;
 
 public abstract class OtherFeature extends Feature
 {
-	private final String name;
-	private final String description;
+	public final String name;
+	public final String description;
 	
 	public OtherFeature(String name, String description)
 	{

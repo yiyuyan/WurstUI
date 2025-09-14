@@ -14,7 +14,7 @@ import net.wurstclient.settings.filters.*;
 
 public class AnchorAuraFilterList extends EntityFilterList
 {
-	private AnchorAuraFilterList(List<EntityFilter> filters)
+	public AnchorAuraFilterList(List<EntityFilter> filters)
 	{
 		super(filters);
 	}

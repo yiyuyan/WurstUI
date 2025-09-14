@@ -23,11 +23,11 @@ import net.wurstclient.util.RenderUtils;
 
 public class TextFieldEditButton extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int TEXT_HEIGHT = 11;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int TEXT_HEIGHT = 11;
 	
-	private final TextFieldSetting setting;
+	public final TextFieldSetting setting;
 	
 	public TextFieldEditButton(TextFieldSetting setting)
 	{

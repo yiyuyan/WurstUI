@@ -54,12 +54,12 @@ public abstract class MinecraftClientMixin
 	public ClientPlayerEntity player;
 	@Shadow
 	@Final
-	private YggdrasilAuthenticationService authenticationService;
+    private YggdrasilAuthenticationService authenticationService;
 	
-	private Session wurstSession;
-	private ProfileKeys wurstProfileKeys;
+	public Session wurstSession;
+	public ProfileKeys wurstProfileKeys;
 	
-	private MinecraftClientMixin(WurstClient wurst, String name)
+	public MinecraftClientMixin(WurstClient wurst, String name)
 	{
 		super(name);
 	}
@@ -72,7 +72,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At(value = "FIELD",
 		target = "Lnet/minecraft/client/MinecraftClient;overlay:Lnet/minecraft/client/gui/screen/Overlay;",
 		ordinal = 0), method = "tick()V")
-	private void onHandleInputEvents(CallbackInfo ci)
+	public void onHandleInputEvents(CallbackInfo ci)
 	{
 		// Make sure this event is not fired outside of gameplay
 		if(player == null)
@@ -84,7 +84,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At(value = "FIELD",
 		target = "Lnet/minecraft/client/MinecraftClient;crosshairTarget:Lnet/minecraft/util/hit/HitResult;",
 		ordinal = 0), method = "doAttack()Z", cancellable = true)
-	private void onDoAttack(CallbackInfoReturnable<Boolean> cir)
+	public void onDoAttack(CallbackInfoReturnable<Boolean> cir)
 	{
 		LeftClickEvent event = new LeftClickEvent();
 		EventManager.fire(event);
@@ -99,7 +99,7 @@ public abstract class MinecraftClientMixin
 			ordinal = 0),
 		method = "doItemUse()V",
 		cancellable = true)
-	private void onDoItemUse(CallbackInfo ci)
+	public void onDoItemUse(CallbackInfo ci)
 	{
 		RightClickEvent event = new RightClickEvent();
 		EventManager.fire(event);
@@ -109,7 +109,7 @@ public abstract class MinecraftClientMixin
 	}
 	
 	@Inject(at = @At("HEAD"), method = "doItemPick()V")
-	private void onDoItemPick(CallbackInfo ci)
+	public void onDoItemPick(CallbackInfo ci)
 	{
 		if(!WurstClient.INSTANCE.isEnabled())
 			return;
@@ -128,7 +128,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At("HEAD"),
 		method = "handleBlockBreaking(Z)V",
 		cancellable = true)
-	private void onHandleBlockBreaking(boolean breaking, CallbackInfo ci)
+	public void onHandleBlockBreaking(boolean breaking, CallbackInfo ci)
 	{
 		HandleBlockBreakingEvent event = new HandleBlockBreakingEvent();
 		EventManager.fire(event);
@@ -140,7 +140,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At("HEAD"),
 		method = "getSession()Lnet/minecraft/client/session/Session;",
 		cancellable = true)
-	private void onGetSession(CallbackInfoReturnable<Session> cir)
+	public void onGetSession(CallbackInfoReturnable<Session> cir)
 	{
 		if(wurstSession != null)
 			cir.setReturnValue(wurstSession);
@@ -164,7 +164,7 @@ public abstract class MinecraftClientMixin
 	@Inject(at = @At("HEAD"),
 		method = "getProfileKeys()Lnet/minecraft/client/session/ProfileKeys;",
 		cancellable = true)
-	private void onGetProfileKeys(CallbackInfoReturnable<ProfileKeys> cir)
+	public void onGetProfileKeys(CallbackInfoReturnable<ProfileKeys> cir)
 	{
 		/*if(WurstClient.INSTANCE.getOtfs().noChatReportsOtf.isActive())
 			cir.setReturnValue(ProfileKeys.MISSING);*/
@@ -178,7 +178,7 @@ public abstract class MinecraftClientMixin
 	/*@Inject(at = @At("HEAD"),
 		method = "isTelemetryEnabledByApi()Z",
 		cancellable = true)
-	private void onIsTelemetryEnabledByApi(CallbackInfoReturnable<Boolean> cir)
+	public void onIsTelemetryEnabledByApi(CallbackInfoReturnable<Boolean> cir)
 	{
 		cir.setReturnValue(
 			!WurstClient.INSTANCE.getOtfs().noTelemetryOtf.isEnabled());
@@ -187,7 +187,7 @@ public abstract class MinecraftClientMixin
 	/*@Inject(at = @At("HEAD"),
 		method = "isOptionalTelemetryEnabledByApi()Z",
 		cancellable = true)
-	private void onIsOptionalTelemetryEnabledByApi(
+	public void onIsOptionalTelemetryEnabledByApi(
 		CallbackInfoReturnable<Boolean> cir)
 	{
 		cir.setReturnValue(

@@ -27,7 +27,7 @@ public abstract class ClientCommonNetworkHandlerMixin
 	@WrapOperation(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/network/ClientConnection;send(Lnet/minecraft/network/packet/Packet;)V"),
 		method = "sendPacket(Lnet/minecraft/network/packet/Packet;)V")
-	private void wrapSendPacket(ClientConnection connection, Packet<?> packet,
+	public void wrapSendPacket(ClientConnection connection, Packet<?> packet,
 		Operation<Void> original)
 	{
 		PacketOutputEvent event = new PacketOutputEvent(packet);

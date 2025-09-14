@@ -15,9 +15,9 @@ import net.wurstclient.util.RotationUtils;
 
 public class FacingSetting extends EnumSetting<FacingSetting.Facing>
 {
-	private static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final WurstClient WURST = WurstClient.INSTANCE;
 	
-	private FacingSetting(String name, String description, Facing[] values,
+	public FacingSetting(String name, String description, Facing[] values,
 		Facing selected)
 	{
 		super(name, description, values, selected);
@@ -54,10 +54,10 @@ public class FacingSetting extends EnumSetting<FacingSetting.Facing>
 		SPAM("Packet spam",
 			v -> RotationUtils.getNeededRotations(v).sendPlayerLookPacket());
 		
-		private String name;
-		private Consumer<Vec3d> face;
+		public String name;
+		public Consumer<Vec3d> face;
 		
-		private Facing(String name, Consumer<Vec3d> face)
+		Facing(String name, Consumer<Vec3d> face)
 		{
 			this.name = name;
 			this.face = face;

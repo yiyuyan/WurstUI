@@ -33,8 +33,8 @@ import net.wurstclient.util.text.WText;
 
 public class BlockListSetting extends Setting
 {
-	private final ArrayList<String> blockNames = new ArrayList<>();
-	private final String[] defaultNames;
+	public final ArrayList<String> blockNames = new ArrayList<>();
+	public final String[] defaultNames;
 	
 	public BlockListSetting(String name, WText description, String... blocks)
 	{

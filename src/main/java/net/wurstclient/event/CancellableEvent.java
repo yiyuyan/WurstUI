@@ -9,7 +9,7 @@ package net.wurstclient.event;
 
 public abstract class CancellableEvent<T extends Listener> extends Event<T>
 {
-	private boolean cancelled = false;
+	public boolean cancelled = false;
 	
 	public void cancel()
 	{

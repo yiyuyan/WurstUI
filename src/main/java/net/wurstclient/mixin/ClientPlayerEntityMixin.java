@@ -44,7 +44,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	@Final
 	protected MinecraftClient client;
 	
-	private Screen tempCurrentScreen;
+	public Screen tempCurrentScreen;
 	
 	public ClientPlayerEntityMixin(WurstClient wurst, ClientWorld world,
 		GameProfile profile)
@@ -55,7 +55,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	@Inject(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;tick()V",
 		ordinal = 0), method = "tick()V")
-	private void onTick(CallbackInfo ci)
+	public void onTick(CallbackInfo ci)
 	{
 		EventManager.fire(UpdateEvent.INSTANCE);
 	}
@@ -68,7 +68,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 			target = "Lnet/minecraft/client/input/Input;hasForwardMovement()Z",
 			ordinal = 0),
 		method = "tickMovement()V")
-	private boolean wrapHasForwardMovement(Input input,
+	public boolean wrapHasForwardMovement(Input input,
 		Operation<Boolean> original)
 	{
 		if(WurstClient.INSTANCE.getHax().autoSprintHack.shouldOmniSprint())
@@ -84,7 +84,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	/*@WrapOperation(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/client/network/ClientPlayerEntity;isUsingItem()Z",
 		ordinal = 0), method = "tickMovement()V")
-	private boolean wrapTickMovementItemUse(ClientPlayerEntity instance,
+	public boolean wrapTickMovementItemUse(ClientPlayerEntity instance,
 		Operation<Boolean> original)
 	{
 		if(WurstClient.INSTANCE.getHax().noSlowdownHack.isEnabled())
@@ -94,20 +94,20 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	}*/
 	
 	@Inject(at = @At("HEAD"), method = "sendMovementPackets()V")
-	private void onSendMovementPacketsHEAD(CallbackInfo ci)
+	public void onSendMovementPacketsHEAD(CallbackInfo ci)
 	{
 		EventManager.fire(PreMotionEvent.INSTANCE);
 	}
 	
 	@Inject(at = @At("TAIL"), method = "sendMovementPackets()V")
-	private void onSendMovementPacketsTAIL(CallbackInfo ci)
+	public void onSendMovementPacketsTAIL(CallbackInfo ci)
 	{
 		EventManager.fire(PostMotionEvent.INSTANCE);
 	}
 	
 	@Inject(at = @At("HEAD"),
 		method = "move(Lnet/minecraft/entity/MovementType;Lnet/minecraft/util/math/Vec3d;)V")
-	private void onMove(MovementType type, Vec3d offset, CallbackInfo ci)
+	public void onMove(MovementType type, Vec3d offset, CallbackInfo ci)
 	{
 		EventManager.fire(PlayerMoveEvent.INSTANCE);
 	}
@@ -115,7 +115,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	/*@Inject(at = @At("HEAD"),
 		method = "isAutoJumpEnabled()Z",
 		cancellable = true)
-	private void onIsAutoJumpEnabled(CallbackInfoReturnable<Boolean> cir)
+	public void onIsAutoJumpEnabled(CallbackInfoReturnable<Boolean> cir)
 	{
 		if(!WurstClient.INSTANCE.getHax().stepHack.isAutoJumpAllowed())
 			cir.setReturnValue(false);
@@ -129,7 +129,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		target = "Lnet/minecraft/client/MinecraftClient;currentScreen:Lnet/minecraft/client/gui/screen/Screen;",
 		opcode = Opcodes.GETFIELD,
 		ordinal = 0), method = "tickNausea(Z)V")
-	private void beforeTickNausea(boolean fromPortalEffect, CallbackInfo ci)
+	public void beforeTickNausea(boolean fromPortalEffect, CallbackInfo ci)
 	{
 		if(!WurstClient.INSTANCE.getHax().portalGuiHack.isEnabled())
 			return;
@@ -146,7 +146,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 		target = "Lnet/minecraft/client/network/ClientPlayerEntity;nauseaIntensity:F",
 		opcode = Opcodes.GETFIELD,
 		ordinal = 1), method = "tickNausea(Z)V")
-	private void afterTickNausea(boolean fromPortalEffect, CallbackInfo ci)
+	public void afterTickNausea(boolean fromPortalEffect, CallbackInfo ci)
 	{
 		if(tempCurrentScreen == null)
 			return;
@@ -160,7 +160,7 @@ public class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 	 * too hungry.
 	 */
 	/*@Inject(at = @At("HEAD"), method = "canSprint()Z", cancellable = true)
-	private void onCanSprint(CallbackInfoReturnable<Boolean> cir)
+	public void onCanSprint(CallbackInfoReturnable<Boolean> cir)
 	{
 		if(WurstClient.INSTANCE.getHax().autoSprintHack.shouldSprintHungry())
 			cir.setReturnValue(true);

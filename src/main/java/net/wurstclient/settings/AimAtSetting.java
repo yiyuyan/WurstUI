@@ -17,10 +17,10 @@ import net.wurstclient.util.RotationUtils;
 
 public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 {
-	private static final String FULL_DESCRIPTION_SUFFIX =
+	public static final String FULL_DESCRIPTION_SUFFIX =
 		buildDescriptionSuffix();
 	
-	private AimAtSetting(String name, String description, AimAt[] values,
+	public AimAtSetting(String name, String description, AimAt[] values,
 		AimAt selected)
 	{
 		super(name, description, values, selected);
@@ -47,7 +47,7 @@ public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 		return getSelected().aimFunction.apply(e);
 	}
 	
-	private static String buildDescriptionSuffix()
+	public static String buildDescriptionSuffix()
 	{
 		StringBuilder builder = new StringBuilder("\n\n");
 		AimAt[] values = AimAt.values();
@@ -59,7 +59,7 @@ public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 		return builder.toString();
 	}
 	
-	private static Vec3d aimAtClosestPoint(Entity e)
+	public static Vec3d aimAtClosestPoint(Entity e)
 	{
 		Box box = e.getBoundingBox();
 		Vec3d eyes = RotationUtils.getEyesPos();
@@ -74,18 +74,18 @@ public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 		return new Vec3d(clampedX, clampedY, clampedZ);
 	}
 	
-	private static Vec3d aimAtHead(Entity e)
+	public static Vec3d aimAtHead(Entity e)
 	{
 		float eyeHeight = e.getEyeHeight(e.getPose());
 		return e.getPos().add(0, eyeHeight, 0);
 	}
 	
-	private static Vec3d aimAtCenter(Entity e)
+	public static Vec3d aimAtCenter(Entity e)
 	{
 		return e.getBoundingBox().getCenter();
 	}
 	
-	private static Vec3d aimAtFeet(Entity e)
+	public static Vec3d aimAtFeet(Entity e)
 	{
 		return e.getPos().add(0, 0.001, 0);
 	}
@@ -104,12 +104,12 @@ public class AimAtSetting extends EnumSetting<AimAtSetting.AimAt>
 		FEET("Feet", "Aims at the bottom of the target's hitbox.",
 			AimAtSetting::aimAtFeet);
 		
-		private final String name;
-		private final String description;
-		private final Function<Entity, Vec3d> aimFunction;
+		public final String name;
+		public final String description;
+		public final Function<Entity, Vec3d> aimFunction;
 		
-		private AimAt(String name, String description,
-			Function<Entity, Vec3d> aimFunction)
+		AimAt(String name, String description,
+              Function<Entity, Vec3d> aimFunction)
 		{
 			this.name = name;
 			this.description = description;

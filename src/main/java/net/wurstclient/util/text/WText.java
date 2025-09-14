@@ -23,9 +23,9 @@ import net.minecraft.text.Text;
  */
 public class WText
 {
-	private final ArrayList<WTextContent> contents;
+	public final ArrayList<WTextContent> contents;
 	
-	private WText(WTextContent... contents)
+	public WText(WTextContent... contents)
 	{
 		this.contents = Lists.newArrayList(contents);
 	}

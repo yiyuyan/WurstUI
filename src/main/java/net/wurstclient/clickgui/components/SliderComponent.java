@@ -20,12 +20,12 @@ import net.wurstclient.util.RenderUtils;
 
 public class SliderComponent extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int TEXT_HEIGHT = 11;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int TEXT_HEIGHT = 11;
 	
-	private final SliderSetting setting;
-	private boolean dragging;
+	public final SliderSetting setting;
+	public boolean dragging;
 	
 	public SliderComponent(SliderSetting setting)
 	{
@@ -55,7 +55,7 @@ public class SliderComponent extends Component
 		}
 	}
 	
-	private void handleDragging(int mouseX, int x3, int x4)
+	public void handleDragging(int mouseX, int x3, int x4)
 	{
 		if(!dragging)
 			return;
@@ -163,7 +163,7 @@ public class SliderComponent extends Component
 		context.state.goDownLayer();
 	}
 	
-	private String getTextTooltip()
+	public String getTextTooltip()
 	{
 		String tooltip = setting.getWrappedDescription(200);
 		
@@ -178,7 +178,7 @@ public class SliderComponent extends Component
 		return tooltip;
 	}
 	
-	private String getSliderTooltip()
+	public String getSliderTooltip()
 	{
 		String tooltip =
 			"\u00a7e[ctrl]\u00a7r+\u00a7e[left-click]\u00a7r for precise input\n";

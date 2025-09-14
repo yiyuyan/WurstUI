@@ -18,7 +18,7 @@ public interface MouseScrollListener extends Listener
 	
 	public static class MouseScrollEvent extends Event<MouseScrollListener>
 	{
-		private final double amount;
+		public final double amount;
 		
 		public MouseScrollEvent(double amount)
 		{

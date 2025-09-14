@@ -21,9 +21,9 @@ public interface GetAmbientOcclusionLightLevelListener extends Listener
 	public static class GetAmbientOcclusionLightLevelEvent
 		extends Event<GetAmbientOcclusionLightLevelListener>
 	{
-		private final BlockState state;
-		private float lightLevel;
-		private final float defaultLightLevel;
+		public final BlockState state;
+		public float lightLevel;
+		public final float defaultLightLevel;
 		
 		public GetAmbientOcclusionLightLevelEvent(BlockState state,
 			float lightLevel)

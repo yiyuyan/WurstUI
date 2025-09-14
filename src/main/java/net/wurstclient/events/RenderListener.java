@@ -19,8 +19,8 @@ public interface RenderListener extends Listener
 	
 	public static class RenderEvent extends Event<RenderListener>
 	{
-		private final MatrixStack matrixStack;
-		private final float partialTicks;
+		public final MatrixStack matrixStack;
+		public final float partialTicks;
 		
 		public RenderEvent(MatrixStack matrixStack, float partialTicks)
 		{

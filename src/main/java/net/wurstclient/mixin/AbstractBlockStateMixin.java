@@ -30,7 +30,7 @@ import net.wurstclient.events.IsNormalCubeListener.IsNormalCubeEvent;
 @Mixin(AbstractBlockState.class)
 public abstract class AbstractBlockStateMixin extends State<Block, BlockState>
 {
-	private AbstractBlockStateMixin(WurstClient wurst, Block owner,
+	public AbstractBlockStateMixin(WurstClient wurst, Block owner,
 		Reference2ObjectArrayMap<Property<?>, Comparable<?>> propertyMap,
 		MapCodec<BlockState> codec)
 	{
@@ -40,7 +40,7 @@ public abstract class AbstractBlockStateMixin extends State<Block, BlockState>
 	@Inject(at = @At("TAIL"),
 		method = "isFullCube(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)Z",
 		cancellable = true)
-	private void onIsFullCube(BlockView world, BlockPos pos,
+	public void onIsFullCube(BlockView world, BlockPos pos,
 		CallbackInfoReturnable<Boolean> cir)
 	{
 		IsNormalCubeEvent event = new IsNormalCubeEvent();
@@ -52,7 +52,7 @@ public abstract class AbstractBlockStateMixin extends State<Block, BlockState>
 	@Inject(at = @At("TAIL"),
 		method = "getAmbientOcclusionLightLevel(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;)F",
 		cancellable = true)
-	private void onGetAmbientOcclusionLightLevel(BlockView blockView,
+	public void onGetAmbientOcclusionLightLevel(BlockView blockView,
 		BlockPos blockPos, CallbackInfoReturnable<Float> cir)
 	{
 		GetAmbientOcclusionLightLevelEvent event =
@@ -66,7 +66,7 @@ public abstract class AbstractBlockStateMixin extends State<Block, BlockState>
 	/*@Inject(at = @At("HEAD"),
 		method = "getOutlineShape(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/ShapeContext;)Lnet/minecraft/util/shape/VoxelShape;",
 		cancellable = true)
-	private void onGetOutlineShape(BlockView view, BlockPos pos,
+	public void onGetOutlineShape(BlockView view, BlockPos pos,
 		ShapeContext context, CallbackInfoReturnable<VoxelShape> cir)
 	{
 		if(context == ShapeContext.absent())
@@ -86,7 +86,7 @@ public abstract class AbstractBlockStateMixin extends State<Block, BlockState>
 	/*@Inject(at = @At("HEAD"),
 		method = "getCollisionShape(Lnet/minecraft/world/BlockView;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/ShapeContext;)Lnet/minecraft/util/shape/VoxelShape;",
 		cancellable = true)
-	private void onGetCollisionShape(BlockView world, BlockPos pos,
+	public void onGetCollisionShape(BlockView world, BlockPos pos,
 		ShapeContext context, CallbackInfoReturnable<VoxelShape> cir)
 	{
 		if(getFluidState().isEmpty())

@@ -16,12 +16,12 @@ public abstract class Component
 	protected static final MinecraftClient MC = WurstClient.MC;
 	protected static final WurstClient WURST = WurstClient.INSTANCE;
 	
-	private int x;
-	private int y;
-	private int width;
-	private int height;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
 	
-	private Window parent;
+	public Window parent;
 	
 	public void handleMouseClick(double mouseX, double mouseY, int mouseButton)
 	{
@@ -97,7 +97,7 @@ public abstract class Component
 		this.parent = parent;
 	}
 	
-	private void invalidateParent()
+	public void invalidateParent()
 	{
 		if(parent != null)
 			parent.invalidate();

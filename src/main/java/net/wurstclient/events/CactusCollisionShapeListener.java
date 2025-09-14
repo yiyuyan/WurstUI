@@ -20,7 +20,7 @@ public interface CactusCollisionShapeListener extends Listener
 	public static class CactusCollisionShapeEvent
 		extends Event<CactusCollisionShapeListener>
 	{
-		private VoxelShape collisionShape;
+		public VoxelShape collisionShape;
 		
 		public VoxelShape getCollisionShape()
 		{

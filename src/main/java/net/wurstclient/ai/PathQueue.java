@@ -13,13 +13,13 @@ import java.util.PriorityQueue;
 
 public class PathQueue
 {
-	private final PriorityQueue<PathQueue.Entry> queue =
+	public final PriorityQueue<PathQueue.Entry> queue =
 		new PriorityQueue<>(Comparator.comparing(e1 -> e1.priority));
 	
-	private static class Entry
+	public static class Entry
 	{
-		private PathPos pos;
-		private float priority;
+		public PathPos pos;
+		public float priority;
 		
 		public Entry(PathPos pos, float priority)
 		{

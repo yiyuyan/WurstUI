@@ -32,9 +32,9 @@ import net.wurstclient.util.text.WText;
 
 public class FileSetting extends Setting
 {
-	private final Path folder;
-	private String selectedFile = "";
-	private final Consumer<Path> createDefaultFiles;
+	public final Path folder;
+	public String selectedFile = "";
+	public final Consumer<Path> createDefaultFiles;
 	
 	public FileSetting(String name, WText description, String folderName,
 		Consumer<Path> createDefaultFiles)
@@ -79,7 +79,7 @@ public class FileSetting extends Setting
 		WurstClient.INSTANCE.saveSettings();
 	}
 	
-	private void setSelectedFileToDefault()
+	public void setSelectedFileToDefault()
 	{
 		ArrayList<Path> files = listFiles();
 		
@@ -89,7 +89,7 @@ public class FileSetting extends Setting
 		selectedFile = "" + files.get(0).getFileName();
 	}
 	
-	private ArrayList<Path> createDefaultFiles()
+	public ArrayList<Path> createDefaultFiles()
 	{
 		try
 		{

@@ -19,8 +19,8 @@ public interface IsPlayerInLavaListener extends Listener
 	public static class IsPlayerInLavaEvent
 		extends Event<IsPlayerInLavaListener>
 	{
-		private boolean inLava;
-		private final boolean normallyInLava;
+		public boolean inLava;
+		public final boolean normallyInLava;
 		
 		public IsPlayerInLavaEvent(boolean inLava)
 		{

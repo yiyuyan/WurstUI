@@ -19,13 +19,13 @@ import net.wurstclient.util.text.WText;
 public class SwingHandSetting
 	extends EnumSetting<SwingHandSetting.SwingHand>
 {
-	private static final MinecraftClient MC = WurstClient.MC;
-	private static final WText FULL_DESCRIPTION_SUFFIX =
+	public static final MinecraftClient MC = WurstClient.MC;
+	public static final WText FULL_DESCRIPTION_SUFFIX =
 		buildDescriptionSuffix(true);
-	private static final WText REDUCED_DESCRIPTION_SUFFIX =
+	public static final WText REDUCED_DESCRIPTION_SUFFIX =
 		buildDescriptionSuffix(false);
 	
-	private SwingHandSetting(String name, WText description, SwingHand[] values,
+	public SwingHandSetting(String name, WText description, SwingHand[] values,
 		SwingHand selected)
 	{
 		super(name, description, values, selected);
@@ -70,7 +70,7 @@ public class SwingHandSetting
 			hack.getName());
 	}
 	
-	private static WText hackDescription(Hack hack)
+	public static WText hackDescription(Hack hack)
 	{
 		return WText.translated("description.wurst.setting."
 			+ hack.getName().toLowerCase() + ".swing_hand");
@@ -81,7 +81,7 @@ public class SwingHandSetting
 		getSelected().swing(hand);
 	}
 	
-	private static WText buildDescriptionSuffix(boolean includeOff)
+	public static WText buildDescriptionSuffix(boolean includeOff)
 	{
 		WText text = WText.literal("\n\n");
 		SwingHand[] values = includeOff ? SwingHand.values()
@@ -104,14 +104,14 @@ public class SwingHandSetting
 		
 		CLIENT("Client-side", hand -> MC.player.swingHand(hand));
 		
-		private static final String TRANSLATION_KEY_PREFIX =
+		public static final String TRANSLATION_KEY_PREFIX =
 			"description.wurst.setting.generic.swing_hand.";
 		
-		private final String name;
-		private final WText description;
-		private final Consumer<Hand> swing;
+		public final String name;
+		public final WText description;
+		public final Consumer<Hand> swing;
 		
-		private SwingHand(String name, Consumer<Hand> swing)
+		SwingHand(String name, Consumer<Hand> swing)
 		{
 			this.name = name;
 			description =

@@ -43,12 +43,12 @@ public enum MultiProcessingUtils
 		return makeProcess(mainClass, args).start();
 	}
 	
-	private static Path getJavaDir()
+	public static Path getJavaDir()
 	{
 		return Paths.get(System.getProperty("java.home"), "bin", "java");
 	}
 	
-	private static Path getClasspath()
+	public static Path getClasspath()
 	{
 		try
 		{

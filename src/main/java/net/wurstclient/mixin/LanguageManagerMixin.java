@@ -23,7 +23,7 @@ public abstract class LanguageManagerMixin
 {
 	@Inject(at = @At("HEAD"),
 		method = "reload(Lnet/minecraft/resource/ResourceManager;)V")
-	private void onReload(ResourceManager manager, CallbackInfo ci)
+	public void onReload(ResourceManager manager, CallbackInfo ci)
 	{
 		// Using a mixin for this because WurstClient.initialize() runs too
 		// early to call ResourceManager.registerReloader()

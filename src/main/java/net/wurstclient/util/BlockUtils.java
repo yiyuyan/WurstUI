@@ -34,7 +34,7 @@ public enum BlockUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public static BlockState getState(BlockPos pos)
 	{
@@ -120,7 +120,7 @@ public enum BlockUtils
 		return getBlock(pos).getHardness() < 0;
 	}
 	
-	private static VoxelShape getOutlineShape(BlockPos pos)
+	public static VoxelShape getOutlineShape(BlockPos pos)
 	{
 		return getState(pos).getOutlineShape(MC.world, pos);
 	}

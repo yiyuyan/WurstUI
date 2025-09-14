@@ -22,7 +22,7 @@ import com.google.gson.JsonElement;
  */
 public class WsonArray
 {
-	private final JsonArray json;
+	public final JsonArray json;
 	
 	public WsonArray(JsonArray json)
 	{

@@ -21,11 +21,11 @@ import net.wurstclient.settings.TextFieldSetting;
 
 public class EditTextFieldScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final TextFieldSetting setting;
+	public final Screen prevScreen;
+	public final TextFieldSetting setting;
 	
-	private TextFieldWidget valueField;
-	private ButtonWidget doneButton;
+	public TextFieldWidget valueField;
+	public ButtonWidget doneButton;
 	
 	public EditTextFieldScreen(Screen prevScreen, TextFieldSetting setting)
 	{
@@ -57,7 +57,7 @@ public class EditTextFieldScreen extends Screen
 		addDrawableChild(doneButton);
 	}
 	
-	private void done()
+	public void done()
 	{
 		String value = valueField.getText();
 		setting.setValue(value);

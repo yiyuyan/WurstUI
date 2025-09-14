@@ -21,10 +21,10 @@ import net.wurstclient.hack.Hack;
 
 public class HackListHUD implements UpdateListener
 {
-	private final ArrayList<HackListEntry> activeHax = new ArrayList<>();
-	//private final HackListOtf otf = WurstClient.INSTANCE.getOtfs().hackListOtf;
-	private int posY;
-	private int textColor;
+	public final ArrayList<HackListEntry> activeHax = new ArrayList<>();
+	//public final HackListOtf otf = WurstClient.INSTANCE.getOtfs().hackListOtf;
+	public int posY;
+	public int textColor;
 	
 	public HackListHUD()
 	{
@@ -61,14 +61,14 @@ public class HackListHUD implements UpdateListener
 			drawHackList(context, partialTicks);*/
 	}
 	
-	private void drawCounter(DrawContext context)
+	public void drawCounter(DrawContext context)
 	{
 		long size = activeHax.stream().filter(e -> e.hack.isEnabled()).count();
 		String s = size + " hack" + (size != 1 ? "s" : "") + " active";
 		drawString(context, s);
 	}
 	
-	private void drawHackList(DrawContext context, float partialTicks)
+	public void drawHackList(DrawContext context, float partialTicks)
 	{
         for(HackListEntry e : activeHax)
             drawString(context, e.hack.getRenderName());
@@ -90,7 +90,7 @@ public class HackListHUD implements UpdateListener
 		}else activeHax.remove(entry);
 	}
 	
-	private void sort()
+	public void sort()
 	{
 		/*Comparator<HackListEntry> comparator =
 			Comparator.comparing(hle -> hle.hack, otf.getComparator());
@@ -116,7 +116,7 @@ public class HackListHUD implements UpdateListener
 		}
 	}
 	
-	private void drawString(DrawContext context, String s)
+	public void drawString(DrawContext context, String s)
 	{
 		TextRenderer tr = WurstClient.MC.textRenderer;
 		int posX;
@@ -134,7 +134,7 @@ public class HackListHUD implements UpdateListener
 		posY += 9;
 	}
 	
-	private void drawWithOffset(DrawContext context, HackListEntry e,
+	public void drawWithOffset(DrawContext context, HackListEntry e,
 		float partialTicks)
 	{
 		TextRenderer tr = WurstClient.MC.textRenderer;
@@ -159,11 +159,11 @@ public class HackListHUD implements UpdateListener
 		posY += 9;
 	}
 	
-	private static class HackListEntry
+	public static class HackListEntry
 	{
-		private final Hack hack;
-		private int offset;
-		private int prevOffset;
+		public final Hack hack;
+		public int offset;
+		public int prevOffset;
 		
 		public HackListEntry(Hack mod, int offset)
 		{

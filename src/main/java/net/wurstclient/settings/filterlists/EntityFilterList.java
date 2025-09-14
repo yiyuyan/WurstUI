@@ -20,7 +20,7 @@ import net.wurstclient.settings.filters.*;
 
 public class EntityFilterList
 {
-	private final List<EntityFilter> entityFilters;
+	public final List<EntityFilter> entityFilters;
 	
 	public EntityFilterList(EntityFilter... filters)
 	{

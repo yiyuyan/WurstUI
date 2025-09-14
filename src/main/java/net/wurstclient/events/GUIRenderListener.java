@@ -19,8 +19,8 @@ public interface GUIRenderListener extends Listener
 	
 	public static class GUIRenderEvent extends Event<GUIRenderListener>
 	{
-		private final float partialTicks;
-		private final DrawContext context;
+		public final float partialTicks;
+		public final DrawContext context;
 		
 		public GUIRenderEvent(DrawContext context, float partialTicks)
 		{

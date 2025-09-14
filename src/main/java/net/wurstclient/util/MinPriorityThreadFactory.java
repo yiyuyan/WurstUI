@@ -14,10 +14,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class MinPriorityThreadFactory implements ThreadFactory
 {
-	private static final AtomicInteger poolNumber = new AtomicInteger(1);
-	private final ThreadGroup group;
-	private final AtomicInteger threadNumber = new AtomicInteger(1);
-	private final String namePrefix;
+	public static final AtomicInteger poolNumber = new AtomicInteger(1);
+	public final ThreadGroup group;
+	public final AtomicInteger threadNumber = new AtomicInteger(1);
+	public final String namePrefix;
 	
 	public MinPriorityThreadFactory()
 	{

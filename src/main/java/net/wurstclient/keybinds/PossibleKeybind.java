@@ -9,8 +9,8 @@ package net.wurstclient.keybinds;
 
 public class PossibleKeybind
 {
-	private final String command;
-	private final String description;
+	public final String command;
+	public final String description;
 	
 	public PossibleKeybind(String command, String description)
 	{

@@ -23,11 +23,11 @@ import net.wurstclient.util.json.WsonObject;
 
 public class AutoBuildTemplate
 {
-	private final Path path;
-	private final String name;
-	private final LinkedHashSet<BlockData> blocks;
+	public final Path path;
+	public final String name;
+	public final LinkedHashSet<BlockData> blocks;
 	
-	private AutoBuildTemplate(Path path, LinkedHashSet<BlockData> blocks)
+	public AutoBuildTemplate(Path path, LinkedHashSet<BlockData> blocks)
 	{
 		this.path = path;
 		String fileName = path.getFileName().toString();
@@ -57,7 +57,7 @@ public class AutoBuildTemplate
 		return new AutoBuildTemplate(path, loadedBlocks);
 	}
 	
-	private static void loadV2(WsonArray jsonBlocks,
+	public static void loadV2(WsonArray jsonBlocks,
 		LinkedHashSet<BlockData> loadedBlocks) throws JsonException
 	{
 		for(int i = 0; i < jsonBlocks.size(); i++)
@@ -81,7 +81,7 @@ public class AutoBuildTemplate
 		}
 	}
 	
-	private static void loadV1(WsonArray jsonBlocks,
+	public static void loadV1(WsonArray jsonBlocks,
 		LinkedHashSet<BlockData> loadedBlocks) throws JsonException
 	{
 		for(int i = 0; i < jsonBlocks.size(); i++)
@@ -135,7 +135,7 @@ public class AutoBuildTemplate
 		return name;
 	}
 	
-	private record BlockData(int[] pos, String name)
+	public record BlockData(int[] pos, String name)
 	{
 		public BlockPos toBlockPos(BlockPos origin, Direction front,
 			Direction left)

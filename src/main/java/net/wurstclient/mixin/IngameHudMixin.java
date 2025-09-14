@@ -30,13 +30,13 @@ public class IngameHudMixin
 {
 	@Shadow
 	@Final
-	private DebugHud debugHud;
+    private DebugHud debugHud;
 	
 	// runs after renderScoreboardSidebar()
 	// and before playerListHud.setVisible()
 	@Inject(at = @At("HEAD"),
 		method = "renderPlayerList(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/client/render/RenderTickCounter;)V")
-	private void onRenderPlayerList(DrawContext context,
+	public void onRenderPlayerList(DrawContext context,
 		RenderTickCounter tickCounter, CallbackInfo ci)
 	{
 		if(debugHud.shouldShowDebugHud())
@@ -49,7 +49,7 @@ public class IngameHudMixin
 	@Inject(at = @At("HEAD"),
 		method = "renderOverlay(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/util/Identifier;F)V",
 		cancellable = true)
-	private void onRenderOverlay(DrawContext context, Identifier texture,
+	public void onRenderOverlay(DrawContext context, Identifier texture,
 		float opacity, CallbackInfo ci)
 	{
 		if(texture == null)
@@ -70,7 +70,7 @@ public class IngameHudMixin
 	@Inject(at = @At("HEAD"),
 		method = "renderVignetteOverlay",
 		cancellable = true)
-	private void onRenderVignetteOverlay(DrawContext context, Entity entity,
+	public void onRenderVignetteOverlay(DrawContext context, Entity entity,
 		CallbackInfo ci)
 	{
 		HackList hax = WurstClient.INSTANCE.getHax();

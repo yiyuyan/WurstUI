@@ -18,7 +18,7 @@ import net.minecraft.entity.passive.WaterAnimalEntity;
 
 public class FilterPassiveSetting extends EntityFilterCheckbox
 {
-	private static final String EXCEPTIONS_TEXT = "\n\nThis filter does not"
+	public static final String EXCEPTIONS_TEXT = "\n\nThis filter does not"
 		+ " affect wolves, bees, polar bears, pufferfish, and villagers.";
 	
 	public FilterPassiveSetting(String description, boolean checked)

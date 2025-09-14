@@ -18,10 +18,10 @@ public interface KeyPressListener extends Listener
 	
 	public static class KeyPressEvent extends Event<KeyPressListener>
 	{
-		private final int keyCode;
-		private final int scanCode;
-		private final int action;
-		private final int modifiers;
+		public final int keyCode;
+		public final int scanCode;
+		public final int action;
+		public final int modifiers;
 		
 		public KeyPressEvent(int keyCode, int scanCode, int action,
 			int modifiers)

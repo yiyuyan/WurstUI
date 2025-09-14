@@ -15,7 +15,7 @@ import net.wurstclient.settings.Setting;
 
 public class BlockListEditButton extends AbstractListEditButton
 {
-	private final BlockListSetting setting;
+	public final BlockListSetting setting;
 	
 	public BlockListEditButton(BlockListSetting setting)
 	{

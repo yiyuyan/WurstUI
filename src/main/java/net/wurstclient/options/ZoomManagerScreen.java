@@ -20,8 +20,8 @@ import net.wurstclient.util.WurstColors;
 
 public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 {
-	private Screen prevScreen;
-	private ButtonWidget scrollButton;
+	public Screen prevScreen;
+	public ButtonWidget scrollButton;
 	
 	public ZoomManagerScreen(Screen par1GuiScreen)
 	{
@@ -72,7 +72,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 				.build());*/
 	}
 	
-	private void toggleScroll()
+	public void toggleScroll()
 	{
 		/*ZoomOtf zoom = WurstClient.INSTANCE.getOtfs().zoomOtf;
 		CheckboxSetting scroll = zoom.getScrollSetting();
@@ -82,7 +82,7 @@ public class ZoomManagerScreen extends Screen implements PressAKeyCallback
 			Text.literal("Use Mouse Wheel: " + onOrOff(scroll.isChecked())));*/
 	}
 	
-	private String onOrOff(boolean on)
+	public String onOrOff(boolean on)
 	{
 		return on ? "ON" : "OFF";
 	}

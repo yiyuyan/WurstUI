@@ -77,10 +77,10 @@ public enum DefaultAutoBuildTemplates
 		{-2, 1, 0}, {-2, 1, 1}, {-1, 1, 1}, {-1, 2, 0}, {0, 2, 0}, {1, 2, 0},
 		{2, 2, 0}, {3, 1, 0}, {-2, 1, -1}, {-2, 2, 0}, {-3, 1, 0}});
 	
-	private final String name;
-	private final int[][] data;
+	public final String name;
+	public final int[][] data;
 	
-	private DefaultAutoBuildTemplates(String name, int[][] data)
+	DefaultAutoBuildTemplates(String name, int[][] data)
 	{
 		this.name = name;
 		this.data = data;
@@ -93,7 +93,7 @@ public enum DefaultAutoBuildTemplates
 			createFile(folder, template);
 	}
 	
-	private static void createFile(Path folder,
+	public static void createFile(Path folder,
 		DefaultAutoBuildTemplates template)
 	{
 		JsonObject json = toJson(template);
@@ -110,7 +110,7 @@ public enum DefaultAutoBuildTemplates
 		}
 	}
 	
-	private static JsonObject toJson(DefaultAutoBuildTemplates template)
+	public static JsonObject toJson(DefaultAutoBuildTemplates template)
 	{
 		JsonObject json = new JsonObject();
 		JsonElement blocks = JsonUtils.GSON.toJsonTree(template.data);

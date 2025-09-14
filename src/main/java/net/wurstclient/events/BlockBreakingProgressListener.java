@@ -21,8 +21,8 @@ public interface BlockBreakingProgressListener extends Listener
 	public static class BlockBreakingProgressEvent
 		extends Event<BlockBreakingProgressListener>
 	{
-		private final BlockPos blockPos;
-		private final Direction direction;
+		public final BlockPos blockPos;
+		public final Direction direction;
 		
 		public BlockBreakingProgressEvent(BlockPos blockPos,
 			Direction direction)

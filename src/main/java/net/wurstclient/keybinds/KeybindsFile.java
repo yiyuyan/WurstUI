@@ -24,7 +24,7 @@ import net.wurstclient.util.json.WsonObject;
 
 public class KeybindsFile
 {
-	private final Path path;
+	public final Path path;
 	
 	public KeybindsFile(Path path)
 	{
@@ -64,7 +64,7 @@ public class KeybindsFile
 		list.setKeybinds(parseFile(profilePath));
 	}
 	
-	private Set<Keybind> parseFile(Path path) throws IOException, JsonException
+	public Set<Keybind> parseFile(Path path) throws IOException, JsonException
 	{
 		WsonObject wson = JsonUtils.parseFileToObject(path);
 		Set<Keybind> newKeybinds = new HashSet<>();
@@ -83,7 +83,7 @@ public class KeybindsFile
 		return newKeybinds;
 	}
 	
-	private boolean isValidKeyName(String key)
+	public boolean isValidKeyName(String key)
 	{
 		try
 		{
@@ -122,7 +122,7 @@ public class KeybindsFile
 		JsonUtils.toJson(json, profilePath);
 	}
 	
-	private JsonObject createJson(KeybindList list)
+	public JsonObject createJson(KeybindList list)
 	{
 		JsonObject json = new JsonObject();
 		

@@ -16,7 +16,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Objects;
-import java.util.stream.Stream;
 
 import org.joml.Matrix3x2fStack;
 import org.lwjgl.glfw.GLFW;
@@ -33,30 +32,29 @@ import net.wurstclient.Category;
 import net.wurstclient.Feature;
 import net.wurstclient.WurstClient;
 import net.wurstclient.clickgui.components.FeatureButton;
-import net.wurstclient.settings.Setting;
 import net.wurstclient.util.RenderUtils;
 import net.wurstclient.util.json.JsonUtils;
 
 public class ClickGui
 {
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final MinecraftClient MC = WurstClient.MC;
+
+	public final ArrayList<Window> windows = new ArrayList<>();
+	public final ArrayList<Popup> popups = new ArrayList<>();
+	public final Path windowsFile;
 	
-	private final ArrayList<Window> windows = new ArrayList<>();
-	private final ArrayList<Popup> popups = new ArrayList<>();
-	private final Path windowsFile;
-	
-	private float[] bgColor = new float[3];
-	private float[] acColor = new float[3];
-	private int txtColor;
-	private float opacity;
-	private float ttOpacity;
-	private int maxHeight;
-	private int maxSettingsHeight;
-	
-	private String tooltip = "";
-	
-	private boolean leftMouseButtonPressed;
+	public float[] bgColor = new float[3];
+	public float[] acColor = new float[3];
+	public int txtColor;
+	public float opacity;
+	public float ttOpacity;
+	public int maxHeight;
+	public int maxSettingsHeight;
+
+	public String tooltip = "";
+
+	public boolean leftMouseButtonPressed;
 	
 	public ClickGui(Path windowsFile)
 	{
@@ -162,7 +160,7 @@ public class ClickGui
 		saveWindows();
 	}
 	
-	private void saveWindows()
+	public void saveWindows()
 	{
 		JsonObject json = new JsonObject();
 		
@@ -278,7 +276,7 @@ public class ClickGui
 		popups.removeIf(Popup::isClosing);
 	}
 	
-	private boolean handlePopupMouseClick(double mouseX, double mouseY,
+	public boolean handlePopupMouseClick(double mouseX, double mouseY,
 		int mouseButton)
 	{
 		for(int i = popups.size() - 1; i >= 0; i--)
@@ -313,7 +311,7 @@ public class ClickGui
 		return false;
 	}
 	
-	private void handleWindowMouseClick(int mouseX, int mouseY, int mouseButton)
+	public void handleWindowMouseClick(int mouseX, int mouseY, int mouseButton)
 	{
 		for(int i = windows.size() - 1; i >= 0; i--)
 		{
@@ -362,7 +360,7 @@ public class ClickGui
 		}
 	}
 	
-	private void handleTitleBarMouseClick(Window window, int mouseX, int mouseY,
+	public void handleTitleBarMouseClick(Window window, int mouseX, int mouseY,
 		int mouseButton)
 	{
 		if(mouseButton != 0)
@@ -411,7 +409,7 @@ public class ClickGui
 		window.startDragging(mouseX, mouseY);
 	}
 	
-	private void handleScrollbarMouseClick(Window window, int mouseX,
+	public void handleScrollbarMouseClick(Window window, int mouseX,
 		int mouseY, int mouseButton)
 	{
 		if(mouseButton != GLFW.GLFW_MOUSE_BUTTON_LEFT)
@@ -434,7 +432,7 @@ public class ClickGui
 		window.startDraggingScrollbar(window.getY() + 13 + mouseY);
 	}
 	
-	private void handleComponentMouseClick(Window window, double mouseX,
+	public void handleComponentMouseClick(Window window, double mouseX,
 		double mouseY, int mouseButton)
 	{
 		for(int i2 = window.countChildren() - 1; i2 >= 0; i2--)
@@ -601,7 +599,7 @@ public class ClickGui
 			acColor = clickGui.getAccentColor();*/
 	}
 	
-	private void renderWindow(DrawContext context, Window window, int mouseX,
+	public void renderWindow(DrawContext context, Window window, int mouseX,
 		int mouseY, float partialTicks)
 	{
 		int x1 = window.getX();
@@ -776,7 +774,7 @@ public class ClickGui
 		context.state.goDownLayer();
 	}
 	
-	private void renderTitleBarButton(DrawContext context, int x1, int y1,
+	public void renderTitleBarButton(DrawContext context, int x1, int y1,
 		int x2, int y2, boolean hovering)
 	{
 		int x3 = x2 + 2;

@@ -33,27 +33,27 @@ import net.wurstclient.util.RenderUtils;
 
 public class PathFinder
 {
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
-	private final PlayerAbilities abilities = PlayerAbilities.get();
+	public final PlayerAbilities abilities = PlayerAbilities.get();
 	protected boolean fallingAllowed = true;
 	protected boolean divingAllowed = true;
 	
-	private final PathPos start;
+	public final PathPos start;
 	protected PathPos current;
-	private final BlockPos goal;
+	public final BlockPos goal;
 	
-	private final HashMap<PathPos, Float> costMap = new HashMap<>();
+	public final HashMap<PathPos, Float> costMap = new HashMap<>();
 	protected final HashMap<PathPos, PathPos> prevPosMap = new HashMap<>();
-	private final PathQueue queue = new PathQueue();
+	public final PathQueue queue = new PathQueue();
 	
 	protected int thinkSpeed = 1024;
 	protected int thinkTime = 200;
-	private int iterations;
+	public int iterations;
 	
 	protected boolean done;
 	protected boolean failed;
-	private final ArrayList<PathPos> path = new ArrayList<>();
+	public final ArrayList<PathPos> path = new ArrayList<>();
 	
 	public PathFinder(BlockPos goal)
 	{
@@ -112,12 +112,12 @@ public class PathFinder
 		return done = goal.equals(current);
 	}
 	
-	private boolean checkFailed()
+	public boolean checkFailed()
 	{
 		return failed = queue.isEmpty() || iterations >= thinkSpeed * thinkTime;
 	}
 	
-	private ArrayList<PathPos> getNeighbors(PathPos pos)
+	public ArrayList<PathPos> getNeighbors(PathPos pos)
 	{
 		ArrayList<PathPos> neighbors = new ArrayList<>();
 		
@@ -202,7 +202,7 @@ public class PathFinder
 		return neighbors;
 	}
 	
-	private boolean checkHorizontalMovement(BlockPos current, BlockPos next)
+	public boolean checkHorizontalMovement(BlockPos current, BlockPos next)
 	{
 		if(isPassable(next) && (canFlyAt(current) || canGoThrough(next.down())
 			|| canSafelyStandOn(next.down())))
@@ -211,7 +211,7 @@ public class PathFinder
 		return false;
 	}
 	
-	private boolean checkDiagonalMovement(BlockPos current,
+	public boolean checkDiagonalMovement(BlockPos current,
 		Direction direction1, Direction direction2)
 	{
 		BlockPos horizontal1 = current.offset(direction1);
@@ -279,7 +279,7 @@ public class PathFinder
 	}
 	
 	@SuppressWarnings("deprecation")
-	private boolean canGoThrough(BlockPos pos)
+	public boolean canGoThrough(BlockPos pos)
 	{
 		// check if loaded
 		// Can't see why isChunkLoaded() is deprecated. Still seems to be widely
@@ -306,7 +306,7 @@ public class PathFinder
 		return true;
 	}
 	
-	private boolean canGoAbove(BlockPos pos)
+	public boolean canGoAbove(BlockPos pos)
 	{
 		// check for fences, etc.
 		Block block = BlockUtils.getBlock(pos);
@@ -317,7 +317,7 @@ public class PathFinder
 		return true;
 	}
 	
-	private boolean canSafelyStandOn(BlockPos pos)
+	public boolean canSafelyStandOn(BlockPos pos)
 	{
 		// check if solid
 		if(!canBeSolid(pos))
@@ -333,7 +333,7 @@ public class PathFinder
 		return true;
 	}
 	
-	private boolean canFallBelow(PathPos pos)
+	public boolean canFallBelow(PathPos pos)
 	{
 		// check if player can keep falling
 		BlockPos down2 = pos.down(2);
@@ -382,13 +382,13 @@ public class PathFinder
 		return false;
 	}
 	
-	private boolean canFlyAt(BlockPos pos)
+	public boolean canFlyAt(BlockPos pos)
 	{
 		return abilities.flying() || !abilities.noWaterSlowdown()
 			&& BlockUtils.getBlock(pos) == Blocks.WATER;
 	}
 	
-	private boolean canClimbUpAt(BlockPos pos)
+	public boolean canClimbUpAt(BlockPos pos)
 	{
 		// check if this block works for climbing
 		Block block = BlockUtils.getBlock(pos);
@@ -407,7 +407,7 @@ public class PathFinder
 		return true;
 	}
 	
-	private boolean canMoveSidewaysInMidairAt(BlockPos pos)
+	public boolean canMoveSidewaysInMidairAt(BlockPos pos)
 	{
 		// check feet
 		Block blockFeet = BlockUtils.getBlock(pos);
@@ -426,7 +426,7 @@ public class PathFinder
 		return false;
 	}
 	
-	private float getCost(BlockPos current, BlockPos next)
+	public float getCost(BlockPos current, BlockPos next)
 	{
 		float[] costs = {0.5F, 0.5F};
 		BlockPos[] positions = {current, next};
@@ -463,7 +463,7 @@ public class PathFinder
 		return cost;
 	}
 	
-	private float getHeuristic(BlockPos pos)
+	public float getHeuristic(BlockPos pos)
 	{
 		float dx = Math.abs(pos.getX() - goal.getX());
 		float dy = Math.abs(pos.getY() - goal.getY());

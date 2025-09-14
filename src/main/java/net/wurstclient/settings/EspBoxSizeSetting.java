@@ -30,10 +30,10 @@ public class EspBoxSizeSetting
 		ACCURATE("Accurate", 0),
 		FANCY("Fancy", 0.1F);
 		
-		private final String name;
-		private final float extraSize;
+		public final String name;
+		public final float extraSize;
 		
-		private BoxSize(String name, float extraSize)
+		BoxSize(String name, float extraSize)
 		{
 			this.name = name;
 			this.extraSize = extraSize;

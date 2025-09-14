@@ -17,8 +17,8 @@ import java.awt.*;
 
 public class WurstLogo
 {
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final Identifier LOGO_TEXTURE =
+	public static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final Identifier LOGO_TEXTURE =
 		Identifier.of("wurstui", "wurstui_128.png");
 	
 	public void render(DrawContext context)
@@ -47,7 +47,7 @@ public class WurstLogo
 		context.state.goDownLayer();
 	}
 	
-	private String getVersionString()
+	public String getVersionString()
 	{
 		String version = "v" + WurstClient.VERSION;
 		version += " MC" + WurstClient.MC_VERSION;

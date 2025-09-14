@@ -18,12 +18,12 @@ public interface KnockbackListener extends Listener
 	
 	public static class KnockbackEvent extends Event<KnockbackListener>
 	{
-		private double x;
-		private double y;
-		private double z;
-		private final double defaultX;
-		private final double defaultY;
-		private final double defaultZ;
+		public double x;
+		public double y;
+		public double z;
+		public final double defaultX;
+		public final double defaultY;
+		public final double defaultZ;
 		
 		public KnockbackEvent(double x, double y, double z)
 		{

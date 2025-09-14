@@ -15,10 +15,10 @@ import net.wurstclient.WurstTranslator;
 
 public class WTranslatedTextContent implements WTextContent
 {
-	private final String key;
-	private final Object[] args;
-	private String translation;
-	private Map<String, String> lastLanguage;
+	public final String key;
+	public final Object[] args;
+	public String translation;
+	public Map<String, String> lastLanguage;
 	
 	public WTranslatedTextContent(String key, Object... args)
 	{
@@ -26,7 +26,7 @@ public class WTranslatedTextContent implements WTextContent
 		this.args = args;
 	}
 	
-	private void update()
+	public void update()
 	{
 		WurstTranslator translator = WurstClient.INSTANCE.getTranslator();
 		Map<String, String> language = translator.getWurstsCurrentLanguage();

@@ -28,11 +28,11 @@ public class AllowedAddressResolverMixin
 {
 	@Shadow
 	@Final
-	private AddressResolver addressResolver;
+    private AddressResolver addressResolver;
 	
 	@Shadow
 	@Final
-	private RedirectResolver redirectResolver;
+    private RedirectResolver redirectResolver;
 	
 	/**
 	 * This mixin allows users to connect to servers that have been shadowbanned

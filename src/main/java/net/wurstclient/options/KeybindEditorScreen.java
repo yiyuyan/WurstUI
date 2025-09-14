@@ -20,13 +20,13 @@ import net.wurstclient.util.WurstColors;
 public class KeybindEditorScreen extends Screen
 	implements PressAKeyCallback
 {
-	private final Screen prevScreen;
+	public final Screen prevScreen;
 	
-	private String key;
-	private final String oldKey;
-	private final String oldCommands;
+	public String key;
+	public final String oldKey;
+	public final String oldCommands;
 	
-	private TextFieldWidget commandField;
+	public TextFieldWidget commandField;
 	
 	public KeybindEditorScreen(Screen prevScreen)
 	{
@@ -74,7 +74,7 @@ public class KeybindEditorScreen extends Screen
 			commandField.setText(oldCommands);
 	}
 	
-	private void save()
+	public void save()
 	{
 		if(oldKey != null)
 			WurstClient.INSTANCE.getKeybinds().remove(oldKey);

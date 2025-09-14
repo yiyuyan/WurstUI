@@ -45,7 +45,7 @@ public enum WurstClientTestHelper
 {
 	;
 	
-	private static final AtomicInteger screenshotCounter = new AtomicInteger(0);
+	public static final AtomicInteger screenshotCounter = new AtomicInteger(0);
 	
 	/**
 	 * Runs the given consumer on Minecraft's main thread and waits for it to

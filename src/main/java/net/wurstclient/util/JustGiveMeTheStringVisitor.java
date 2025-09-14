@@ -22,7 +22,7 @@ import net.minecraft.text.Style;
  */
 public class JustGiveMeTheStringVisitor implements CharacterVisitor
 {
-	private final StringBuilder sb = new StringBuilder();
+	public final StringBuilder sb = new StringBuilder();
 	
 	@Override
 	public boolean accept(int index, Style style, int codePoint)

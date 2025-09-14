@@ -14,7 +14,7 @@ import net.wurstclient.settings.filters.*;
 
 public class FollowFilterList extends EntityFilterList
 {
-	private FollowFilterList(List<EntityFilter> filters)
+	public FollowFilterList(List<EntityFilter> filters)
 	{
 		super(filters);
 	}

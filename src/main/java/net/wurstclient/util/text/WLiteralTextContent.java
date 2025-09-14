@@ -13,7 +13,7 @@ public class WLiteralTextContent implements WTextContent
 {
 	public static final WLiteralTextContent EMPTY = new WLiteralTextContent("");
 	
-	private final String text;
+	public final String text;
 	
 	public WLiteralTextContent(String text)
 	{

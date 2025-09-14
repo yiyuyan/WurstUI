@@ -44,13 +44,13 @@ public abstract class ClientPlayerInteractionManagerMixin
 {
 	@Shadow
 	@Final
-	private MinecraftClient client;
+    private MinecraftClient client;
 	
 	@Inject(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/client/network/ClientPlayerEntity;getId()I",
 		ordinal = 0),
 		method = "updateBlockBreakingProgress(Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/math/Direction;)Z")
-	private void onPlayerDamageBlock(BlockPos pos, Direction direction,
+	public void onPlayerDamageBlock(BlockPos pos, Direction direction,
 		CallbackInfoReturnable<Boolean> cir)
 	{
 		EventManager.fire(new BlockBreakingProgressEvent(pos, direction));
@@ -58,14 +58,14 @@ public abstract class ClientPlayerInteractionManagerMixin
 	
 	@Inject(at = @At("HEAD"),
 		method = "stopUsingItem(Lnet/minecraft/entity/player/PlayerEntity;)V")
-	private void onStopUsingItem(PlayerEntity player, CallbackInfo ci)
+	public void onStopUsingItem(PlayerEntity player, CallbackInfo ci)
 	{
 		EventManager.fire(StopUsingItemEvent.INSTANCE);
 	}
 	
 	@Inject(at = @At("HEAD"),
 		method = "attackEntity(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/entity/Entity;)V")
-	private void onAttackEntity(PlayerEntity player, Entity target,
+	public void onAttackEntity(PlayerEntity player, Entity target,
 		CallbackInfo ci)
 	{
 		if(player != client.player)
@@ -130,7 +130,7 @@ public abstract class ClientPlayerInteractionManagerMixin
 	}
 	
 	@Shadow
-	private void sendSequencedPacket(ClientWorld world,
+	public void sendSequencedPacket(ClientWorld world,
 		SequencedPacketCreator packetCreator)
 	{
 		

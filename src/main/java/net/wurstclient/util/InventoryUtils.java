@@ -23,8 +23,8 @@ public enum InventoryUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
-	private static final IMinecraftClient IMC = WurstClient.IMC;
+	public static final MinecraftClient MC = WurstClient.MC;
+	public static final IMinecraftClient IMC = WurstClient.IMC;
 	
 	public static int indexOf(Item item)
 	{
@@ -124,7 +124,7 @@ public enum InventoryUtils
 			.map(slot -> inventory.getStack(slot).getCount()).sum();
 	}
 	
-	private static IntStream getMatchingSlots(Predicate<ItemStack> predicate,
+	public static IntStream getMatchingSlots(Predicate<ItemStack> predicate,
 		int maxInvSlot, boolean includeOffhand)
 	{
 		PlayerInventory inventory = MC.player.getInventory();

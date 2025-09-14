@@ -23,11 +23,11 @@ import net.wurstclient.util.MathUtils;
 
 public class EditSliderScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final SliderSetting slider;
+	public final Screen prevScreen;
+	public final SliderSetting slider;
 	
-	private TextFieldWidget valueField;
-	private ButtonWidget doneButton;
+	public TextFieldWidget valueField;
+	public ButtonWidget doneButton;
 	
 	public EditSliderScreen(Screen prevScreen, SliderSetting slider)
 	{
@@ -60,7 +60,7 @@ public class EditSliderScreen extends Screen
 		addDrawableChild(doneButton);
 	}
 	
-	private void done()
+	public void done()
 	{
 		String value = valueField.getText();
 		

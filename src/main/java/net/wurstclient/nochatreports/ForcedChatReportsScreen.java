@@ -25,24 +25,24 @@ import net.wurstclient.util.LastServerRememberer;
 
 public class ForcedChatReportsScreen extends Screen
 {
-	private static final List<String> TRANSLATABLE_DISCONNECT_REASONS =
+	public static final List<String> TRANSLATABLE_DISCONNECT_REASONS =
 		Arrays.asList("multiplayer.disconnect.missing_public_key",
 			"multiplayer.disconnect.invalid_public_key_signature",
 			"multiplayer.disconnect.invalid_public_key",
 			"multiplayer.disconnect.unsigned_chat");
 	
-	private static final List<String> LITERAL_DISCONNECT_REASONS =
+	public static final List<String> LITERAL_DISCONNECT_REASONS =
 		Arrays.asList("An internal error occurred in your connection.",
 			"A secure profile is required to join this server.",
 			"Secure profile expired.", "Secure profile invalid.");
 	
-	private final Screen prevScreen;
-	private final Text reason;
-	private MultilineText reasonFormatted = MultilineText.EMPTY;
-	private int reasonHeight;
+	public final Screen prevScreen;
+	public final Text reason;
+	public MultilineText reasonFormatted = MultilineText.EMPTY;
+	public int reasonHeight;
 	
-	private ButtonWidget signatureButton;
-/*	private final Supplier<String> sigButtonMsg;*/
+	public ButtonWidget signatureButton;
+/*	public final Supplier<String> sigButtonMsg;*/
 	
 	public ForcedChatReportsScreen(Screen prevScreen)
 	{
@@ -60,7 +60,7 @@ public class ForcedChatReportsScreen extends Screen
 			+ blockedOrAllowed(ncr.isEnabled());*/
 	}
 	
-	private String blockedOrAllowed(boolean blocked)
+	public String blockedOrAllowed(boolean blocked)
 	{
 		return WurstClient.INSTANCE.translate(
 			"gui.wurst.generic.allcaps_" + (blocked ? "blocked" : "allowed"));
@@ -95,7 +95,7 @@ public class ForcedChatReportsScreen extends Screen
 			.dimensions(buttonX, backButtonY, 200, 20).build());
 	}
 	
-	private void toggleSignatures()
+	public void toggleSignatures()
 	{
 		/*WurstClient.INSTANCE.getOtfs().noChatReportsOtf.doPrimaryAction();
 		signatureButton.setMessage(Text.literal(sigButtonMsg.get()));*/

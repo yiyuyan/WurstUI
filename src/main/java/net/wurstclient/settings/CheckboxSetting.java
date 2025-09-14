@@ -23,9 +23,9 @@ import net.wurstclient.util.text.WText;
 
 public class CheckboxSetting extends Setting implements CheckboxLock
 {
-	private boolean checked;
-	private final boolean checkedByDefault;
-	private CheckboxLock lock;
+	public boolean checked;
+	public final boolean checkedByDefault;
+	public CheckboxLock lock;
 	
 	public CheckboxSetting(String name, WText description, boolean checked)
 	{
@@ -63,7 +63,7 @@ public class CheckboxSetting extends Setting implements CheckboxLock
 		setCheckedIgnoreLock(checked);
 	}
 	
-	private void setCheckedIgnoreLock(boolean checked)
+	public void setCheckedIgnoreLock(boolean checked)
 	{
 		this.checked = checked;
 		update();

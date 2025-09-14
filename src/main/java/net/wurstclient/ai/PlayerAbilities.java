@@ -16,8 +16,8 @@ public record PlayerAbilities(boolean invulnerable, boolean creativeFlying,
 	boolean jesus, boolean spider)
 {
 	
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public static PlayerAbilities get()
 	{

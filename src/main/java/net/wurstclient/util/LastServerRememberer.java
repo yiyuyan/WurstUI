@@ -23,7 +23,7 @@ public enum LastServerRememberer
 {
 	;
 	
-	private static ServerInfo lastServer;
+	public static ServerInfo lastServer;
 	
 	public static ServerInfo getLastServer()
 	{

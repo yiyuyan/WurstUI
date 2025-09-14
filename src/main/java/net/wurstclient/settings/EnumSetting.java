@@ -24,9 +24,9 @@ import net.wurstclient.util.text.WText;
 
 public class EnumSetting<T extends Enum<T>> extends Setting
 {
-	private final T[] values;
-	private T selected;
-	private final T defaultSelected;
+	public final T[] values;
+	public T selected;
+	public final T defaultSelected;
 	
 	public EnumSetting(String name, WText description, T[] values, T selected)
 	{

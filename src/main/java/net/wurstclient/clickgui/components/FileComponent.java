@@ -19,10 +19,10 @@ import net.wurstclient.util.RenderUtils;
 
 public class FileComponent extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
 	
-	private final FileSetting setting;
+	public final FileSetting setting;
 	
 	public FileComponent(FileSetting setting)
 	{
@@ -81,13 +81,13 @@ public class FileComponent extends Component
 		context.state.goDownLayer();
 	}
 	
-	private int getFillColor(boolean hovering)
+	public int getFillColor(boolean hovering)
 	{
 		float opacity = GUI.getOpacity() * (hovering ? 1.5F : 1);
 		return RenderUtils.toIntColor(GUI.getBgColor(), opacity);
 	}
 	
-	private int getButtonWidth()
+	public int getButtonWidth()
 	{
 		return TR.getWidth(setting.getSelectedFileName());
 	}

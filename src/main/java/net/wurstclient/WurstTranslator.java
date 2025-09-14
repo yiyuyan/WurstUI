@@ -30,11 +30,11 @@ import net.minecraft.util.Language;
 
 public class WurstTranslator implements SynchronousResourceReloader
 {
-	private final WurstClient wurst = WurstClient.INSTANCE;
-	private TranslationStorage mcEnglish;
+	public final WurstClient wurst = WurstClient.INSTANCE;
+	public TranslationStorage mcEnglish;
 	
-	private Map<String, String> currentLangStrings = Map.of();
-	private Map<String, String> englishOnlyStrings = Map.of();
+	public Map<String, String> currentLangStrings = Map.of();
+	public Map<String, String> englishOnlyStrings = Map.of();
 	
 	@Override
 	public void reload(ResourceManager manager)
@@ -163,7 +163,7 @@ public class WurstTranslator implements SynchronousResourceReloader
 			: getMinecraftsCurrentLanguage();
 	}
 	
-	private ArrayList<String> getCurrentLangCodes()
+	public ArrayList<String> getCurrentLangCodes()
 	{
 		// Weird bug: Some users have their language set to "en_US" instead of
 		// "en_us" for some reason. Last seen in 1.21.
@@ -178,7 +178,7 @@ public class WurstTranslator implements SynchronousResourceReloader
 		return langCodes;
 	}
 	
-	private void loadTranslations(ResourceManager manager,
+	public void loadTranslations(ResourceManager manager,
 		Iterable<String> langCodes, BiConsumer<String, String> entryConsumer)
 	{
 		for(String langCode : langCodes)

@@ -20,7 +20,7 @@ import net.wurstclient.events.KeyPressListener.KeyPressEvent;
 public class KeyboardMixin
 {
 	@Inject(at = @At("HEAD"), method = "onKey(JIIII)V")
-	private void onOnKey(long windowHandle, int key, int scancode, int action,
+	public void onOnKey(long windowHandle, int key, int scancode, int action,
 		int modifiers, CallbackInfo ci)
 	{
 		EventManager.fire(new KeyPressEvent(key, scancode, action, modifiers));

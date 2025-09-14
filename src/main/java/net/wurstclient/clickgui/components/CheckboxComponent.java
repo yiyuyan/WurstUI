@@ -19,11 +19,11 @@ import net.wurstclient.util.RenderUtils;
 
 public class CheckboxComponent extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int BOX_SIZE = 11;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int BOX_SIZE = 11;
 	
-	private final CheckboxSetting setting;
+	public final CheckboxSetting setting;
 	
 	public CheckboxComponent(CheckboxSetting setting)
 	{
@@ -88,13 +88,13 @@ public class CheckboxComponent extends Component
 		context.state.goDownLayer();
 	}
 	
-	private int getFillColor(boolean hovering)
+	public int getFillColor(boolean hovering)
 	{
 		float opacity = GUI.getOpacity() * (hovering ? 1.5F : 1);
 		return RenderUtils.toIntColor(GUI.getBgColor(), opacity);
 	}
 	
-	private String getTooltip()
+	public String getTooltip()
 	{
 		String tooltip = setting.getWrappedDescription(200);
 		if(setting.isLocked())

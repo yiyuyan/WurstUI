@@ -20,8 +20,8 @@ import net.wurstclient.util.text.WText;
 
 public class BookOffersSetting extends Setting
 {
-	/*private final ArrayList<BookOffer> offers = new ArrayList<>();
-	private final BookOffer[] defaultOffers;*/
+	/*public final ArrayList<BookOffer> offers = new ArrayList<>();
+	public final BookOffer[] defaultOffers;*/
 	
 	public BookOffersSetting(String name, WText description,
 		String... enchantments)
@@ -164,7 +164,7 @@ public class BookOffersSetting extends Setting
 		}*/
 	}
 	
-	/*private BookOffer loadOffer(WsonObject wson)
+	/*public BookOffer loadOffer(WsonObject wson)
 	{
 		*//*try
 		{

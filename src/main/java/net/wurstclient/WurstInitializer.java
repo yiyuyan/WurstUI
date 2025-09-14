@@ -11,7 +11,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class WurstInitializer implements ModInitializer
 {
-	private static boolean initialized;
+	public static boolean initialized;
 	
 	@Override
 	public void onInitialize()

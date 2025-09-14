@@ -50,13 +50,13 @@ public enum NoFallHackTest
 		setPerspective(Perspective.FIRST_PERSON);
 	}
 	
-	private static void assertOnGround()
+	public static void assertOnGround()
 	{
 		if(!submitAndGet(mc -> mc.player.isOnGround()))
 			throw new RuntimeException("Player is not on ground");
 	}
 	
-	private static void assertPlayerHealth(Predicate<Float> healthCheck)
+	public static void assertPlayerHealth(Predicate<Float> healthCheck)
 	{
 		float health = submitAndGet(mc -> mc.player.getHealth());
 		if(!healthCheck.test(health))

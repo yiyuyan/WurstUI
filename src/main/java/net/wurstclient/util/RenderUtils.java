@@ -123,7 +123,7 @@ public enum RenderUtils
 		vcp.draw(layer);
 	}
 	
-	private static Vec3d getTracerOrigin(float partialTicks)
+	public static Vec3d getTracerOrigin(float partialTicks)
 	{
 		Vec3d start = RotationUtils.getClientLookVec(partialTicks).multiply(10);
 		if(WurstClient.MC.options

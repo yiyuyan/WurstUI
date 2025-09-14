@@ -13,10 +13,10 @@ import java.util.Locale;
 
 public class RoundingPrecisionSetting extends SliderSetting
 {
-	private static final DecimalFormatSymbols SYMBOLS =
+	public static final DecimalFormatSymbols SYMBOLS =
 		new DecimalFormatSymbols(Locale.ENGLISH);
 	
-	private final DecimalFormat[] FORMATS;
+	public final DecimalFormat[] FORMATS;
 	
 	public RoundingPrecisionSetting(String name, String description, int value,
 		int min, int max)

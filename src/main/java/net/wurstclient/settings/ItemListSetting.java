@@ -33,8 +33,8 @@ import net.wurstclient.util.text.WText;
 
 public class ItemListSetting extends Setting
 {
-	private final ArrayList<String> itemNames = new ArrayList<>();
-	private final String[] defaultNames;
+	public final ArrayList<String> itemNames = new ArrayList<>();
+	public final String[] defaultNames;
 	
 	public ItemListSetting(String name, WText description, String... items)
 	{

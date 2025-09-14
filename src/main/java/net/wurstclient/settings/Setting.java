@@ -20,8 +20,8 @@ import net.wurstclient.util.text.WText;
 
 public abstract class Setting
 {
-	private final String name;
-	private final WText description;
+	public final String name;
+	public final WText description;
 	
 	public Setting(String name, WText description)
 	{

@@ -14,7 +14,7 @@ import net.wurstclient.settings.filters.*;
 
 public class CrystalAuraFilterList extends EntityFilterList
 {
-	private CrystalAuraFilterList(List<EntityFilter> filters)
+	public CrystalAuraFilterList(List<EntityFilter> filters)
 	{
 		super(filters);
 	}

@@ -192,11 +192,11 @@ public class HackList implements UpdateListener
 	public final TreeMap<String, Hack> hax =
 		new TreeMap<>(String::compareToIgnoreCase);
 	
-	private final EnabledHacksFile enabledHacksFile;
-	private final Path profilesFolder =
+	public final EnabledHacksFile enabledHacksFile;
+	public final Path profilesFolder =
 		WurstClient.INSTANCE.getWurstFolder().resolve("enabled hacks");
 	
-	private final EventManager eventManager =
+	public final EventManager eventManager =
 		WurstClient.INSTANCE.getEventManager();
 	
 	public HackList(Path enabledHacksFile)

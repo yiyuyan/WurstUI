@@ -26,9 +26,9 @@ import net.wurstclient.util.text.WText;
 
 public class TextFieldSetting extends Setting
 {
-	private String value = "";
-	private final String defaultValue;
-	private final Predicate<String> validator;
+	public String value = "";
+	public final String defaultValue;
+	public final Predicate<String> validator;
 	
 	public TextFieldSetting(String name, WText description, String defaultValue,
 		Predicate<String> validator)

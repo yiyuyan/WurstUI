@@ -27,7 +27,7 @@ public abstract class ChatScreenMixin extends Screen
 	@Shadow
 	protected TextFieldWidget chatField;
 	
-	private ChatScreenMixin(WurstClient wurst, Text title)
+	public ChatScreenMixin(WurstClient wurst, Text title)
 	{
 		super(title);
 	}

@@ -28,7 +28,7 @@ public enum InteractionSimulator
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	/**
 	 * @see #rightClickBlock(BlockHitResult, SwingHand)
@@ -112,7 +112,7 @@ public enum InteractionSimulator
 	 * @return {@code true} if this call should consume the click and prevent
 	 *         any further block/item interactions
 	 */
-	private static boolean interactBlockAndSwing(BlockHitResult hitResult,
+	public static boolean interactBlockAndSwing(BlockHitResult hitResult,
 		SwingHand swing, Hand hand, ItemStack stack)
 	{
 		// save old stack size and call interactBlock()
@@ -142,7 +142,7 @@ public enum InteractionSimulator
 	 * @return {@code true} if this call should consume the click and prevent
 	 *         any further block/item interactions
 	 */
-	private static boolean interactItemAndSwing(ItemStack stack,
+	public static boolean interactItemAndSwing(ItemStack stack,
 		SwingHand swing, Hand hand)
 	{
 		// pass if hand is empty

@@ -34,12 +34,12 @@ public class ChatHudMixin
 {
 	@Shadow
 	@Final
-	private List<ChatHudLine.Visible> visibleMessages;
+	public List<ChatHudLine.Visible> visibleMessages;
 	
 	@Inject(at = @At("HEAD"),
 		method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V",
 		cancellable = true)
-	private void onAddMessage(Text messageDontUse,
+	public void onAddMessage(Text messageDontUse,
 		@Nullable MessageSignatureData signature,
 		@Nullable MessageIndicator indicatorDontUse, CallbackInfo ci,
 		@Local(argsOnly = true) LocalRef<Text> message,

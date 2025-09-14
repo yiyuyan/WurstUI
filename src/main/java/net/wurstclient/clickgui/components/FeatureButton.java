@@ -21,13 +21,13 @@ import net.wurstclient.util.RenderUtils;
 
 public class FeatureButton extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
 	
-	private final Feature feature;
-	private final boolean hasSettings;
+	public final Feature feature;
+	public final boolean hasSettings;
 	
-	private Window settingsWindow;
+	public Window settingsWindow;
 	
 	public FeatureButton(Feature feature)
 	{
@@ -60,12 +60,12 @@ public class FeatureButton extends Component
 		feature.doPrimaryAction();*/
 	}
 	
-	private boolean isSettingsWindowOpen()
+	public boolean isSettingsWindowOpen()
 	{
 		return settingsWindow != null && !settingsWindow.isClosing();
 	}
 	
-	private void toggleSettingsWindow()
+	public void toggleSettingsWindow()
 	{
 		if(!isSettingsWindowOpen())
 		{
@@ -124,7 +124,7 @@ public class FeatureButton extends Component
 		context.state.goDownLayer();
 	}
 	
-	private int getButtonColor(boolean enabled, boolean hovering)
+	public int getButtonColor(boolean enabled, boolean hovering)
 	{
 		float[] rgb = enabled ? new float[]{0, 1, 0} : GUI.getBgColor();
 		float opacity = GUI.getOpacity() * (hovering ? 1.5F : 1);

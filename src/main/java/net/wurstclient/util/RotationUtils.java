@@ -19,7 +19,7 @@ public enum RotationUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public static Vec3d getEyesPos()
 	{

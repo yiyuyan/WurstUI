@@ -22,11 +22,11 @@ import net.minecraft.util.Colors;
 
 public class EnterProfileNameScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final Consumer<String> callback;
+	public final Screen prevScreen;
+	public final Consumer<String> callback;
 	
-	private TextFieldWidget valueField;
-	private ButtonWidget doneButton;
+	public TextFieldWidget valueField;
+	public ButtonWidget doneButton;
 	
 	public EnterProfileNameScreen(Screen prevScreen, Consumer<String> callback)
 	{
@@ -57,7 +57,7 @@ public class EnterProfileNameScreen extends Screen
 		addDrawableChild(doneButton);
 	}
 	
-	private void done()
+	public void done()
 	{
 		String value = valueField.getText();
 		if(!value.isEmpty())

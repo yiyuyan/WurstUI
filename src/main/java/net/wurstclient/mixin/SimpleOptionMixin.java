@@ -26,7 +26,7 @@ public class SimpleOptionMixin<T> implements ISimpleOption<T>
 	
 	@Shadow
 	@Final
-	private Consumer<T> changeCallback;
+    private Consumer<T> changeCallback;
 	
 	@Override
 	public void forceSetValue(T newValue)

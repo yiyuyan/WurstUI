@@ -34,7 +34,7 @@ public interface PlayerAttacksEntityListener extends Listener
 	public static class PlayerAttacksEntityEvent
 		extends Event<PlayerAttacksEntityListener>
 	{
-		private final Entity target;
+		public final Entity target;
 		
 		public PlayerAttacksEntityEvent(Entity target)
 		{

@@ -20,8 +20,8 @@ import net.wurstclient.util.ChatUtils;
 
 public class KeybindProcessor implements KeyPressListener
 {
-	private final HackList hax;
-	private final KeybindList keybinds;
+	public final HackList hax;
+	public final KeybindList keybinds;
 	
 	public KeybindProcessor(HackList hax, KeybindList keybinds)
 	{
@@ -52,14 +52,14 @@ public class KeybindProcessor implements KeyPressListener
 		processCmds(cmds);
 	}
 	
-	private String getKeyName(KeyPressEvent event)
+	public String getKeyName(KeyPressEvent event)
 	{
 		int keyCode = event.getKeyCode();
 		int scanCode = event.getScanCode();
 		return InputUtil.fromKeyCode(keyCode, scanCode).getTranslationKey();
 	}
 	
-	private void processCmds(String cmds)
+	public void processCmds(String cmds)
 	{
 		cmds = cmds.replace(";", "\u00a7").replace("\u00a7\u00a7", ";");
 		
@@ -67,7 +67,7 @@ public class KeybindProcessor implements KeyPressListener
 			processCmd(cmd.trim());
 	}
 	
-	private void processCmd(String cmd)
+	public void processCmd(String cmd)
 	{
 		/*if(cmd.startsWith("."))
 			cmdProcessor.process(cmd.substring(1));

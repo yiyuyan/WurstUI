@@ -15,7 +15,7 @@ import net.minecraft.entity.passive.WaterAnimalEntity;
 
 public class FilterPassiveWaterSetting extends EntityFilterCheckbox
 {
-	private static final String EXCEPTIONS_TEXT =
+	public static final String EXCEPTIONS_TEXT =
 		"\n\nThis filter does not affect guardians, drowned, and pufferfish.";
 	
 	public FilterPassiveWaterSetting(String description, boolean checked)

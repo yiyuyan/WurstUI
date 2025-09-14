@@ -12,10 +12,10 @@ import net.minecraft.entity.mob.PiglinEntity;
 
 public class FilterPiglinsSetting extends AttackDetectingEntityFilter
 {
-	private static final String EXCEPTIONS_TEXT =
+	public static final String EXCEPTIONS_TEXT =
 		"\n\nThis filter does not affect piglin brutes.";
 	
-	private FilterPiglinsSetting(String description, Mode selected,
+	public FilterPiglinsSetting(String description, Mode selected,
 		boolean checked)
 	{
 		super("Filter piglins", description + EXCEPTIONS_TEXT, selected,

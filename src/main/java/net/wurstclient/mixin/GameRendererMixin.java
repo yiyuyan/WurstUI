@@ -24,7 +24,7 @@ import net.wurstclient.events.CameraTransformViewBobbingListener.CameraTransform
 public abstract class GameRendererMixin implements AutoCloseable
 {
 	@Unique
-	private boolean cancelNextBobView;
+	public boolean cancelNextBobView;
 	
 	/**
 	 * Fires the CameraTransformViewBobbingEvent event and records whether the
@@ -34,7 +34,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 		target = "Lnet/minecraft/client/render/GameRenderer;bobView(Lnet/minecraft/client/util/math/MatrixStack;F)V",
 		ordinal = 0),
 		method = "renderWorld(Lnet/minecraft/client/render/RenderTickCounter;)V")
-	private void onRenderWorldViewBobbing(RenderTickCounter tickCounter,
+	public void onRenderWorldViewBobbing(RenderTickCounter tickCounter,
 		CallbackInfo ci)
 	{
 		CameraTransformViewBobbingEvent event =
@@ -52,7 +52,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 	@Inject(at = @At("HEAD"),
 		method = "bobView(Lnet/minecraft/client/util/math/MatrixStack;F)V",
 		cancellable = true)
-	private void onBobView(MatrixStack matrices, float tickDelta,
+	public void onBobView(MatrixStack matrices, float tickDelta,
 		CallbackInfo ci)
 	{
 		if(!cancelNextBobView)
@@ -68,7 +68,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 	 * after the view-bobbing call.
 	 */
 	@Inject(at = @At("HEAD"), method = "renderHand(FZLorg/joml/Matrix4f;)V")
-	private void onRenderHand(float tickDelta, boolean bl, Matrix4f matrix4f,
+	public void onRenderHand(float tickDelta, boolean bl, Matrix4f matrix4f,
 		CallbackInfo ci)
 	{
 		cancelNextBobView = false;
@@ -77,7 +77,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 	/*@Inject(at = @At(value = "RETURN", ordinal = 1),
 		method = "getFov(Lnet/minecraft/client/render/Camera;FZ)F",
 		cancellable = true)
-	private void onGetFov(Camera camera, float tickDelta, boolean changingFov,
+	public void onGetFov(Camera camera, float tickDelta, boolean changingFov,
 		CallbackInfoReturnable<Float> cir)
 	{
 		cir.setReturnValue(WurstClient.INSTANCE.getOtfs().zoomOtf
@@ -91,7 +91,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 		target = "Lnet/minecraft/entity/Entity;raycast(DFZ)Lnet/minecraft/util/hit/HitResult;",
 		ordinal = 0),
 		method = "findCrosshairTarget(Lnet/minecraft/entity/Entity;DDF)Lnet/minecraft/util/hit/HitResult;")
-	private HitResult liquidsRaycast(Entity instance, double maxDistance,
+	public HitResult liquidsRaycast(Entity instance, double maxDistance,
 		float tickDelta, boolean includeFluids, Operation<HitResult> original)
 	{
 		if(!WurstClient.INSTANCE.getHax().liquidsHack.isEnabled())
@@ -106,7 +106,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 			target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F",
 			ordinal = 0),
 		method = "renderWorld(Lnet/minecraft/client/render/RenderTickCounter;)V")
-	private float onRenderWorldNauseaLerp(float delta, float start, float end,
+	public float onRenderWorldNauseaLerp(float delta, float start, float end,
 		Operation<Float> original)
 	{
 		if(!WurstClient.INSTANCE.getHax().antiWobbleHack.isEnabled())
@@ -118,7 +118,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 	@Inject(at = @At("HEAD"),
 		method = "getNightVisionStrength(Lnet/minecraft/entity/LivingEntity;F)F",
 		cancellable = true)
-	private static void onGetNightVisionStrength(LivingEntity entity,
+	public static void onGetNightVisionStrength(LivingEntity entity,
 		float tickDelta, CallbackInfoReturnable<Float> cir)
 	{
 		FullbrightHack fullbright =
@@ -131,7 +131,7 @@ public abstract class GameRendererMixin implements AutoCloseable
 	@Inject(at = @At("HEAD"),
 		method = "tiltViewWhenHurt(Lnet/minecraft/client/util/math/MatrixStack;F)V",
 		cancellable = true)
-	private void onTiltViewWhenHurt(MatrixStack matrices, float tickDelta,
+	public void onTiltViewWhenHurt(MatrixStack matrices, float tickDelta,
 		CallbackInfo ci)
 	{
 		if(WurstClient.INSTANCE.getHax().noHurtcamHack.isEnabled())

@@ -32,7 +32,7 @@ public abstract class HeldItemRendererMixin
 		target = "Lnet/minecraft/client/render/item/HeldItemRenderer;applyEquipOffset(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/Arm;F)V",
 		ordinal = 4),
 		method = "renderFirstPersonItem(Lnet/minecraft/client/network/AbstractClientPlayerEntity;FFLnet/minecraft/util/Hand;FLnet/minecraft/item/ItemStack;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V")
-	private void onApplyEquipOffsetBlocking(AbstractClientPlayerEntity player,
+	public void onApplyEquipOffsetBlocking(AbstractClientPlayerEntity player,
 		float tickDelta, float pitch, Hand hand, float swingProgress,
 		ItemStack item, float equipProgress, MatrixStack matrices,
 		VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci)
@@ -51,7 +51,7 @@ public abstract class HeldItemRendererMixin
 		target = "Lnet/minecraft/client/render/item/HeldItemRenderer;swingArm(FFLnet/minecraft/client/util/math/MatrixStack;ILnet/minecraft/util/Arm;)V",
 		ordinal = 2),
 		method = "renderFirstPersonItem(Lnet/minecraft/client/network/AbstractClientPlayerEntity;FFLnet/minecraft/util/Hand;FLnet/minecraft/item/ItemStack;FLnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V")
-	private void onApplySwingOffsetNotBlocking(
+	public void onApplySwingOffsetNotBlocking(
 		AbstractClientPlayerEntity player, float tickDelta, float pitch,
 		Hand hand, float swingProgress, ItemStack item, float equipProgress,
 		MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light,

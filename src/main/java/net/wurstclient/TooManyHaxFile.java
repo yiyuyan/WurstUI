@@ -22,8 +22,8 @@ import net.wurstclient.util.json.WsonArray;
 
 public class TooManyHaxFile
 {
-	private final Path path;
-	private final ArrayList<Feature> blockedFeatures;
+	public final Path path;
+	public final ArrayList<Feature> blockedFeatures;
 	
 	public TooManyHaxFile(Path path, ArrayList<Feature> blockedFeatures)
 	{
@@ -62,7 +62,7 @@ public class TooManyHaxFile
 		save();
 	}
 	
-	private void setBlockedFeatures(WsonArray wson)
+	public void setBlockedFeatures(WsonArray wson)
 	{
 		blockedFeatures.clear();
 		
@@ -103,7 +103,7 @@ public class TooManyHaxFile
 		JsonUtils.toJson(json, profilePath);
 	}
 	
-	private JsonArray createJson()
+	public JsonArray createJson()
 	{
 		JsonArray json = new JsonArray();
 		blockedFeatures.stream().filter(Feature::isSafeToBlock)

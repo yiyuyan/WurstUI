@@ -14,7 +14,7 @@ import net.wurstclient.settings.filters.*;
 
 public class RemoteViewFilterList extends EntityFilterList
 {
-	private RemoteViewFilterList(List<EntityFilter> filters)
+	public RemoteViewFilterList(List<EntityFilter> filters)
 	{
 		super(filters);
 	}

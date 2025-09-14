@@ -24,18 +24,18 @@ public enum ChatUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	public static final String WURST_PREFIX =
 		"\u00a7c[\u00a76Wurst\u00a7c]\u00a7r ";
-	private static final String WARNING_PREFIX =
+	public static final String WARNING_PREFIX =
 		"\u00a7c[\u00a76\u00a7lWARNING\u00a7c]\u00a7r ";
-	private static final String ERROR_PREFIX =
+	public static final String ERROR_PREFIX =
 		"\u00a7c[\u00a74\u00a7lERROR\u00a7c]\u00a7r ";
-	private static final String SYNTAX_ERROR_PREFIX =
+	public static final String SYNTAX_ERROR_PREFIX =
 		"\u00a74Syntax error:\u00a7r ";
 	
-	private static boolean enabled = true;
+	public static boolean enabled = true;
 	
 	public static void setEnabled(boolean enabled)
 	{

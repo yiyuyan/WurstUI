@@ -28,11 +28,11 @@ import net.wurstclient.util.WurstColors;
 
 public class EditBlockScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final BlockSetting setting;
+	public final Screen prevScreen;
+	public final BlockSetting setting;
 	
-	private TextFieldWidget blockField;
-	private ButtonWidget doneButton;
+	public TextFieldWidget blockField;
+	public ButtonWidget doneButton;
 	
 	public EditBlockScreen(Screen prevScreen, BlockSetting setting)
 	{
@@ -65,7 +65,7 @@ public class EditBlockScreen extends Screen
 		addDrawableChild(doneButton);
 	}
 	
-	private void done()
+	public void done()
 	{
 		String nameOrId = blockField.getText();
 		Block block = BlockUtils.getBlockFromNameOrID(nameOrId);

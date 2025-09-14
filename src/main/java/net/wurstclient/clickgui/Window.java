@@ -15,38 +15,38 @@ import net.wurstclient.WurstClient;
 
 public class Window
 {
-	private String title;
-	private int x;
-	private int y;
-	private int width;
-	private int height;
+	public String title;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
 	
-	private boolean valid;
-	private final ArrayList<Component> children = new ArrayList<>();
+	public boolean valid;
+	public final ArrayList<Component> children = new ArrayList<>();
 	
-	private boolean dragging;
-	private int dragOffsetX;
-	private int dragOffsetY;
+	public boolean dragging;
+	public int dragOffsetX;
+	public int dragOffsetY;
 	
-	private boolean minimized;
-	private boolean minimizable = true;
+	public boolean minimized;
+	public boolean minimizable = true;
 	
-	private boolean pinned;
-	private boolean pinnable = true;
+	public boolean pinned;
+	public boolean pinnable = true;
 	
-	private boolean closable;
-	private boolean closing;
+	public boolean closable;
+	public boolean closing;
 	
-	private boolean invisible;
+	public boolean invisible;
 	
-	private boolean fixedWidth;
-	private int innerHeight;
-	private int maxInnerHeight;
-	private int scrollOffset;
-	private boolean scrollingEnabled;
+	public boolean fixedWidth;
+	public int innerHeight;
+	public int maxInnerHeight;
+	public int scrollOffset;
+	public boolean scrollingEnabled;
 	
-	private boolean draggingScrollbar;
-	private int scrollbarDragOffsetY;
+	public boolean draggingScrollbar;
+	public int scrollbarDragOffsetY;
 	
 	public Window(String title)
 	{

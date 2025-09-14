@@ -18,7 +18,7 @@ import net.wurstclient.util.RotationUtils;
 
 public class FlyPathProcessor extends PathProcessor
 {
-	private final boolean creativeFlying;
+	public final boolean creativeFlying;
 	
 	public FlyPathProcessor(ArrayList<PathPos> path, boolean creativeFlying)
 	{

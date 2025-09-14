@@ -20,9 +20,9 @@ public class OverlayRenderer
 	protected static final MinecraftClient MC = WurstClient.MC;
 	protected static final IMinecraftClient IMC = WurstClient.IMC;
 	
-	private float progress;
-	private float prevProgress;
-	private BlockPos prevPos;
+	public float progress;
+	public float prevProgress;
+	public BlockPos prevPos;
 	
 	public void resetProgress()
 	{

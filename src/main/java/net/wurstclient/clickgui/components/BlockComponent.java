@@ -23,11 +23,11 @@ import net.wurstclient.util.RenderUtils;
 
 public class BlockComponent extends Component
 {
-	private static final ClickGui GUI = WURST.getGui();
-	private static final TextRenderer TR = MC.textRenderer;
-	private static final int BLOCK_WITDH = 24;
+	public static final ClickGui GUI = WURST.getGui();
+	public static final TextRenderer TR = MC.textRenderer;
+	public static final int BLOCK_WITDH = 24;
 	
-	private final BlockSetting setting;
+	public final BlockSetting setting;
 	
 	public BlockComponent(BlockSetting setting)
 	{
@@ -92,7 +92,7 @@ public class BlockComponent extends Component
 		context.state.goDownLayer();
 	}
 	
-	private boolean isHovering(int mouseX, int mouseY, int x1, int y1, int x2,
+	public boolean isHovering(int mouseX, int mouseY, int x1, int y1, int x2,
 		int y2)
 	{
 		Window parent = getParent();
@@ -103,7 +103,7 @@ public class BlockComponent extends Component
 			&& mouseY >= -scroll && mouseY < parent.getHeight() - 13 - scroll;
 	}
 	
-	private String getBlockTooltip()
+	public String getBlockTooltip()
 	{
 		Block block = setting.getBlock();
 		BlockState state = block.getDefaultState();

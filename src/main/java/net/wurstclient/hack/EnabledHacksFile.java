@@ -21,8 +21,8 @@ import net.wurstclient.util.json.WsonArray;
 
 public class EnabledHacksFile
 {
-	private final Path path;
-	private boolean disableSaving;
+	public final Path path;
+	public boolean disableSaving;
 	
 	public EnabledHacksFile(Path path)
 	{
@@ -61,7 +61,7 @@ public class EnabledHacksFile
 		save(hax);
 	}
 	
-	private void enableHacks(HackList hax, WsonArray wson)
+	public void enableHacks(HackList hax, WsonArray wson)
 	{
 		try
 		{
@@ -114,7 +114,7 @@ public class EnabledHacksFile
 		JsonUtils.toJson(json, profilePath);
 	}
 	
-	private JsonArray createJson(HackList hax)
+	public JsonArray createJson(HackList hax)
 	{
 		Stream<Hack> enabledHax = hax.getAllHax().stream()
 			.filter(Hack::isEnabled).filter(Hack::isStateSaved);

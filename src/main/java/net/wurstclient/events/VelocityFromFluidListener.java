@@ -20,7 +20,7 @@ public interface VelocityFromFluidListener extends Listener
 	public static class VelocityFromFluidEvent
 		extends CancellableEvent<VelocityFromFluidListener>
 	{
-		private final Entity entity;
+		public final Entity entity;
 		
 		public VelocityFromFluidEvent(Entity entity)
 		{

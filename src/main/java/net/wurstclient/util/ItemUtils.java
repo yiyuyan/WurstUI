@@ -31,7 +31,7 @@ public enum ItemUtils
 {
 	;
 	
-	private static final MinecraftClient MC = WurstClient.MC;
+	public static final MinecraftClient MC = WurstClient.MC;
 	
 	/**
 	 * @param nameOrId

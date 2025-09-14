@@ -19,8 +19,8 @@ import net.wurstclient.WurstClient;
 
 public class EventManager
 {
-	private final WurstClient wurst;
-	private final HashMap<Class<? extends Listener>, ArrayList<? extends Listener>> listenerMap =
+	public final WurstClient wurst;
+	public final HashMap<Class<? extends Listener>, ArrayList<? extends Listener>> listenerMap =
 		new HashMap<>();
 	
 	public EventManager(WurstClient wurst)
@@ -42,7 +42,7 @@ public class EventManager
 		eventManager.fireImpl(event);
 	}
 	
-	private <L extends Listener, E extends Event<L>> void fireImpl(E event)
+	public <L extends Listener, E extends Event<L>> void fireImpl(E event)
 	{
 		if(!wurst.isEnabled())
 			return;

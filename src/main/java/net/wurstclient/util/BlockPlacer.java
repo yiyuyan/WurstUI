@@ -24,9 +24,9 @@ public enum BlockPlacer
 {
 	;
 	
-	private static final WurstClient WURST = WurstClient.INSTANCE;
-	private static final MinecraftClient MC = WurstClient.MC;
-	private static final IMinecraftClient IMC = WurstClient.IMC;
+	public static final WurstClient WURST = WurstClient.INSTANCE;
+	public static final MinecraftClient MC = WurstClient.MC;
+	public static final IMinecraftClient IMC = WurstClient.IMC;
 	
 	public static boolean placeOneBlock(BlockPos pos)
 	{

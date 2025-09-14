@@ -27,16 +27,16 @@ public abstract class Feature
 	protected static final MinecraftClient MC = WurstClient.MC;
 	protected static final IMinecraftClient IMC = WurstClient.IMC;
 	
-	private final LinkedHashMap<String, Setting> settings =
+	public final LinkedHashMap<String, Setting> settings =
 		new LinkedHashMap<>();
-	private final LinkedHashSet<PossibleKeybind> possibleKeybinds =
+	public final LinkedHashSet<PossibleKeybind> possibleKeybinds =
 		new LinkedHashSet<>();
 	
-	private final String searchTags =
+	public final String searchTags =
 		getClass().isAnnotationPresent(SearchTags.class) ? String.join("\u00a7",
 			getClass().getAnnotation(SearchTags.class).value()) : "";
 	
-	private final boolean safeToBlock =
+	public final boolean safeToBlock =
 		!getClass().isAnnotationPresent(DontBlock.class);
 	
 	public abstract String getName();

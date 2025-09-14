@@ -31,9 +31,9 @@ import net.wurstclient.util.json.WsonObject;
 
 public class SettingsFile
 {
-	private final Path path;
-	private final Map<String, Feature> featuresWithSettings;
-	private boolean disableSaving;
+	public final Path path;
+	public final Map<String, Feature> featuresWithSettings;
+	public boolean disableSaving;
 	
 	public SettingsFile(Path path, HackList hax, OtfList otfs)
 	{
@@ -41,7 +41,7 @@ public class SettingsFile
 		featuresWithSettings = createFeatureMap(hax, otfs);
 	}
 	
-	private Map<String, Feature> createFeatureMap(HackList hax,
+	public Map<String, Feature> createFeatureMap(HackList hax,
 		OtfList otfs)
 	{
 		LinkedHashMap<String, Feature> map = new LinkedHashMap<>();
@@ -92,7 +92,7 @@ public class SettingsFile
 		save();
 	}
 	
-	private void loadSettings(WsonObject wson)
+	public void loadSettings(WsonObject wson)
 	{
 		try
 		{
@@ -114,7 +114,7 @@ public class SettingsFile
 		}
 	}
 	
-	private void loadSettings(Feature feature, JsonObject json)
+	public void loadSettings(Feature feature, JsonObject json)
 	{
 		Map<String, Setting> settings = feature.getSettings();
 		
@@ -156,7 +156,7 @@ public class SettingsFile
 		JsonUtils.toJson(json, profilePath);
 	}
 	
-	private JsonObject createJson()
+	public JsonObject createJson()
 	{
 		JsonObject json = new JsonObject();
 		

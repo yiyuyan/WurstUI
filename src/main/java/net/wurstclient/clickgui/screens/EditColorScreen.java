@@ -33,31 +33,31 @@ import net.wurstclient.util.WurstColors;
 
 public class EditColorScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final ColorSetting colorSetting;
-	private Color color;
+	public final Screen prevScreen;
+	public final ColorSetting colorSetting;
+	public Color color;
 	
-	private TextFieldWidget hexValueField;
-	private TextFieldWidget redValueField;
-	private TextFieldWidget greenValueField;
-	private TextFieldWidget blueValueField;
+	public TextFieldWidget hexValueField;
+	public TextFieldWidget redValueField;
+	public TextFieldWidget greenValueField;
+	public TextFieldWidget blueValueField;
 	
-	private ButtonWidget doneButton;
+	public ButtonWidget doneButton;
 	
-	private final Identifier paletteIdentifier =
+	public final Identifier paletteIdentifier =
 		Identifier.of("wurstui", "colorpalette.png");
-	private BufferedImage paletteAsBufferedImage;
+	public BufferedImage paletteAsBufferedImage;
 	
-	private int paletteX = 0;
-	private int paletteY = 0;
+	public int paletteX = 0;
+	public int paletteY = 0;
 	
-	private final int paletteWidth = 200;
-	private final int paletteHeight = 84;
+	public final int paletteWidth = 200;
+	public final int paletteHeight = 84;
 	
-	private int fieldsX = 0;
-	private int fieldsY = 0;
+	public int fieldsX = 0;
+	public int fieldsY = 0;
 	
-	private boolean ignoreChanges;
+	public boolean ignoreChanges;
 	
 	public EditColorScreen(Screen prevScreen, ColorSetting colorSetting)
 	{
@@ -128,7 +128,7 @@ public class EditColorScreen extends Screen
 		addDrawableChild(doneButton);
 	}
 	
-	private void updateColor(boolean hex)
+	public void updateColor(boolean hex)
 	{
 		if(ignoreChanges)
 			return;
@@ -153,7 +153,7 @@ public class EditColorScreen extends Screen
 		ignoreChanges = false;
 	}
 	
-	private void done()
+	public void done()
 	{
 		colorSetting.setColor(color);
 		client.setScreen(prevScreen);
@@ -278,7 +278,7 @@ public class EditColorScreen extends Screen
 		return super.mouseClicked(mouseX, mouseY, button);
 	}
 	
-	private void setColor(Color color)
+	public void setColor(Color color)
 	{
 		hexValueField.setText(ColorUtils.toHex(color).substring(1));
 		redValueField.setText("" + color.getRed());

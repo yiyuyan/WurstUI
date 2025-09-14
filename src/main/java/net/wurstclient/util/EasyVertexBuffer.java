@@ -37,9 +37,9 @@ import net.minecraft.client.util.math.MatrixStack;
  */
 public class EasyVertexBuffer implements AutoCloseable
 {
-	private final RenderSystem.ShapeIndexBuffer shapeIndexBuffer;
-	private final GpuBuffer vertexBuffer;
-	private final int indexCount;
+	public final RenderSystem.ShapeIndexBuffer shapeIndexBuffer;
+	public final GpuBuffer vertexBuffer;
+	public final int indexCount;
 	
 	/**
 	 * Drop-in replacement for {@code VertexBuffer.createAndUpload()}.
@@ -60,7 +60,7 @@ public class EasyVertexBuffer implements AutoCloseable
 		}
 	}
 	
-	private EasyVertexBuffer(BuiltBuffer buffer, DrawMode drawMode)
+	public EasyVertexBuffer(BuiltBuffer buffer, DrawMode drawMode)
 	{
 		DrawParameters drawParams = buffer.getDrawParameters();
 		shapeIndexBuffer = RenderSystem.getSequentialBuffer(drawParams.mode());
@@ -70,7 +70,7 @@ public class EasyVertexBuffer implements AutoCloseable
 			RenderSystem.getDevice().createBuffer(null, 40, buffer.getBuffer());
 	}
 	
-	private EasyVertexBuffer(DrawMode drawMode)
+	public EasyVertexBuffer(DrawMode drawMode)
 	{
 		shapeIndexBuffer = null;
 		indexCount = 0;

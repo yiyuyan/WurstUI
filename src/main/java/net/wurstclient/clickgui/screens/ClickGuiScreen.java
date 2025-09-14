@@ -15,7 +15,7 @@ import net.wurstclient.clickgui.ClickGui;
 
 public class ClickGuiScreen extends Screen
 {
-	private final ClickGui gui;
+	public final ClickGui gui;
 	
 	public ClickGuiScreen(ClickGui gui)
 	{

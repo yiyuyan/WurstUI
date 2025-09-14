@@ -31,7 +31,7 @@ public interface ConnectionPacketOutputListener extends Listener
 	public static class ConnectionPacketOutputEvent
 		extends CancellableEvent<ConnectionPacketOutputListener>
 	{
-		private Packet<?> packet;
+		public Packet<?> packet;
 		
 		public ConnectionPacketOutputEvent(Packet<?> packet)
 		{

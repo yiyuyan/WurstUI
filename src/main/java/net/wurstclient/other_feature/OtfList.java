@@ -34,7 +34,7 @@ public class OtfList
 	public final WurstLogoOtf wurstLogoOtf = new WurstLogoOtf();
 	public final ZoomOtf zoomOtf = new ZoomOtf();*/
 	
-	private final TreeMap<String, OtherFeature> otfs =
+	public final TreeMap<String, OtherFeature> otfs =
 		new TreeMap<>(String::compareToIgnoreCase);
 	
 	public OtfList()

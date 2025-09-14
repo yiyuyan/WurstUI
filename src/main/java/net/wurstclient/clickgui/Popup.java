@@ -11,13 +11,13 @@ import net.minecraft.client.gui.DrawContext;
 
 public abstract class Popup
 {
-	private final Component owner;
+	public final Component owner;
 	
-	private int x;
-	private int y;
-	private int width;
-	private int height;
-	private boolean closing;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
+	public boolean closing;
 	
 	public Popup(Component owner)
 	{

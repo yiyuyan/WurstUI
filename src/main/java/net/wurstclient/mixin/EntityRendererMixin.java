@@ -33,7 +33,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 	/*@Inject(at = @At("HEAD"),
 		method = "renderLabelIfPresent(Lnet/minecraft/client/render/entity/state/EntityRenderState;Lnet/minecraft/text/Text;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/VertexConsumerProvider;I)V",
 		cancellable = true)
-	private void onRenderLabelIfPresent(S state, Text text,
+	public void onRenderLabelIfPresent(S state, Text text,
 		MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light,
 		CallbackInfo ci)
 	{
@@ -109,7 +109,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 	@WrapOperation(at = @At(value = "INVOKE",
 		target = "Lnet/minecraft/client/render/entity/EntityRenderDispatcher;getSquaredDistanceToCamera(Lnet/minecraft/entity/Entity;)D"),
 		method = "updateRenderState(Lnet/minecraft/entity/Entity;Lnet/minecraft/client/render/entity/state/EntityRenderState;F)V")
-	private double fakeSquaredDistanceToCamera(
+	public double fakeSquaredDistanceToCamera(
 		EntityRenderDispatcher dispatcher, Entity entity,
 		Operation<Double> original,
 		@Share("actualDistanceSq") LocalDoubleRef actualDistanceSq)
@@ -128,7 +128,7 @@ public abstract class EntityRendererMixin<T extends Entity, S extends EntityRend
 	 */
 	@Inject(at = @At("TAIL"),
 		method = "updateRenderState(Lnet/minecraft/entity/Entity;Lnet/minecraft/client/render/entity/state/EntityRenderState;F)V")
-	private void restoreSquaredDistanceToCamera(T entity, S state,
+	public void restoreSquaredDistanceToCamera(T entity, S state,
 		float tickDelta, CallbackInfo ci,
 		@Share("actualDistanceSq") LocalDoubleRef actualDistanceSq)
 	{

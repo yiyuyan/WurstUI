@@ -12,7 +12,7 @@ import net.minecraft.entity.mob.EndermanEntity;
 
 public class FilterEndermenSetting extends AttackDetectingEntityFilter
 {
-	private FilterEndermenSetting(String description, Mode selected,
+	public FilterEndermenSetting(String description, Mode selected,
 		boolean checked)
 	{
 		super("Filter endermen", description, selected, checked);

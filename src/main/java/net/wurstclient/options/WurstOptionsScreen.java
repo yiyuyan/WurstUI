@@ -29,7 +29,7 @@ import net.wurstclient.util.WurstColors;
 
 public class WurstOptionsScreen extends Screen
 {
-	private Screen prevScreen;
+	public Screen prevScreen;
 	
 	public WurstOptionsScreen(Screen prevScreen)
 	{
@@ -50,7 +50,7 @@ public class WurstOptionsScreen extends Screen
 		addLinkButtons();
 	}
 	
-	private void addSettingButtons()
+	public void addSettingButtons()
 	{
 		WurstClient wurst = WurstClient.INSTANCE;
 		//FriendsCmd friendsCmd = wurst.getCmds().friendsCmd;
@@ -92,7 +92,7 @@ public class WurstOptionsScreen extends Screen
 			b -> forceEnglish.setChecked(!forceEnglish.isChecked()));*/
 	}
 	
-	private void addManagerButtons()
+	public void addManagerButtons()
 	{
 		/*XRayHack xRayHack = WurstClient.INSTANCE.getHax().xRayHack;*/
 		
@@ -111,7 +111,7 @@ public class WurstOptionsScreen extends Screen
 			b -> client.setScreen(new ZoomManagerScreen(this)));
 	}
 	
-	private void addLinkButtons()
+	public void addLinkButtons()
 	{
 		OperatingSystem os = Util.getOperatingSystem();
 		
@@ -155,7 +155,7 @@ public class WurstOptionsScreen extends Screen
 		renderButtonTooltip(context, mouseX, mouseY);
 	}
 	
-	private void renderTitles(DrawContext context)
+	public void renderTitles(DrawContext context)
 	{
 		TextRenderer tr = client.textRenderer;
 		int middleX = width / 2;
@@ -173,7 +173,7 @@ public class WurstOptionsScreen extends Screen
 			WurstColors.VERY_LIGHT_GRAY);
 	}
 	
-	private void renderButtonTooltip(DrawContext context, int mouseX,
+	public void renderButtonTooltip(DrawContext context, int mouseX,
 		int mouseY)
 	{
 		for(ClickableWidget button : Screens.getButtons(this))
@@ -191,10 +191,10 @@ public class WurstOptionsScreen extends Screen
 		}
 	}
 	
-	private class WurstOptionsButton extends ButtonWidget
+	public class WurstOptionsButton extends ButtonWidget
 	{
-		private final Supplier<String> messageSupplier;
-		private final List<Text> tooltip;
+		public final Supplier<String> messageSupplier;
+		public final List<Text> tooltip;
 		
 		public WurstOptionsButton(int xOffset, int yOffset,
 			Supplier<String> messageSupplier, String tooltip,

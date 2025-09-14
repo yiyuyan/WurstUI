@@ -19,8 +19,8 @@ public interface AirStrafingSpeedListener extends Listener
 	public static class AirStrafingSpeedEvent
 		extends Event<AirStrafingSpeedListener>
 	{
-		private float airStrafingSpeed;
-		private final float defaultSpeed;
+		public float airStrafingSpeed;
+		public final float defaultSpeed;
 		
 		public AirStrafingSpeedEvent(float airStrafingSpeed)
 		{

@@ -27,15 +27,15 @@ import net.wurstclient.util.MinPriorityThreadFactory;
  */
 public class ChunkSearcher
 {
-	private static final ExecutorService BACKGROUND_THREAD_POOL =
+	public static final ExecutorService BACKGROUND_THREAD_POOL =
 		MinPriorityThreadFactory.newFixedThreadPool();
 	
-	private final BiPredicate<BlockPos, BlockState> query;
-	private final Chunk chunk;
-	private final DimensionType dimension;
+	public final BiPredicate<BlockPos, BlockState> query;
+	public final Chunk chunk;
+	public final DimensionType dimension;
 	
-	private CompletableFuture<ArrayList<Result>> future;
-	private boolean interrupted;
+	public CompletableFuture<ArrayList<Result>> future;
+	public boolean interrupted;
 	
 	public ChunkSearcher(BiPredicate<BlockPos, BlockState> query, Chunk chunk,
 		DimensionType dimension)
@@ -54,7 +54,7 @@ public class ChunkSearcher
 			BACKGROUND_THREAD_POOL);
 	}
 	
-	private ArrayList<Result> searchNow()
+	public ArrayList<Result> searchNow()
 	{
 		ArrayList<Result> results = new ArrayList<>();
 		ChunkPos chunkPos = chunk.getPos();

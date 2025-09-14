@@ -33,16 +33,16 @@ import net.wurstclient.util.WurstColors;
 
 public class EditBlockListScreen extends Screen
 {
-	private final Screen prevScreen;
-	private final BlockListSetting blockList;
+	public final Screen prevScreen;
+	public final BlockListSetting blockList;
 	
-	private ListGui listGui;
-	private TextFieldWidget blockNameField;
-	private ButtonWidget addButton;
-	private ButtonWidget removeButton;
-	private ButtonWidget doneButton;
+	public ListGui listGui;
+	public TextFieldWidget blockNameField;
+	public ButtonWidget addButton;
+	public ButtonWidget removeButton;
+	public ButtonWidget doneButton;
 	
-	private Block blockToAdd;
+	public Block blockToAdd;
 	
 	public EditBlockListScreen(Screen prevScreen, BlockListSetting blockList)
 	{
@@ -195,10 +195,10 @@ public class EditBlockListScreen extends Screen
 		return false;
 	}
 	
-	private class Entry
+	public class Entry
 		extends AlwaysSelectedEntryListWidget.Entry<EditBlockListScreen.Entry>
 	{
-		private final String blockName;
+		public final String blockName;
 		
 		public Entry(String blockName)
 		{
@@ -234,19 +234,19 @@ public class EditBlockListScreen extends Screen
 				Colors.LIGHT_GRAY, false);
 		}
 		
-		private String getDisplayName(ItemStack stack)
+		public String getDisplayName(ItemStack stack)
 		{
 			return stack.isEmpty() ? "\u00a7ounknown block\u00a7r"
 				: stack.getName().getString();
 		}
 		
-		private String getIdText(Block block)
+		public String getIdText(Block block)
 		{
 			return "ID: " + Block.getRawIdFromState(block.getDefaultState());
 		}
 	}
 	
-	private class ListGui
+	public class ListGui
 		extends AlwaysSelectedEntryListWidget<EditBlockListScreen.Entry>
 	{
 		public ListGui(MinecraftClient minecraft, EditBlockListScreen screen,

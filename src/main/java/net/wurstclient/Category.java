@@ -18,9 +18,9 @@ public enum Category
 	ITEMS("Items"),
 	OTHER("Other");
 	
-	private final String name;
+	public final String name;
 	
-	private Category(String name)
+	Category(String name)
 	{
 		this.name = name;
 	}

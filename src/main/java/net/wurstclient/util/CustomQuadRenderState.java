@@ -51,7 +51,7 @@ public record CustomQuadRenderState(RenderPipeline pipeline,
 	}
 	
 	@Nullable
-	private static ScreenRect createBounds(float x1, float y1, float x2,
+	public static ScreenRect createBounds(float x1, float y1, float x2,
 		float y2, float x3, float y3, float x4, float y4, Matrix3x2f pose,
 		@Nullable ScreenRect scissorArea)
 	{

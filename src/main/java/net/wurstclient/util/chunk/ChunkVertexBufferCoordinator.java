@@ -28,10 +28,10 @@ import net.wurstclient.util.chunk.ChunkSearcher.Result;
 
 public class ChunkVertexBufferCoordinator extends AbstractChunkCoordinator
 {
-	private final HashMap<ChunkPos, EasyVertexBuffer> buffers = new HashMap<>();
-	private final Renderer renderer;
-	private final DrawMode drawMode;
-	private final VertexFormat format;
+	public final HashMap<ChunkPos, EasyVertexBuffer> buffers = new HashMap<>();
+	public final Renderer renderer;
+	public final DrawMode drawMode;
+	public final VertexFormat format;
 	
 	public ChunkVertexBufferCoordinator(BiPredicate<BlockPos, BlockState> query,
 		DrawMode drawMode, VertexFormat format, Renderer renderer,
@@ -80,7 +80,7 @@ public class ChunkVertexBufferCoordinator extends AbstractChunkCoordinator
 		return Collections.unmodifiableSet(buffers.entrySet());
 	}
 	
-	private void buildBuffer(ChunkSearcher searcher)
+	public void buildBuffer(ChunkSearcher searcher)
 	{
 		if(buffers.containsKey(searcher.getPos()))
 			return;

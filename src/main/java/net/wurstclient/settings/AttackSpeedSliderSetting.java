@@ -12,8 +12,8 @@ import net.wurstclient.WurstClient;
 
 public class AttackSpeedSliderSetting extends SliderSetting
 {
-	private final Random random = Random.createLocal();
-	private int tickTimer;
+	public final Random random = Random.createLocal();
+	public int tickTimer;
 	
 	public AttackSpeedSliderSetting()
 	{

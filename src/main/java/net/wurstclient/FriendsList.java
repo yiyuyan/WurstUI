@@ -23,8 +23,8 @@ import net.wurstclient.util.json.JsonUtils;
 
 public class FriendsList
 {
-	private final TreeSet<String> friends = new TreeSet<>();
-	private Path path;
+	public final TreeSet<String> friends = new TreeSet<>();
+	public Path path;
 	
 	public FriendsList(Path path)
 	{
@@ -102,7 +102,7 @@ public class FriendsList
 		save();
 	}
 	
-	private void save()
+	public void save()
 	{
 		try
 		{
@@ -115,7 +115,7 @@ public class FriendsList
 		}
 	}
 	
-	private JsonArray createJson()
+	public JsonArray createJson()
 	{
 		JsonArray json = new JsonArray();
 		friends.forEach(json::add);

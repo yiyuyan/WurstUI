@@ -23,9 +23,9 @@ import net.wurstclient.WurstClient;
 
 public class FakePlayerEntity extends OtherClientPlayerEntity
 {
-	private final ClientPlayerEntity player = WurstClient.MC.player;
-	private final ClientWorld world = WurstClient.MC.world;
-	private PlayerListEntry playerListEntry;
+	public final ClientPlayerEntity player = WurstClient.MC.player;
+	public final ClientWorld world = WurstClient.MC.world;
+	public PlayerListEntry playerListEntry;
 	
 	public FakePlayerEntity()
 	{
@@ -57,12 +57,12 @@ public class FakePlayerEntity extends OtherClientPlayerEntity
 		// Prevents pushing the real player away
 	}
 	
-	private void copyInventory()
+	public void copyInventory()
 	{
 		getInventory().clone(player.getInventory());
 	}
 	
-	private void copyPlayerModel(Entity from, Entity to)
+	public void copyPlayerModel(Entity from, Entity to)
 	{
 		DataTracker fromTracker = from.getDataTracker();
 		DataTracker toTracker = to.getDataTracker();
@@ -70,20 +70,20 @@ public class FakePlayerEntity extends OtherClientPlayerEntity
 		toTracker.set(PlayerEntity.PLAYER_MODEL_PARTS, playerModel);
 	}
 	
-	private void copyRotation()
+	public void copyRotation()
 	{
 		headYaw = player.headYaw;
 		bodyYaw = player.bodyYaw;
 	}
 	
-	private void resetCapeMovement()
+	public void resetCapeMovement()
 	{
 		capeX = getX();
 		capeY = getY();
 		capeZ = getZ();
 	}
 	
-	private void spawn()
+	public void spawn()
 	{
 		world.addEntity(this);
 	}
